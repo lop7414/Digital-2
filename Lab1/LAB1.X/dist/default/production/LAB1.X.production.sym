@@ -96,7 +96,7 @@ cinit FF8 FFF CODE FF8 0
 maintext FF2 FF7 CODE FF2 0
 %locals
 dist/default/production\LAB1.X.production.o
-C:\Users\flope\AppData\Local\Temp\sdlg.s
+C:\Users\flope\AppData\Local\Temp\sguk.s
 423 7FC 0 CODE 0
 426 7FC 0 CODE 0
 432 7FC 0 CODE 0
