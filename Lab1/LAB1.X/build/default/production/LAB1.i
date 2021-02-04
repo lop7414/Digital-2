@@ -7,26 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "LAB1.c" 2
-# 14 "LAB1.c"
-#pragma config FOSC = EXTRC_CLKOUT
-#pragma config WDTE = ON
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
-
-
-
+# 12 "LAB1.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2507,9 +2488,240 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 32 "LAB1.c" 2
+# 12 "LAB1.c" 2
+
+
+
+
+
+
+
+#pragma config FOSC = XT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+# 47 "LAB1.c"
+char PLAYER1 = 0;
+char PLAYER2 = 0;
+char START = 0;
+char START2 = 0;
+
+
+
+
+void setup(void);
+void semaforo(void);
+void player1(void);
+void player2(void);
+
+
+
 
 
 void main(void) {
+
+    setup();
+
+
+
+
+
+    while (1) {
+
+        if (PORTBbits.RB0 == 1){
+            semaforo();
+            PORTBbits.RB3 = 0;
+            PORTBbits.RB4 = 0;
+            START=1;
+        }
+        if (PORTBbits.RB1 == 0){
+            if (PORTBbits.RB2 == 0){
+                START2 = 1;
+            }
+        }
+        if (START==1){
+            if (START2==1){
+                if (PORTBbits.RB1 == 1){
+                    player1();
+                    START2 = 0;
+                }
+
+                if (PORTBbits.RB2 == 1){
+                    player2();
+                    START2 = 0;
+                }
+            }
+        }
+
+        switch (PLAYER1){
+            case 0:
+                PORTC = 0;
+            break;
+
+            case 1:
+                PORTCbits.RC0 = 1;
+            break;
+
+            case 2:
+                PORTCbits.RC0 = 0;
+                PORTCbits.RC1 = 1;
+            break;
+
+            case 3:
+                PORTCbits.RC1 = 0;
+                PORTCbits.RC2 = 1;
+            break;
+
+            case 4:
+                PORTCbits.RC2 = 0;
+                PORTCbits.RC3 = 1;
+            break;
+
+            case 5:
+                PORTCbits.RC3 = 0;
+                PORTCbits.RC4 = 1;
+            break;
+
+            case 6:
+                PORTCbits.RC4 = 0;
+                PORTCbits.RC5 = 1;
+            break;
+
+            case 7:
+                PORTCbits.RC5 = 0;
+                PORTCbits.RC6 = 1;
+            break;
+
+            case 8:
+                PORTCbits.RC6 = 0;
+                PORTCbits.RC7 = 1;
+            break;
+
+            case 9:
+                START = 0;
+                PORTBbits.RB3 = 1;
+                PLAYER1 = 0;
+        }
+
+        switch (PLAYER2){
+            case 0:
+                PORTD = 0;
+            break;
+
+            case 1:
+                PORTDbits.RD0 = 1;
+            break;
+
+            case 2:
+                PORTDbits.RD0 = 0;
+                PORTDbits.RD1 = 1;
+            break;
+
+            case 3:
+                PORTDbits.RD1 = 0;
+                PORTDbits.RD2 = 1;
+            break;
+
+            case 4:
+                PORTDbits.RD2 = 0;
+                PORTDbits.RD3 = 1;
+            break;
+
+            case 5:
+                PORTDbits.RD3 = 0;
+                PORTDbits.RD4 = 1;
+            break;
+
+            case 6:
+                PORTDbits.RD4 = 0;
+                PORTDbits.RD5 = 1;
+            break;
+
+            case 7:
+                PORTDbits.RD5 = 0;
+                PORTDbits.RD6 = 1;
+            break;
+
+            case 8:
+                PORTDbits.RD6 = 0;
+                PORTDbits.RD7 = 1;
+            break;
+
+            case 9:
+                START = 0;
+                PORTBbits.RB4 = 1;
+                PLAYER2 = 0;
+        }
+
+    if (PORTBbits.RB3 == 1){
+        if (PORTBbits.RB0 == 1){
+            return;
+        }
+    }
+    if (PORTBbits.RB4 == 1){
+        if (PORTBbits.RB0 == 1){
+            return;
+        }
+    }
+    }
+
+}
+
+
+
+
+
+void setup(void) {
+    TRISE = 0;
+    PORTE = 0;
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISB = 0;
+    PORTB = 0;
+    TRISC = 0;
+    PORTC = 0;
+    TRISD = 0;
+    PORTD = 0;
+}
+
+
+
+
+
+void semaforo(void) {
+    PORTC = 0;
+    PORTD = 0;
+    PLAYER1 = 0;
+    PLAYER2 = 0;
+    PORTEbits.RE0 = 1;
+    _delay((unsigned long)((700)*(8000000/4000.0)));
+    PORTEbits.RE0 = 0;
+    PORTEbits.RE1 = 1;
+    _delay((unsigned long)((200)*(8000000/4000.0)));
+    PORTEbits.RE1 = 0;
+    PORTEbits.RE2 = 1;
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    PORTEbits.RE2 = 0;
+}
+
+void player1(void){
+    PLAYER1++;
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+    return;
+}
+
+void player2(void){
+    PLAYER2++;
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     return;
 }
