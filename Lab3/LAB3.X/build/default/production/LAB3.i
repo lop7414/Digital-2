@@ -2639,9 +2639,9 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 # 39 "LAB3.c" 2
-# 51 "LAB3.c"
+# 55 "LAB3.c"
 # 1 "./LCD.h" 1
-# 48 "./LCD.h"
+# 64 "./LCD.h"
 void Lcd_Port(char a);
 
 void Lcd_Cmd(char a);
@@ -2659,8 +2659,8 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right();
 
 void Lcd_Shift_Left();
-# 51 "LAB3.c" 2
-# 61 "LAB3.c"
+# 55 "LAB3.c" 2
+# 65 "LAB3.c"
 void setup(void);
 
 
@@ -2668,6 +2668,8 @@ void setup(void);
 
 
 void main(void) {
+
+    setup();
 
     unsigned int a;
   TRISD = 0x00;
@@ -2721,8 +2723,6 @@ void main(void) {
 
 
 void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
@@ -2731,4 +2731,6 @@ void setup(void) {
     PORTC = 0;
     TRISD = 0;
     PORTD = 0;
+    TRISE = 0;
+    PORTE = 0;
 }

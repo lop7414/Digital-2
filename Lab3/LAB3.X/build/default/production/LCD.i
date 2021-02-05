@@ -9,7 +9,7 @@
 # 1 "LCD.c" 2
 # 11 "LCD.c"
 # 1 "./LCD.h" 1
-# 43 "./LCD.h"
+# 59 "./LCD.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2490,7 +2490,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 43 "./LCD.h" 2
+# 59 "./LCD.h" 2
 
 
 
@@ -2518,32 +2518,52 @@ void Lcd_Shift_Left();
 
 void Lcd_Port(char a){
  if(a & 1)
+  RD0 = 1;
+ else
+  RD0 = 0;
+
+    if(a & 2)
+  RD1 = 1;
+ else
+  RD1 = 0;
+
+    if(a & 4)
+  RD2 = 1;
+ else
+  RD2 = 0;
+
+    if(a & 8)
+  RD3 = 1;
+ else
+  RD3 = 0;
+
+    if(a & 16)
   RD4 = 1;
  else
   RD4 = 0;
 
- if(a & 2)
+ if(a & 32)
   RD5 = 1;
  else
   RD5 = 0;
 
- if(a & 4)
+ if(a & 64)
   RD6 = 1;
  else
   RD6 = 0;
 
- if(a & 8)
+ if(a & 128)
   RD7 = 1;
  else
   RD7 = 0;
 }
 
 void Lcd_Cmd(char a){
- PORTDbits.RD2 = 0;
+ PORTEbits.RE0 = 0;
  Lcd_Port(a);
- RD3 = 1;
+ RE1 = 1;
         _delay((unsigned long)((4)*(8000000/4000.0)));
-        RD3 = 0;
+        RE1 = 0;
 }
 
 void Lcd_Clear(void){
@@ -2591,15 +2611,15 @@ void Lcd_Write_Char(char a){
    char temp,y;
    temp = a&0x0F;
    y = a&0xF0;
-   PORTDbits.RD2 = 1;
+   PORTEbits.RE0 = 1;
    Lcd_Port(y>>4);
-   RD3 = 1;
+   RE1 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RD3 = 0;
+   RE1 = 0;
    Lcd_Port(temp);
-   RD3 = 1;
+   RE1 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RD3 = 0;
+   RE1 = 0;
 }
 
 void Lcd_Write_String(char *a){

@@ -41,8 +41,12 @@
 
 #define _XTAL_FREQ 8000000
 
-#define RS RD2
-#define EN RD3
+#define RS RE0
+#define EN RE1
+#define D0 RD0
+#define D1 RD1
+#define D2 RD2
+#define D3 RD3
 #define D4 RD4
 #define D5 RD5
 #define D6 RD6
@@ -65,7 +69,9 @@ void setup(void);
 //******************************************************************************
 
 void main(void) {
-        
+    
+    setup();
+    
     unsigned int a;
   TRISD = 0x00;
   Lcd_Init();
@@ -118,8 +124,6 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
@@ -128,6 +132,8 @@ void setup(void) {
     PORTC = 0;
     TRISD = 0;
     PORTD = 0;
+    TRISE = 0;
+    PORTE = 0;
 }
 
 //******************************************************************************
