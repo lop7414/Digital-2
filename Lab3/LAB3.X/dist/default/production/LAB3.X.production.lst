@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Fri Feb 05 00:41:13 2021
+                                                                                               Fri Feb 05 01:05:01 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1655,7 +1655,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1639  06A6  1188               	bcf	8,3	;volatile
   1640  06A7                     l83:
   1641                           
-  1642                           ;LCD.c: 34:     if(a & 16)
+  1642                           ;LCD.c: 34:     if(a & 0x10)
   1643  06A7  1E70               	btfss	Lcd_Port@a,4
   1644  06A8  2EAA               	goto	u51
   1645  06A9  2EAB               	goto	u50
@@ -1675,7 +1675,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1659  06AD  1208               	bcf	8,4	;volatile
   1660  06AE                     l85:
   1661                           
-  1662                           ;LCD.c: 39:  if(a & 32)
+  1662                           ;LCD.c: 39:  if(a & 0x20)
   1663  06AE  1EF0               	btfss	Lcd_Port@a,5
   1664  06AF  2EB1               	goto	u61
   1665  06B0  2EB2               	goto	u60
@@ -1695,7 +1695,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1679  06B4  1288               	bcf	8,5	;volatile
   1680  06B5                     l87:
   1681                           
-  1682                           ;LCD.c: 44:  if(a & 64)
+  1682                           ;LCD.c: 44:  if(a & 0x40)
   1683  06B5  1F70               	btfss	Lcd_Port@a,6
   1684  06B6  2EB8               	goto	u71
   1685  06B7  2EB9               	goto	u70
@@ -1715,7 +1715,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1699  06BB  1308               	bcf	8,6	;volatile
   1700  06BC                     l89:
   1701                           
-  1702                           ;LCD.c: 49:  if(a & 128)
+  1702                           ;LCD.c: 49:  if(a & 0x80)
   1703  06BC  1FF0               	btfss	Lcd_Port@a,7
   1704  06BD  2EBF               	goto	u81
   1705  06BE  2EC0               	goto	u80
@@ -1936,7 +1936,7 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Fri Feb 05 00:41:13 2021
+Symbol Table                                                                                   Fri Feb 05 01:05:01 2021
 
                         pc 0002                         l53 063C                         l80 069F  
                        l81 06A0                         l90 06C2                         l82 06A6  

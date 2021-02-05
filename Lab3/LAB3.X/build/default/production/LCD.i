@@ -2537,22 +2537,22 @@ void Lcd_Port(char a){
  else
   RD3 = 0;
 
-    if(a & 16)
+    if(a & 0x10)
   RD4 = 1;
  else
   RD4 = 0;
 
- if(a & 32)
+ if(a & 0x20)
   RD5 = 1;
  else
   RD5 = 0;
 
- if(a & 64)
+ if(a & 0x40)
   RD6 = 1;
  else
   RD6 = 0;
 
- if(a & 128)
+ if(a & 0x80)
   RD7 = 1;
  else
   RD7 = 0;

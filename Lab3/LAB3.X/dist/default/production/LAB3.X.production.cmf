@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flope\AppData\Local\Temp\skvc.o
+$C:\Users\flope\AppData\Local\Temp\scrk.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 $dist/default/production\LAB3.X.production.o
@@ -76,11 +76,11 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\LAB3.X.production.o
-7FC cinit CODE >739:C:\Users\flope\AppData\Local\Temp\skvc.s
-7FC cinit CODE >742:C:\Users\flope\AppData\Local\Temp\skvc.s
-7FC cinit CODE >748:C:\Users\flope\AppData\Local\Temp\skvc.s
-7FC cinit CODE >750:C:\Users\flope\AppData\Local\Temp\skvc.s
-7FD cinit CODE >751:C:\Users\flope\AppData\Local\Temp\skvc.s
+7FC cinit CODE >739:C:\Users\flope\AppData\Local\Temp\scrk.s
+7FC cinit CODE >742:C:\Users\flope\AppData\Local\Temp\scrk.s
+7FC cinit CODE >748:C:\Users\flope\AppData\Local\Temp\scrk.s
+7FC cinit CODE >750:C:\Users\flope\AppData\Local\Temp\scrk.s
+7FD cinit CODE >751:C:\Users\flope\AppData\Local\Temp\scrk.s
 686 text10 CODE >13:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\Lab3\LAB3.X\LCD.c
 687 text10 CODE >14:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\Lab3\LAB3.X\LCD.c
 68B text10 CODE >15:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\Lab3\LAB3.X\LCD.c
@@ -235,21 +235,21 @@ __end_of_Lcd_Init E1E 0 CODE 0 text7 dist/default/production\LAB3.X.production.o
 __end_of_Lcd_Port D88 0 CODE 0 text10 dist/default/production\LAB3.X.production.o
 main@a 7B 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\skvc.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\scrk.o
 _main E1E 0 CODE 0 maintext dist/default/production\LAB3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\LAB3.X.production.o
 _Lcd_Write_Char C0C 0 CODE 0 text3 dist/default/production\LAB3.X.production.o
-start 0 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\skvc.o
+start 0 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\scrk.o
 __size_of_main 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
 Lcd_Port@a 70 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
 Lcd_Write_Char@temp 73 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\skvc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\scrk.o
 wtemp0 7E 0 ABS 0 - dist/default/production\LAB3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __size_of_Lcd_Set_Cursor 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
@@ -258,8 +258,8 @@ __end_of_Lcd_Write_Char C40 0 CODE 0 text3 dist/default/production\LAB3.X.produc
 _ANSELH 189 0 ABS 0 - dist/default/production\LAB3.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_Lcd_Shift_Right BD8 0 CODE 0 text4 dist/default/production\LAB3.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\skvc.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\skvc.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\scrk.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\scrk.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
 Lcd_Set_Cursor@temp 77 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\LAB3.X.production.o
@@ -267,7 +267,7 @@ _Lcd_Write_String CC2 0 CODE 0 text2 dist/default/production\LAB3.X.production.o
 _Lcd_Shift_Left BBC 0 CODE 0 text5 dist/default/production\LAB3.X.production.o
 _Lcd_Shift_Right BCA 0 CODE 0 text4 dist/default/production\LAB3.X.production.o
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\skvc.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\scrk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -322,7 +322,7 @@ __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\LAB3.X.production
 __stringtab 6 0 STRING 0 strings dist/default/production\LAB3.X.production.o
 Lcd_Write_String@a 76 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
 Lcd_Write_String@i 74 0 COMMON 1 cstackCOMMON dist/default/production\LAB3.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\skvc.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\scrk.o
 __size_of_Lcd_Clear 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
 __size_of_Lcd_Shift_Right 0 0 ABS 0 - dist/default/production\LAB3.X.production.o
 __end_of_Lcd_Cmd C0C 0 CODE 0 text9 dist/default/production\LAB3.X.production.o
