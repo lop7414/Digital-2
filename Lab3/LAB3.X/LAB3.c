@@ -73,6 +73,7 @@ void main(void) {
     setup();
     
     unsigned int a;
+  TRISE = 0x00;
   TRISD = 0x00;
   Lcd_Init();
 
@@ -139,3 +140,19 @@ void setup(void) {
 //******************************************************************************
 // Funciones
 //******************************************************************************
+
+
+
+/*Precodigo
+ * 
+ * Con libreria ADC leer RB0 y RB1 y guardar datos en variables
+ * Abrir comunicacion USART con libreria
+ * Codigo simple de sumar 1 o restar 1 a una variable "contador"
+ * Escribir String " S1:    S2:    S3: "
+ * pasar ese valor a puerto D para escribir en LCD RB0
+ * Escribir String "V "
+ * pasar ese valor a puerto D para escribir en LCD RB1
+ * Escribir String "V "
+ * Escribir variable de "contador"
+ * Escribir String "V "
+ */

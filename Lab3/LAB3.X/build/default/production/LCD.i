@@ -2504,15 +2504,15 @@ void Lcd_Clear(void);
 
 void Lcd_Set_Cursor(char a, char b);
 
-void Lcd_Init();
+void Lcd_Init(void);
 
 void Lcd_Write_Char(char a);
 
 void Lcd_Write_String(char *a);
 
-void Lcd_Shift_Right();
+void Lcd_Shift_Right(void);
 
-void Lcd_Shift_Left();
+void Lcd_Shift_Left(void);
 # 11 "LCD.c" 2
 
 
@@ -2561,65 +2561,50 @@ void Lcd_Port(char a){
 void Lcd_Cmd(char a){
  PORTEbits.RE0 = 0;
  Lcd_Port(a);
- RE1 = 1;
+ PORTEbits.RE1 = 1;
         _delay((unsigned long)((4)*(8000000/4000.0)));
-        RE1 = 0;
+        PORTEbits.RE1 = 0;
 }
 
 void Lcd_Clear(void){
- Lcd_Cmd(0);
  Lcd_Cmd(1);
 }
 
 void Lcd_Set_Cursor(char a, char b){
- char temp,z,y;
+ char temp;
  if(a == 1){
    temp = 0x80 + b - 1;
-  z = temp>>4;
-  y = temp & 0x0F;
-  Lcd_Cmd(z);
-  Lcd_Cmd(y);
+  Lcd_Cmd(temp);
  }
  else if(a == 2) {
   temp = 0xC0 + b - 1;
-  z = temp>>4;
-  y = temp & 0x0F;
-  Lcd_Cmd(z);
-  Lcd_Cmd(y);
+  Lcd_Cmd(temp);
  }
 }
 
 void Lcd_Init(){
   Lcd_Port(0x00);
    _delay((unsigned long)((20)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
+  Lcd_Cmd(0x30);
  _delay((unsigned long)((5)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
+  Lcd_Cmd(0x30);
  _delay((unsigned long)((11)*(8000000/4000.0)));
-  Lcd_Cmd(0x03);
+  Lcd_Cmd(0x30);
 
-  Lcd_Cmd(0x02);
-  Lcd_Cmd(0x02);
+  Lcd_Cmd(0x38);
   Lcd_Cmd(0x08);
-  Lcd_Cmd(0x00);
-  Lcd_Cmd(0x0C);
-  Lcd_Cmd(0x00);
+  Lcd_Cmd(0x01);
   Lcd_Cmd(0x06);
 }
 
 void Lcd_Write_Char(char a){
-   char temp,y;
-   temp = a&0x0F;
-   y = a&0xF0;
+   char temp;
+   temp = a;
    PORTEbits.RE0 = 1;
-   Lcd_Port(y>>4);
-   RE1 = 1;
-   _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RE1 = 0;
    Lcd_Port(temp);
-   RE1 = 1;
+   PORTEbits.RE1 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
-   RE1 = 0;
+   PORTEbits.RE1 = 0;
 }
 
 void Lcd_Write_String(char *a){
@@ -2629,11 +2614,9 @@ void Lcd_Write_String(char *a){
 }
 
 void Lcd_Shift_Right(){
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x0C);
+ Lcd_Cmd(0x1C);
 }
 
 void Lcd_Shift_Left(){
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x08);
+ Lcd_Cmd(0x18);
 }
