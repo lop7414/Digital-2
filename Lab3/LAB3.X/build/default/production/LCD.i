@@ -1,4 +1,4 @@
-# 1 "../../../LCD Interfacing/lcd.X/main.c"
+# 1 "LCD.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "../../../LCD Interfacing/lcd.X/main.c" 2
-# 10 "../../../LCD Interfacing/lcd.X/main.c"
+# 1 "LCD.c" 2
+# 11 "LCD.c"
+# 1 "./LCD.h" 1
+# 43 "./LCD.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,13 +2490,33 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 11 "../../../LCD Interfacing/lcd.X/main.c" 2
-# 1 "../../../LCD Interfacing/lcd.X/lcd.h" 1
+# 43 "./LCD.h" 2
 
 
 
-void Lcd_Port(char a)
-{
+
+
+void Lcd_Port(char a);
+
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init();
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right();
+
+void Lcd_Shift_Left();
+# 11 "LCD.c" 2
+
+
+void Lcd_Port(char a){
  if(a & 1)
   RD4 = 1;
  else
@@ -2515,34 +2537,30 @@ void Lcd_Port(char a)
  else
   RD7 = 0;
 }
-void Lcd_Cmd(char a)
-{
- RD2 = 0;
+
+void Lcd_Cmd(char a){
+ PORTDbits.RD2 = 0;
  Lcd_Port(a);
  RD3 = 1;
         _delay((unsigned long)((4)*(8000000/4000.0)));
         RD3 = 0;
 }
 
-Lcd_Clear()
-{
+void Lcd_Clear(void){
  Lcd_Cmd(0);
  Lcd_Cmd(1);
 }
 
-void Lcd_Set_Cursor(char a, char b)
-{
+void Lcd_Set_Cursor(char a, char b){
  char temp,z,y;
- if(a == 1)
- {
+ if(a == 1){
    temp = 0x80 + b - 1;
   z = temp>>4;
   y = temp & 0x0F;
   Lcd_Cmd(z);
   Lcd_Cmd(y);
  }
- else if(a == 2)
- {
+ else if(a == 2) {
   temp = 0xC0 + b - 1;
   z = temp>>4;
   y = temp & 0x0F;
@@ -2551,8 +2569,7 @@ void Lcd_Set_Cursor(char a, char b)
  }
 }
 
-void Lcd_Init()
-{
+void Lcd_Init(){
   Lcd_Port(0x00);
    _delay((unsigned long)((20)*(8000000/4000.0)));
   Lcd_Cmd(0x03);
@@ -2570,12 +2587,11 @@ void Lcd_Init()
   Lcd_Cmd(0x06);
 }
 
-void Lcd_Write_Char(char a)
-{
+void Lcd_Write_Char(char a){
    char temp,y;
    temp = a&0x0F;
    y = a&0xF0;
-   RD2 = 1;
+   PORTDbits.RD2 = 1;
    Lcd_Port(y>>4);
    RD3 = 1;
    _delay((unsigned long)((40)*(8000000/4000000.0)));
@@ -2586,77 +2602,18 @@ void Lcd_Write_Char(char a)
    RD3 = 0;
 }
 
-void Lcd_Write_String(char *a)
-{
+void Lcd_Write_String(char *a){
  int i;
  for(i=0;a[i]!='\0';i++)
     Lcd_Write_Char(a[i]);
 }
 
-void Lcd_Shift_Right()
-{
+void Lcd_Shift_Right(){
  Lcd_Cmd(0x01);
  Lcd_Cmd(0x0C);
 }
 
-void Lcd_Shift_Left()
-{
+void Lcd_Shift_Left(){
  Lcd_Cmd(0x01);
  Lcd_Cmd(0x08);
-}
-# 12 "../../../LCD Interfacing/lcd.X/main.c" 2
-
-
-#pragma config FOSC = HS
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config BOREN = ON
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
-#pragma config CP = OFF
-
-
-int main()
-{
-  unsigned int a;
-  TRISD = 0x00;
-  Lcd_Init();
-  while(1)
-  {
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("LCD Library for");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("MPLAB XC8");
-    _delay((unsigned long)((2000)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Developed By");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("electroSome");
-    _delay((unsigned long)((2000)*(8000000/4000.0)));
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("www.electroSome.com");
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Left();
-    }
-
-    for(a=0;a<15;a++)
-    {
-        _delay((unsigned long)((300)*(8000000/4000.0)));
-        Lcd_Shift_Right();
-    }
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    _delay((unsigned long)((2000)*(8000000/4000.0)));
-  }
-  return 0;
 }

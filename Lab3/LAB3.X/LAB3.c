@@ -2,22 +2,18 @@
  * File:   LAB3.c
  * Author: francisco lopez
  *
+ * se Adaptaron librerias de Ligo George
+ * extraidas de la pagina https://electrosome.com/lcd-pic-mplab-xc8/#Example
+ * 
  * Created on February 4, 2021, 7:54 PM
  */
-
-
-//******************************************************************************
-// librerías
-//******************************************************************************
-
-#include <xc.h>
 
 // PIC16F887 Configuration Bit Settings
 
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = EXTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -35,7 +31,24 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+//******************************************************************************
+// librerías
+//******************************************************************************
+
+#include <xc.h>
+#include <stdint.h>
+
+
 #define _XTAL_FREQ 8000000
+
+#define RS RD2
+#define EN RD3
+#define D4 RD4
+#define D5 RD5
+#define D6 RD6
+#define D7 RD7
+
+#include "LCD.h"
 
 //******************************************************************************
 // Variables
@@ -52,16 +65,51 @@ void setup(void);
 //******************************************************************************
 
 void main(void) {
-
-    setup();
+        
+    unsigned int a;
+  TRISD = 0x00;
+  Lcd_Init();
 
     //**************************************************************************
     // Loop principal
     //**************************************************************************
 
     while (1) {
-        return;
-    } 
+        Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("LCD Library for");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("MPLAB XC8");
+    __delay_ms(2000);
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Developed By");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("electroSome");
+    __delay_ms(2000);
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("www.electroSome.com");
+
+    for(a=0;a<15;a++)
+    {
+        __delay_ms(300);
+        Lcd_Shift_Left();
+    }
+
+    for(a=0;a<15;a++)
+    {
+        __delay_ms(300);
+        Lcd_Shift_Right();
+    }
+
+    Lcd_Clear();
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_Char('e');
+    Lcd_Write_Char('S');
+    __delay_ms(2000);
+  }
+  return;
     
 }
 
