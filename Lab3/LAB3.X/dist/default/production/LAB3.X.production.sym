@@ -1,12 +1,4 @@
 __size_of_Lcd_Cmd 0 0 ABS 0
-_RD0 40 0 ABS 0
-_RD1 41 0 ABS 0
-_RD2 42 0 ABS 0
-_RD3 43 0 ABS 0
-_RD4 44 0 ABS 0
-_RD5 45 0 ABS 0
-_RD6 46 0 ABS 0
-_RD7 47 0 ABS 0
 __S0 800 0 ABS 0
 __S1 7D 0 ABS 0
 __S2 0 0 ABS 0
@@ -79,6 +71,7 @@ ___stacklo 0 0 ABS 0
 __size_of_Lcd_Clear 0 0 ABS 0
 __stringtab 3 0 STRING 0
 __end_of_Lcd_Shift_Right 5EC 0 CODE 0
+_PORTDbits 8 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 _PORTEbits 9 0 ABS 0
@@ -181,12 +174,12 @@ text5 BBC BC9 CODE BBC 0
 text8 BAE BBB CODE BAE 0
 %locals
 dist/default/production\LAB3.X.production.o
-C:\Users\flope\AppData\Local\Temp\scrk.s
-739 7FC 0 CODE 0
-742 7FC 0 CODE 0
-748 7FC 0 CODE 0
-750 7FC 0 CODE 0
-751 7FD 0 CODE 0
+C:\Users\flope\AppData\Local\Temp\sml4.s
+725 7FC 0 CODE 0
+728 7FC 0 CODE 0
+734 7FC 0 CODE 0
+736 7FC 0 CODE 0
+737 7FD 0 CODE 0
 LAB3.c
 71 70F 0 CODE 0
 73 70F 0 CODE 0

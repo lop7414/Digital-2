@@ -2641,7 +2641,7 @@ typedef uint16_t uintptr_t;
 # 39 "LAB3.c" 2
 # 55 "LAB3.c"
 # 1 "./LCD.h" 1
-# 64 "./LCD.h"
+# 75 "./LCD.h"
 void Lcd_Port(char a);
 
 void Lcd_Cmd(char a);
@@ -2681,7 +2681,7 @@ void main(void) {
 
 
     while (1) {
-        Lcd_Clear();
+    Lcd_Clear();
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("LCD Library for");
     Lcd_Set_Cursor(2,1);

@@ -41,16 +41,16 @@
 
 #define _XTAL_FREQ 8000000
 
-#define RS RE0
-#define EN RE1
-#define D0 RD0
-#define D1 RD1
-#define D2 RD2
-#define D3 RD3
-#define D4 RD4
-#define D5 RD5
-#define D6 RD6
-#define D7 RD7
+#define RS PORTEbits.RE0
+#define EN PORTEbits.RE1
+#define D0 PORTDbits.RD0
+#define D1 PORTDbits.RD1
+#define D2 PORTDbits.RD2
+#define D3 PORTDbits.RD3
+#define D4 PORTDbits.RD4
+#define D5 PORTDbits.RD5
+#define D6 PORTDbits.RD6
+#define D7 PORTDbits.RD7
 
 #include "LCD.h"
 
@@ -82,7 +82,7 @@ void main(void) {
     //**************************************************************************
 
     while (1) {
-        Lcd_Clear();
+    Lcd_Clear();
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("LCD Library for");
     Lcd_Set_Cursor(2,1);

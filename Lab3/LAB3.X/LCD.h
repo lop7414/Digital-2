@@ -16,12 +16,23 @@
 #define _XTAL_FREQ 8000000
 #endif
 
-#ifndef RS
 #define RS PORTEbits.RE0
+#define EN PORTEbits.RE1
+#define D0 PORTDbits.RD0
+#define D1 PORTDbits.RD1
+#define D2 PORTDbits.RD2
+#define D3 PORTDbits.RD3
+#define D4 PORTDbits.RD4
+#define D5 PORTDbits.RD5
+#define D6 PORTDbits.RD6
+#define D7 PORTDbits.RD7
+
+#ifndef RS
+#define RS PORTCbits.RC6
 #endif
 
 #ifndef EN
-#define EN PORTEbits.RE1
+#define EN RC7
 #endif
 
 #ifndef D0

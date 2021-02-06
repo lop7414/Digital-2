@@ -9,30 +9,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1602
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
-"72 ./LCD.h
-[; ;./LCD.h: 72: void Lcd_Init(void);
+"83 ./LCD.h
+[; ;./LCD.h: 83: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"68
-[; ;./LCD.h: 68: void Lcd_Clear(void);
+"79
+[; ;./LCD.h: 79: void Lcd_Clear(void);
 [v _Lcd_Clear `(v ~T0 @X0 0 ef ]
-"70
-[; ;./LCD.h: 70: void Lcd_Set_Cursor(char a, char b);
+"81
+[; ;./LCD.h: 81: void Lcd_Set_Cursor(char a, char b);
 [v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"76
-[; ;./LCD.h: 76: void Lcd_Write_String(char *a);
+"87
+[; ;./LCD.h: 87: void Lcd_Write_String(char *a);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"80 ./LCD.h
-[; ;./LCD.h: 80: void Lcd_Shift_Left(void);
+"91 ./LCD.h
+[; ;./LCD.h: 91: void Lcd_Shift_Left(void);
 [v _Lcd_Shift_Left `(v ~T0 @X0 0 ef ]
-"78
-[; ;./LCD.h: 78: void Lcd_Shift_Right(void);
+"89
+[; ;./LCD.h: 89: void Lcd_Shift_Right(void);
 [v _Lcd_Shift_Right `(v ~T0 @X0 0 ef ]
-"74
-[; ;./LCD.h: 74: void Lcd_Write_Char(char a);
+"85
+[; ;./LCD.h: 85: void Lcd_Write_Char(char a);
 [v _Lcd_Write_Char `(v ~T0 @X0 0 ef1`uc ]
 "3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
@@ -343,7 +343,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 140 ]
 {
 "85
-[; ;LAB3.c: 85:         Lcd_Clear();
+[; ;LAB3.c: 85:     Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
 "86
 [; ;LAB3.c: 86:     Lcd_Set_Cursor(1,1);

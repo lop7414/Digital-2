@@ -1,28 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"4181 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4181: extern volatile __bit RD0 __attribute__((address(0x40)));
-[v _RD0 `Vb ~T0 @X0 0 e@64 ]
-"4184
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4184: extern volatile __bit RD1 __attribute__((address(0x41)));
-[v _RD1 `Vb ~T0 @X0 0 e@65 ]
-"4187
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4187: extern volatile __bit RD2 __attribute__((address(0x42)));
-[v _RD2 `Vb ~T0 @X0 0 e@66 ]
-"4190
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4190: extern volatile __bit RD3 __attribute__((address(0x43)));
-[v _RD3 `Vb ~T0 @X0 0 e@67 ]
-"4193
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4193: extern volatile __bit RD4 __attribute__((address(0x44)));
-[v _RD4 `Vb ~T0 @X0 0 e@68 ]
-"4196
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4196: extern volatile __bit RD5 __attribute__((address(0x45)));
-[v _RD5 `Vb ~T0 @X0 0 e@69 ]
-"4199
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4199: extern volatile __bit RD6 __attribute__((address(0x46)));
-[v _RD6 `Vb ~T0 @X0 0 e@70 ]
-"4202
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4202: extern volatile __bit RD7 __attribute__((address(0x47)));
-[v _RD7 `Vb ~T0 @X0 0 e@71 ]
+"358 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 358:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 357: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
 "420
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 420:     struct {
 [s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -283,113 +270,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 14:  if(a & 1)
 [e $ ! != & -> _a `i -> 1 `i -> 0 `i 139  ]
 "15
-[; ;LCD.c: 15:   RD0 = 1;
-[e = _RD0 -> -> 1 `i `b ]
+[; ;LCD.c: 15:   PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 [e $U 140  ]
 "16
 [; ;LCD.c: 16:  else
 [e :U 139 ]
 "17
-[; ;LCD.c: 17:   RD0 = 0;
-[e = _RD0 -> -> 0 `i `b ]
+[; ;LCD.c: 17:   PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
 [e :U 140 ]
 "19
 [; ;LCD.c: 19:     if(a & 2)
 [e $ ! != & -> _a `i -> 2 `i -> 0 `i 141  ]
 "20
-[; ;LCD.c: 20:   RD1 = 1;
-[e = _RD1 -> -> 1 `i `b ]
+[; ;LCD.c: 20:   PORTDbits.RD1 = 1;
+[e = . . _PORTDbits 0 1 -> -> 1 `i `uc ]
 [e $U 142  ]
 "21
 [; ;LCD.c: 21:  else
 [e :U 141 ]
 "22
-[; ;LCD.c: 22:   RD1 = 0;
-[e = _RD1 -> -> 0 `i `b ]
+[; ;LCD.c: 22:   PORTDbits.RD1 = 0;
+[e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
 [e :U 142 ]
 "24
 [; ;LCD.c: 24:     if(a & 4)
 [e $ ! != & -> _a `i -> 4 `i -> 0 `i 143  ]
 "25
-[; ;LCD.c: 25:   RD2 = 1;
-[e = _RD2 -> -> 1 `i `b ]
+[; ;LCD.c: 25:   PORTDbits.RD2 = 1;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
 [e $U 144  ]
 "26
 [; ;LCD.c: 26:  else
 [e :U 143 ]
 "27
-[; ;LCD.c: 27:   RD2 = 0;
-[e = _RD2 -> -> 0 `i `b ]
+[; ;LCD.c: 27:   PORTDbits.RD2 = 0;
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
 [e :U 144 ]
 "29
 [; ;LCD.c: 29:     if(a & 8)
 [e $ ! != & -> _a `i -> 8 `i -> 0 `i 145  ]
 "30
-[; ;LCD.c: 30:   RD3 = 1;
-[e = _RD3 -> -> 1 `i `b ]
+[; ;LCD.c: 30:   PORTDbits.RD3 = 1;
+[e = . . _PORTDbits 0 3 -> -> 1 `i `uc ]
 [e $U 146  ]
 "31
 [; ;LCD.c: 31:  else
 [e :U 145 ]
 "32
-[; ;LCD.c: 32:   RD3 = 0;
-[e = _RD3 -> -> 0 `i `b ]
+[; ;LCD.c: 32:   PORTDbits.RD3 = 0;
+[e = . . _PORTDbits 0 3 -> -> 0 `i `uc ]
 [e :U 146 ]
 "34
 [; ;LCD.c: 34:     if(a & 0x10)
 [e $ ! != & -> _a `i -> 16 `i -> 0 `i 147  ]
 "35
-[; ;LCD.c: 35:   RD4 = 1;
-[e = _RD4 -> -> 1 `i `b ]
+[; ;LCD.c: 35:   PORTDbits.RD4 = 1;
+[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
 [e $U 148  ]
 "36
 [; ;LCD.c: 36:  else
 [e :U 147 ]
 "37
-[; ;LCD.c: 37:   RD4 = 0;
-[e = _RD4 -> -> 0 `i `b ]
+[; ;LCD.c: 37:   PORTDbits.RD4 = 0;
+[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
 [e :U 148 ]
 "39
 [; ;LCD.c: 39:  if(a & 0x20)
 [e $ ! != & -> _a `i -> 32 `i -> 0 `i 149  ]
 "40
-[; ;LCD.c: 40:   RD5 = 1;
-[e = _RD5 -> -> 1 `i `b ]
+[; ;LCD.c: 40:   PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
 [e $U 150  ]
 "41
 [; ;LCD.c: 41:  else
 [e :U 149 ]
 "42
-[; ;LCD.c: 42:   RD5 = 0;
-[e = _RD5 -> -> 0 `i `b ]
+[; ;LCD.c: 42:   PORTDbits.RD5 = 0;
+[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
 [e :U 150 ]
 "44
 [; ;LCD.c: 44:  if(a & 0x40)
 [e $ ! != & -> _a `i -> 64 `i -> 0 `i 151  ]
 "45
-[; ;LCD.c: 45:   RD6 = 1;
-[e = _RD6 -> -> 1 `i `b ]
+[; ;LCD.c: 45:   PORTDbits.RD6 = 1;
+[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
 [e $U 152  ]
 "46
 [; ;LCD.c: 46:  else
 [e :U 151 ]
 "47
-[; ;LCD.c: 47:   RD6 = 0;
-[e = _RD6 -> -> 0 `i `b ]
+[; ;LCD.c: 47:   PORTDbits.RD6 = 0;
+[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
 [e :U 152 ]
 "49
 [; ;LCD.c: 49:  if(a & 0x80)
 [e $ ! != & -> _a `i -> 128 `i -> 0 `i 153  ]
 "50
-[; ;LCD.c: 50:   RD7 = 1;
-[e = _RD7 -> -> 1 `i `b ]
+[; ;LCD.c: 50:   PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 [e $U 154  ]
 "51
 [; ;LCD.c: 51:  else
 [e :U 153 ]
 "52
-[; ;LCD.c: 52:   RD7 = 0;
-[e = _RD7 -> -> 0 `i `b ]
+[; ;LCD.c: 52:   PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 [e :U 154 ]
 "53
 [; ;LCD.c: 53: }
@@ -412,10 +399,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 58:  PORTEbits.RE1 = 1;
 [e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
 "59
-[; ;LCD.c: 59:         _delay((unsigned long)((4)*(8000000/4000.0)));
+[; ;LCD.c: 59:     _delay((unsigned long)((4)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 4 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "60
-[; ;LCD.c: 60:         PORTEbits.RE1 = 0;
+[; ;LCD.c: 60:     PORTEbits.RE1 = 0;
 [e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "61
 [; ;LCD.c: 61: }
@@ -465,7 +452,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _a `i -> 2 `i 160  ]
 {
 "74
-[; ;LCD.c: 74:   temp = 0xC0 + b - 1;
+[; ;LCD.c: 74:         temp = 0xC0 + b - 1;
 [e = _temp -> - + -> 192 `i -> _b `i -> 1 `i `uc ]
 "75
 [; ;LCD.c: 75:   Lcd_Cmd(temp);
@@ -533,8 +520,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 95:    char temp;
 [v _temp `uc ~T0 @X0 1 a ]
 "96
-[; ;LCD.c: 96:    temp = a;
-[e = _temp _a ]
+[; ;LCD.c: 96:    temp = a&0xFF;
+[e = _temp -> & -> _a `i -> 255 `i `uc ]
 "97
 [; ;LCD.c: 97:    PORTEbits.RE0 = 1;
 [e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
