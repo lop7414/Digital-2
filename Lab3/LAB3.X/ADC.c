@@ -5,11 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-void CONTADOR (int  n, char *a){
+int CONTADOR (int  n){
     Destination = n;
-    O = (Destination)*1;
-    itoa(a,O,10);
-    return;
+    return ((Destination)*1);
 }
 
 void ADC_Init (void){

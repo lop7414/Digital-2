@@ -17,7 +17,7 @@ int Destination;
 
 //ADC functions
 
-void CONTADOR(int n, char *a);
+int CONTADOR(int n);
 
 void ADC_Init(void);
 

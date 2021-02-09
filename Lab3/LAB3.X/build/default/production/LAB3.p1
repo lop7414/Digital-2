@@ -5,11 +5,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
 "20 ./ADC.h
-[; ;./ADC.h: 20: void CONTADOR(int n, char *a);
-[v _CONTADOR `(v ~T0 @X0 0 ef2`i`*uc ]
+[; ;./ADC.h: 20: int CONTADOR(int n);
+[v _CONTADOR `(i ~T0 @X0 0 ef1`i ]
 "1140 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
+[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
 [p mainexit ]
 "82 LAB3.c
 [; ;LAB3.c: 82: void setup(void);
@@ -33,9 +36,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24 ./ADC.h
 [; ;./ADC.h: 24: unsigned char ADC_Read(int a,int b);
 [v _ADC_Read `(uc ~T0 @X0 0 ef2`i`i ]
-"113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
-[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
 "37 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h: 37: extern char * strcpy(char *, const char *);
 [v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
@@ -432,8 +432,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RCIF `i -> 1 `i 144  ]
 {
 "89
-[; ;LAB3.c: 89:         CONTADOR ((int)RCREG,COMPARE);
-[e ( _CONTADOR (2 , -> _RCREG `i &U _COMPARE ]
+[; ;LAB3.c: 89:         O = CONTADOR ((int)RCREG);
+[e = _O ( _CONTADOR (1 -> _RCREG `i ]
+"90
+[; ;LAB3.c: 90:         itoa(COMPARE,O,10);
+[e ( _itoa (3 , , &U _COMPARE _O -> 10 `i ]
 "91
 [; ;LAB3.c: 91:         RCIF=0;
 [e = _RCIF -> -> 0 `i `b ]

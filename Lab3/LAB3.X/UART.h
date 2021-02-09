@@ -17,6 +17,6 @@ uint8_t UART_READ();
 
 uint8_t UART_TX_Empty();
 
-void UART_Write(uint8_t contador);
+void UART_Write(uint8_t a);
 
 #endif

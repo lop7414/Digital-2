@@ -395,11 +395,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 148 ]
 }
 "35
-[; ;UART.c: 35: void UART_Write(uint8_t contador){
+[; ;UART.c: 35: void UART_Write(uint8_t a){
 [v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Write ]
-[v _contador `uc ~T0 @X0 1 r1 ]
+[v _a `uc ~T0 @X0 1 r1 ]
 [f ]
 "36
 [; ;UART.c: 36:   while(!TRMT);
@@ -409,8 +409,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! _TRMT 151  ]
 [e :U 152 ]
 "37
-[; ;UART.c: 37:   TXREG = contador;
-[e = _TXREG _contador ]
+[; ;UART.c: 37:   TXREG = a;
+[e = _TXREG _a ]
 "38
 [; ;UART.c: 38: }
 [e :UE 149 ]

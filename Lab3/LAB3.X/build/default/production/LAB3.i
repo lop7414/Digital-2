@@ -2900,7 +2900,7 @@ extern char * strrichr(const char *, int);
 
 
 
-void CONTADOR(int n, char *a);
+int CONTADOR(int n);
 
 void ADC_Init(void);
 
@@ -2921,7 +2921,7 @@ uint8_t UART_READ();
 
 uint8_t UART_TX_Empty();
 
-void UART_Write(uint8_t contador);
+void UART_Write(uint8_t a);
 # 46 "LAB3.c" 2
 
 
@@ -2966,8 +2966,8 @@ void setup(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void){
     if (RCIF==1){
-        CONTADOR ((int)RCREG,COMPARE);
-
+        O = CONTADOR ((int)RCREG);
+        itoa(COMPARE,O,10);
         RCIF=0;
     }
 }

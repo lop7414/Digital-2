@@ -86,8 +86,8 @@ void setup(void);
 //******************************************************************************
 void __interrupt() ISR(void){
     if (RCIF==1){
-        CONTADOR ((int)RCREG,COMPARE);
-        
+        O = CONTADOR ((int)RCREG);
+        itoa(COMPARE,O,10);
         RCIF=0;
     }
 }

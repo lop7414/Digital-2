@@ -2858,7 +2858,7 @@ extern char * strrichr(const char *, int);
 
 
 
-void CONTADOR(int n, char *a);
+int CONTADOR(int n);
 
 void ADC_Init(void);
 
@@ -2872,11 +2872,9 @@ unsigned char ADC_Read(int a,int b);
 
 
 
-void CONTADOR (int n, char *a){
+int CONTADOR (int n){
     Destination = n;
-    O = (Destination)*1;
-    itoa(a,O,10);
-    return;
+    return ((Destination)*1);
 }
 
 void ADC_Init (void){

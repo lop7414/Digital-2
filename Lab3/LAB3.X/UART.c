@@ -7,7 +7,7 @@
 
 void SERIAL_Init(void){
     SPBRG = 25;
-    // EL QUE TX
+    //TX
     TXSTAbits.BRGH = 1;
     TXSTAbits.TXEN = 1;
     TXSTAbits.SYNC = 0;
@@ -32,7 +32,7 @@ uint8_t UART_TX_Empty(){
   return TRMT;
 }
 
-void UART_Write(uint8_t contador){
+void UART_Write(uint8_t a){
   while(!TRMT);
-  TXREG = contador;
+  TXREG = a;
 }

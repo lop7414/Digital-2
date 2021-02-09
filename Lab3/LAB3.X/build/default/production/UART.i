@@ -2635,7 +2635,7 @@ uint8_t UART_READ();
 
 uint8_t UART_TX_Empty();
 
-void UART_Write(uint8_t contador);
+void UART_Write(uint8_t a);
 # 2 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
@@ -2886,7 +2886,7 @@ uint8_t UART_TX_Empty(){
   return TRMT;
 }
 
-void UART_Write(uint8_t contador){
+void UART_Write(uint8_t a){
   while(!TRMT);
-  TXREG = contador;
+  TXREG = a;
 }
