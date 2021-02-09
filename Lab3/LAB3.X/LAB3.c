@@ -13,7 +13,7 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = EXTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -38,26 +38,43 @@
 #include <xc.h>
 #include <stdint.h>
 
+#define _XTAL_FREQ 4000000
 
-#define _XTAL_FREQ 8000000
-
-#define RS PORTEbits.RE0
-#define EN PORTEbits.RE1
-#define D0 PORTDbits.RD0
-#define D1 PORTDbits.RD1
-#define D2 PORTDbits.RD2
-#define D3 PORTDbits.RD3
-#define D4 PORTDbits.RD4
-#define D5 PORTDbits.RD5
-#define D6 PORTDbits.RD6
-#define D7 PORTDbits.RD7
-
+#include "pic16f887.h"
 #include "LCD.h"
+#include "ADC.h"
+#include "UART.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 //******************************************************************************
 // Variables
 //******************************************************************************
+uint8_t adc;
 
+int   voltaje;
+int     V1;
+int     POT1A;
+char    POT1SA[5];
+int     POT1B;
+char    POT1SB[5];
+int     POT1C;
+char    POT1SC[5];
+char    PUNTO1[5];
+
+int   voltaje2;
+int     V2;
+int     POT2A;
+char    POT2SA[5];
+int     POT2B;
+char    POT2SB[5];
+int     POT2C;
+char    POT2SC[5];
+char    PUNTO2[5];
+
+char    Contador;
+char    COMPARE[5];
 
 //******************************************************************************
 // Funciones
@@ -67,56 +84,69 @@ void setup(void);
 //******************************************************************************
 // Main
 //******************************************************************************
+void __interrupt() ISR(void){
+    if (RCIF==1){
+        CONTADOR ((int)RCREG,COMPARE);
+        
+        RCIF=0;
+    }
+}
 
 void main(void) {
     
     setup();
     
-    unsigned int a;
-  TRISE = 0x00;
-  TRISD = 0x00;
-  Lcd_Init();
-
     //**************************************************************************
     // Loop principal
     //**************************************************************************
 
     while (1) {
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("LCD Library for");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("MPLAB XC8");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Developed By");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("electroSome");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("www.electroSome.com");
-
-    for(a=0;a<15;a++)
-    {
-        __delay_ms(300);
-        Lcd_Shift_Left();
+        Lcd_Init();
+        SERIAL_Init();
+        ADC_Init();
+        
+        Lcd_Write_String("S1    S2    S3  ");
+        
+        __delay_ms(1);
+        ADC_Read(0,0,adc);
+        
+        voltaje = (adc*5.0)/255.0;
+        V1 = (voltaje)*100;
+        POT1A = V1%10;
+        itoa(POT1SA,POT1A,10);
+        POT1B = (V1/10)%10;
+        itoa(POT1SB,POT1B,10);
+        POT1C = (V1/100)%10;
+        itoa(POT1SC,POT1C,10);
+        strcpy(PUNTO1,".");
+        strcat(POT1SB,POT1SA);
+        strcat(PUNTO1,POT1SB);
+        strcat(POT1SC,PUNTO1);
+        
+        __delay_us(600);
+        ADC_Read(1,1,adc);
+        
+        voltaje2 = adc*5.0/255.0;
+        V2 = (voltaje2)*100;
+        POT2A = V2%10;
+        itoa(POT2SA,POT2A,10);
+        POT2B = (V2/10)%10;
+        itoa(POT2SB,POT2B,10);
+        POT2C = (V2/100)%10;
+        itoa(POT2SC,POT2C,10);
+        strcpy(PUNTO2,".");
+        strcat(POT2SB,POT2SA);
+        strcat(PUNTO2,POT2SB);
+        strcat(POT2SC,PUNTO2);
+        
+        Lcd_Cmd(0xC0); 
+        Lcd_Write_String(POT1SC);
+        Lcd_Write_String(" ");
+        Lcd_Write_String(POT2SC);
+        Lcd_Write_String(" ");
+        Lcd_Write_String(COMPARE);
+        
     }
-
-    for(a=0;a<15;a++)
-    {
-        __delay_ms(300);
-        Lcd_Shift_Right();
-    }
-
-    Lcd_Clear();
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    __delay_ms(2000);
-  }
-  return;
     
 }
 
@@ -125,16 +155,24 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    ANSEL = 0;
-    ANSELH = 0;
-    TRISB = 0;
-    PORTB = 0;
-    TRISC = 0;
-    PORTC = 0;
-    TRISD = 0;
-    PORTD = 0;
+    ANSEL = 0b00001001;
+    ANSELH= 0b00000000;
+    TRISA = 0b00001001;
+    TRISB = 0b00000000; 
+    TRISD = 0b00000000;
     TRISE = 0;
+    
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
     PORTE = 0;
+    
+    OSCCONbits.IRCF = 0b110; //4Mhz
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1; 
 }
 
 //******************************************************************************
