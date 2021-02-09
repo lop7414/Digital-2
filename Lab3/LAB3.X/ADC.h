@@ -21,6 +21,6 @@ void CONTADOR(int n, char *a);
 
 void ADC_Init(void);
 
-void ADC_Read(unsigned char a,unsigned char b,unsigned char adc);
+unsigned char ADC_Read(int a,int b);
 
 #endif

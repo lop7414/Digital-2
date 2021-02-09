@@ -2862,7 +2862,7 @@ void CONTADOR(int n, char *a);
 
 void ADC_Init(void);
 
-void ADC_Read(unsigned char a,unsigned char b,unsigned char adc);
+unsigned char ADC_Read(int a,int b);
 # 2 "ADC.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
@@ -2888,7 +2888,7 @@ void ADC_Init (void){
     ADCON1bits.VCFG1 = 0;
 }
 
-void ADC_Read(unsigned char a,unsigned char b,unsigned char c){
+unsigned char ADC_Read(int a,int b){
     ADCON0bits.CHS0 = a;
     ADCON0bits.CHS1 = b;
     ADCON0bits.CHS2 = 0;
@@ -2896,6 +2896,5 @@ void ADC_Read(unsigned char a,unsigned char b,unsigned char c){
     ADCON0bits.ADON = 1;
     ADCON0bits.GO = 1;
     PIR1bits.ADIF = 0;
-    c = ADRESH;
-    return;
+    return(ADRESH);
 }

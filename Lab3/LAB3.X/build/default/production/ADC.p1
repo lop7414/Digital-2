@@ -343,20 +343,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 144 ]
 }
 "24
-[; ;ADC.c: 24: void ADC_Read(unsigned char a,unsigned char b,unsigned char c){
-[v _ADC_Read `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+[; ;ADC.c: 24: unsigned char ADC_Read(int a,int b){
+[v _ADC_Read `(uc ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _ADC_Read ]
-[v _a `uc ~T0 @X0 1 r1 ]
-[v _b `uc ~T0 @X0 1 r2 ]
-[v _c `uc ~T0 @X0 1 r3 ]
+[v _a `i ~T0 @X0 1 r1 ]
+[v _b `i ~T0 @X0 1 r2 ]
 [f ]
 "25
 [; ;ADC.c: 25:     ADCON0bits.CHS0 = a;
-[e = . . _ADCON0bits 1 2 _a ]
+[e = . . _ADCON0bits 1 2 -> _a `uc ]
 "26
 [; ;ADC.c: 26:     ADCON0bits.CHS1 = b;
-[e = . . _ADCON0bits 1 3 _b ]
+[e = . . _ADCON0bits 1 3 -> _b `uc ]
 "27
 [; ;ADC.c: 27:     ADCON0bits.CHS2 = 0;
 [e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
@@ -373,12 +372,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ADC.c: 31:     PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "32
-[; ;ADC.c: 32:     c = ADRESH;
-[e = _c _ADRESH ]
-"33
-[; ;ADC.c: 33:     return;
+[; ;ADC.c: 32:     return(ADRESH);
+[e ) _ADRESH ]
 [e $UE 145  ]
-"34
-[; ;ADC.c: 34: }
+"33
+[; ;ADC.c: 33: }
 [e :UE 145 ]
 }

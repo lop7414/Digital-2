@@ -250,7 +250,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
 "13 LCD.c
-[; ;LCD.c: 13: void Lcd_Cmd(unsigned char a){
+[; ;LCD.c: 13: void Lcd_Cmd(char a){
 [v _Lcd_Cmd `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Lcd_Cmd ]
@@ -304,7 +304,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 140 ]
 "28
 [; ;LCD.c: 28:     PORTD = a;
-[e = _PORTD _a ]
+[e = _PORTD -> _a `uc ]
 "29
 [; ;LCD.c: 29:     RE0 = 0;
 [e = _RE0 -> -> 0 `i `b ]
@@ -357,7 +357,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _temp -> - + -> 128 `i -> _b `i -> 1 `i `uc ]
 "44
 [; ;LCD.c: 44:   Lcd_Cmd(temp);
-[e ( _Lcd_Cmd (1 -> _temp `uc ]
+[e ( _Lcd_Cmd (1 _temp ]
 "45
 [; ;LCD.c: 45:  }
 }
@@ -372,7 +372,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _temp -> - + -> 192 `i -> _b `i -> 1 `i `uc ]
 "48
 [; ;LCD.c: 48:   Lcd_Cmd(temp);
-[e ( _Lcd_Cmd (1 -> _temp `uc ]
+[e ( _Lcd_Cmd (1 _temp ]
 "49
 [; ;LCD.c: 49:  }
 }
@@ -408,7 +408,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 146 ]
 }
 "60
-[; ;LCD.c: 60: void Lcd_Write_Char(unsigned char a){
+[; ;LCD.c: 60: void Lcd_Write_Char(char a){
 [v _Lcd_Write_Char `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Lcd_Write_Char ]
@@ -462,7 +462,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 149 ]
 "75
 [; ;LCD.c: 75:     PORTD = a;
-[e = _PORTD _a ]
+[e = _PORTD -> _a `uc ]
 "76
 [; ;LCD.c: 76:     RE0 = 1;
 [e = _RE0 -> -> 1 `i `b ]
@@ -495,7 +495,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 152 ]
 "85
 [; ;LCD.c: 85:         Lcd_Write_Char(*a++);
-[e ( _Lcd_Write_Char (1 -> *U ++ _a * -> -> 1 `i `x -> -> # *U _a `i `x `uc ]
+[e ( _Lcd_Write_Char (1 *U ++ _a * -> -> 1 `i `x -> -> # *U _a `i `x ]
 [e :U 151 ]
 "84
 [; ;LCD.c: 84:     while(*a != 0)

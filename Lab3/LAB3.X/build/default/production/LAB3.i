@@ -2646,7 +2646,7 @@ typedef uint16_t uintptr_t;
 
 # 1 "./LCD.h" 1
 # 41 "./LCD.h"
-void Lcd_Cmd(unsigned char a);
+void Lcd_Cmd(char a);
 
 void Lcd_Clear(void);
 
@@ -2654,7 +2654,7 @@ void Lcd_Set_Cursor(char a, char b);
 
 void Lcd_Init(void);
 
-void Lcd_Write_Char(unsigned char a);
+void Lcd_Write_Char(char a);
 
 void Lcd_Write_String(char *a);
 
@@ -2904,7 +2904,7 @@ void CONTADOR(int n, char *a);
 
 void ADC_Init(void);
 
-void ADC_Read(unsigned char a,unsigned char b,unsigned char adc);
+unsigned char ADC_Read(int a,int b);
 # 45 "LAB3.c" 2
 
 # 1 "./UART.h" 1
@@ -2933,7 +2933,7 @@ void UART_Write(uint8_t contador);
 
 uint8_t adc;
 
-int voltaje;
+float voltaje;
 int V1;
 int POT1A;
 char POT1SA[5];
@@ -2943,7 +2943,7 @@ int POT1C;
 char POT1SC[5];
 char PUNTO1[5];
 
-int voltaje2;
+float voltaje2;
 int V2;
 int POT2A;
 char POT2SA[5];
@@ -2988,7 +2988,7 @@ void main(void) {
         Lcd_Write_String("S1    S2    S3  ");
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
-        ADC_Read(0,0,adc);
+        adc=ADC_Read(0,0);
 
         voltaje = (adc*5.0)/255.0;
         V1 = (voltaje)*100;
@@ -3004,7 +3004,7 @@ void main(void) {
         strcat(POT1SC,PUNTO1);
 
         _delay((unsigned long)((600)*(4000000/4000000.0)));
-        ADC_Read(1,1,adc);
+        adc=ADC_Read(1,1);
 
         voltaje2 = adc*5.0/255.0;
         V2 = (voltaje2)*100;

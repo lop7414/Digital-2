@@ -31,8 +31,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
 "24 ./ADC.h
-[; ;./ADC.h: 24: void ADC_Read(unsigned char a,unsigned char b,unsigned char adc);
-[v _ADC_Read `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+[; ;./ADC.h: 24: unsigned char ADC_Read(int a,int b);
+[v _ADC_Read `(uc ~T0 @X0 0 ef2`i`i ]
 "113 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
 [v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
@@ -43,7 +43,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h: 36: extern char * strcat(char *, const char *);
 [v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
 "41 ./LCD.h
-[; ;./LCD.h: 41: void Lcd_Cmd(unsigned char a);
+[; ;./LCD.h: 41: void Lcd_Cmd(char a);
 [v _Lcd_Cmd `(v ~T0 @X0 0 ef1`uc ]
 "3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
@@ -361,8 +361,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LAB3.c: 54: uint8_t adc;
 [v _adc `uc ~T0 @X0 1 e ]
 "56
-[; ;LAB3.c: 56: int voltaje;
-[v _voltaje `i ~T0 @X0 1 e ]
+[; ;LAB3.c: 56: float voltaje;
+[v _voltaje `f ~T0 @X0 1 e ]
 "57
 [; ;LAB3.c: 57: int V1;
 [v _V1 `i ~T0 @X0 1 e ]
@@ -388,8 +388,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LAB3.c: 64: char PUNTO1[5];
 [v _PUNTO1 `uc ~T0 @X0 -> 5 `i e ]
 "66
-[; ;LAB3.c: 66: int voltaje2;
-[v _voltaje2 `i ~T0 @X0 1 e ]
+[; ;LAB3.c: 66: float voltaje2;
+[v _voltaje2 `f ~T0 @X0 1 e ]
 "67
 [; ;LAB3.c: 67: int V2;
 [v _V2 `i ~T0 @X0 1 e ]
@@ -475,14 +475,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LAB3.c: 110:         _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "111
-[; ;LAB3.c: 111:         ADC_Read(0,0,adc);
-[e ( _ADC_Read (3 , , -> -> 0 `i `uc -> -> 0 `i `uc _adc ]
+[; ;LAB3.c: 111:         adc=ADC_Read(0,0);
+[e = _adc ( _ADC_Read (2 , -> 0 `i -> 0 `i ]
 "113
 [; ;LAB3.c: 113:         voltaje = (adc*5.0)/255.0;
-[e = _voltaje -> / * -> -> _adc `i `d .5.0 .255.0 `i ]
+[e = _voltaje -> / * -> -> _adc `i `d .5.0 .255.0 `f ]
 "114
 [; ;LAB3.c: 114:         V1 = (voltaje)*100;
-[e = _V1 * _voltaje -> 100 `i ]
+[e = _V1 -> * _voltaje -> -> 100 `i `f `i ]
 "115
 [; ;LAB3.c: 115:         POT1A = V1%10;
 [e = _POT1A % _V1 -> 10 `i ]
@@ -517,14 +517,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LAB3.c: 126:         _delay((unsigned long)((600)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 600 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "127
-[; ;LAB3.c: 127:         ADC_Read(1,1,adc);
-[e ( _ADC_Read (3 , , -> -> 1 `i `uc -> -> 1 `i `uc _adc ]
+[; ;LAB3.c: 127:         adc=ADC_Read(1,1);
+[e = _adc ( _ADC_Read (2 , -> 1 `i -> 1 `i ]
 "129
 [; ;LAB3.c: 129:         voltaje2 = adc*5.0/255.0;
-[e = _voltaje2 -> / * -> -> _adc `i `d .5.0 .255.0 `i ]
+[e = _voltaje2 -> / * -> -> _adc `i `d .5.0 .255.0 `f ]
 "130
 [; ;LAB3.c: 130:         V2 = (voltaje2)*100;
-[e = _V2 * _voltaje2 -> 100 `i ]
+[e = _V2 -> * _voltaje2 -> -> 100 `i `f `i ]
 "131
 [; ;LAB3.c: 131:         POT2A = V2%10;
 [e = _POT2A % _V2 -> 10 `i ]

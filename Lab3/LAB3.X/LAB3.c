@@ -53,7 +53,7 @@
 //******************************************************************************
 uint8_t adc;
 
-int   voltaje;
+float   voltaje;
 int     V1;
 int     POT1A;
 char    POT1SA[5];
@@ -63,7 +63,7 @@ int     POT1C;
 char    POT1SC[5];
 char    PUNTO1[5];
 
-int   voltaje2;
+float   voltaje2;
 int     V2;
 int     POT2A;
 char    POT2SA[5];
@@ -108,7 +108,7 @@ void main(void) {
         Lcd_Write_String("S1    S2    S3  ");
         
         __delay_ms(1);
-        ADC_Read(0,0,adc);
+        adc=ADC_Read(0,0);
         
         voltaje = (adc*5.0)/255.0;
         V1 = (voltaje)*100;
@@ -124,7 +124,7 @@ void main(void) {
         strcat(POT1SC,PUNTO1);
         
         __delay_us(600);
-        ADC_Read(1,1,adc);
+        adc=ADC_Read(1,1);
         
         voltaje2 = adc*5.0/255.0;
         V2 = (voltaje2)*100;

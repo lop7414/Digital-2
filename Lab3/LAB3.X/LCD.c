@@ -10,7 +10,7 @@
 
 #include "LCD.h"
 
-void Lcd_Cmd(unsigned char a){
+void Lcd_Cmd(char a){
 	LCD = 0xFF;
     LCD &= 0x80;
     RS = 0;
@@ -57,7 +57,7 @@ void Lcd_Init(){
     Lcd_Cmd(0x80);
 }
 
-void Lcd_Write_Char(unsigned char a){
+void Lcd_Write_Char(char a){
     LCD = 0xFF;
     LCD &= 0x80;
     RS = 0;

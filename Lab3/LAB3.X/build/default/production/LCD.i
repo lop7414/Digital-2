@@ -2496,7 +2496,7 @@ extern __bank0 __bit __timeout;
 
 
 
-void Lcd_Cmd(unsigned char a);
+void Lcd_Cmd(char a);
 
 void Lcd_Clear(void);
 
@@ -2504,7 +2504,7 @@ void Lcd_Set_Cursor(char a, char b);
 
 void Lcd_Init(void);
 
-void Lcd_Write_Char(unsigned char a);
+void Lcd_Write_Char(char a);
 
 void Lcd_Write_String(char *a);
 
@@ -2514,7 +2514,7 @@ void Lcd_Shift_Left(void);
 # 11 "LCD.c" 2
 
 
-void Lcd_Cmd(unsigned char a){
+void Lcd_Cmd(char a){
  PORTD = 0xFF;
     PORTD &= 0x80;
     RE0 = 0;
@@ -2561,7 +2561,7 @@ void Lcd_Init(){
     Lcd_Cmd(0x80);
 }
 
-void Lcd_Write_Char(unsigned char a){
+void Lcd_Write_Char(char a){
     PORTD = 0xFF;
     PORTD &= 0x80;
     RE0 = 0;
