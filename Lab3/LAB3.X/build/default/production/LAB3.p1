@@ -45,6 +45,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "41 ./LCD.h
 [; ;./LCD.h: 41: void Lcd_Cmd(char a);
 [v _Lcd_Cmd `(v ~T0 @X0 0 ef1`uc ]
+"234 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 234:     struct {
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"233
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 233: typedef union {
+[u S7 `S8 1 ]
+[n S7 . . ]
+"245
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
+[v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"20 ./UART.h
+[; ;./UART.h: 20: void UART_Write(uint8_t a);
+[v _UART_Write `(v ~T0 @X0 0 ef1`uc ]
 "3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -577,72 +591,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LAB3.c: 147:         Lcd_Write_String(COMPARE);
 [e ( _Lcd_Write_String (1 &U _COMPARE ]
 "149
-[; ;LAB3.c: 149:     }
+[; ;LAB3.c: 149:         if (PORTBbits.RB0 == 1){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 149  ]
+{
+"150
+[; ;LAB3.c: 150:             Contador++;
+[e ++ _Contador -> -> 1 `i `uc ]
+"151
+[; ;LAB3.c: 151:         }
+}
+[e $U 150  ]
+"152
+[; ;LAB3.c: 152:         else{
+[e :U 149 ]
+{
+"153
+[; ;LAB3.c: 153:         }
+}
+[e :U 150 ]
+"155
+[; ;LAB3.c: 155:         if (PORTBbits.RB1 == 1){
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 151  ]
+{
+"156
+[; ;LAB3.c: 156:             Contador--;
+[e -- _Contador -> -> 1 `i `uc ]
+"157
+[; ;LAB3.c: 157:         }
+}
+[e $U 152  ]
+"158
+[; ;LAB3.c: 158:         else{
+[e :U 151 ]
+{
+"159
+[; ;LAB3.c: 159:         }
+}
+[e :U 152 ]
+"161
+[; ;LAB3.c: 161:         UART_Write(Contador);
+[e ( _UART_Write (1 -> _Contador `uc ]
+"163
+[; ;LAB3.c: 163:     }
 }
 [e :U 146 ]
 [e $U 147  ]
 [e :U 148 ]
-"151
-[; ;LAB3.c: 151: }
+"165
+[; ;LAB3.c: 165: }
 [e :UE 145 ]
 }
-"157
-[; ;LAB3.c: 157: void setup(void) {
+"171
+[; ;LAB3.c: 171: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"158
-[; ;LAB3.c: 158:     ANSEL = 0b00001001;
-[e = _ANSEL -> -> 9 `i `uc ]
-"159
-[; ;LAB3.c: 159:     ANSELH= 0b00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
-"160
-[; ;LAB3.c: 160:     TRISA = 0b00001001;
-[e = _TRISA -> -> 9 `i `uc ]
-"161
-[; ;LAB3.c: 161:     TRISB = 0b00000000;
-[e = _TRISB -> -> 0 `i `uc ]
-"162
-[; ;LAB3.c: 162:     TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"163
-[; ;LAB3.c: 163:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"165
-[; ;LAB3.c: 165:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"166
-[; ;LAB3.c: 166:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"167
-[; ;LAB3.c: 167:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"168
-[; ;LAB3.c: 168:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"169
-[; ;LAB3.c: 169:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"171
-[; ;LAB3.c: 171:     OSCCONbits.IRCF = 0b110;
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 "172
-[; ;LAB3.c: 172:     OSCCONbits.OSTS= 0;
-[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+[; ;LAB3.c: 172:     ANSEL = 0b00001001;
+[e = _ANSEL -> -> 9 `i `uc ]
 "173
-[; ;LAB3.c: 173:     OSCCONbits.HTS = 0;
-[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+[; ;LAB3.c: 173:     ANSELH= 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
 "174
-[; ;LAB3.c: 174:     OSCCONbits.LTS = 0;
-[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+[; ;LAB3.c: 174:     TRISA = 0b00001001;
+[e = _TRISA -> -> 9 `i `uc ]
 "175
-[; ;LAB3.c: 175:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;LAB3.c: 175:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
 "176
-[; ;LAB3.c: 176: }
-[e :UE 149 ]
+[; ;LAB3.c: 176:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"177
+[; ;LAB3.c: 177:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"179
+[; ;LAB3.c: 179:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"180
+[; ;LAB3.c: 180:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"181
+[; ;LAB3.c: 181:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"182
+[; ;LAB3.c: 182:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"183
+[; ;LAB3.c: 183:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"185
+[; ;LAB3.c: 185:     OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"186
+[; ;LAB3.c: 186:     OSCCONbits.OSTS= 0;
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+"187
+[; ;LAB3.c: 187:     OSCCONbits.HTS = 0;
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+"188
+[; ;LAB3.c: 188:     OSCCONbits.LTS = 0;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+"189
+[; ;LAB3.c: 189:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"190
+[; ;LAB3.c: 190: }
+[e :UE 153 ]
 }
 [a 2C 46 0 ]
 [a 3C 46 0 ]

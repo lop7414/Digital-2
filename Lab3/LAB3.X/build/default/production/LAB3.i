@@ -3026,6 +3026,20 @@ void main(void) {
         Lcd_Write_String(" ");
         Lcd_Write_String(COMPARE);
 
+        if (PORTBbits.RB0 == 1){
+            Contador++;
+        }
+        else{
+        }
+
+        if (PORTBbits.RB1 == 1){
+            Contador--;
+        }
+        else{
+        }
+
+        UART_Write(Contador);
+
     }
 
 }
