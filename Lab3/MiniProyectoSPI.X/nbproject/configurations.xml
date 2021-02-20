@@ -19,6 +19,9 @@
       <itemPath>MiniProyectoSPI.c</itemPath>
       <itemPath>LCD.c</itemPath>
       <itemPath>UART.c</itemPath>
+      <itemPath>Slave1.c</itemPath>
+      <itemPath>Slave2.c</itemPath>
+      <itemPath>Slave3.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
