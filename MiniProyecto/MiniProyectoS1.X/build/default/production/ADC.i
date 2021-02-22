@@ -2497,10 +2497,6 @@ extern __bank0 __bit __timeout;
 
 
 
-int O;
-int Destination;
-
-
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2635,7 +2631,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 12 "./ADC.h" 2
+# 9 "./ADC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2734,7 +2730,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 13 "./ADC.h" 2
+# 10 "./ADC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2819,7 +2815,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 14 "./ADC.h" 2
+# 11 "./ADC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
@@ -2852,13 +2848,11 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 15 "./ADC.h" 2
+# 12 "./ADC.h" 2
 
 
 
 
-
-int CONTADOR(int n);
 
 void ADC_Init(void);
 
@@ -2871,11 +2865,6 @@ unsigned char ADC_Read(int a,int b);
 
 
 
-
-int CONTADOR (int n){
-    Destination = n;
-    return ((Destination)*1);
-}
 
 void ADC_Init (void){
     ADCON0bits.ADCS0 = 1;

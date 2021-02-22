@@ -113,12 +113,12 @@ text1 FBC FF7 CODE FBC 0
 maintext FAA FBB CODE FAA 0
 %locals
 dist/default/production\MiniProyectoS3.X.production.o
-C:\Users\flope\AppData\Local\Temp\scpk.s
-448 7FC 0 CODE 0
-451 7FC 0 CODE 0
-457 7FC 0 CODE 0
-459 7FC 0 CODE 0
-460 7FD 0 CODE 0
+C:\Users\flope\AppData\Local\Temp\s698.s
+604 7FC 0 CODE 0
+607 7FC 0 CODE 0
+613 7FC 0 CODE 0
+615 7FC 0 CODE 0
+616 7FD 0 CODE 0
 S3.c
 63 7D5 0 CODE 0
 65 7D5 0 CODE 0

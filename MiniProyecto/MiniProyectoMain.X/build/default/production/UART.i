@@ -1,4 +1,4 @@
-# 1 "S1.c"
+# 1 "UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,23 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "S1.c" 2
-# 17 "S1.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 39 "S1.c"
+# 1 "UART.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,7 +2487,20 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 39 "S1.c" 2
+# 1 "UART.c" 2
+
+# 1 "./UART.h" 1
+
+
+
+
+
+
+
+int O;
+int Destination;
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2638,26 +2635,24 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 40 "S1.c" 2
+# 12 "./UART.h" 2
 
 
 
 
+int CONTADOR(int n);
 
-# 1 "./SPI.h" 1
-# 45 "S1.c" 2
+void SERIAL_Init(void);
 
-# 1 "./ADC.h" 1
+uint8_t UART_READ();
 
+uint8_t UART_TX_Empty();
 
-
-
-
-
-
+void UART_Write(uint8_t a);
+# 2 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 9 "./ADC.h" 2
+# 3 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2756,7 +2751,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 10 "./ADC.h" 2
+# 4 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2841,7 +2836,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 11 "./ADC.h" 2
+# 5 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
@@ -2874,94 +2869,42 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 12 "./ADC.h" 2
+# 6 "UART.c" 2
 
 
-
-
-
-void ADC_Init(void);
-
-unsigned char ADC_Read(int a,int b);
-# 46 "S1.c" 2
-
-
-
-
-
-
-
-
-uint8_t adc;
-
-float voltaje;
-int V1;
-int POT1A;
-char POT1SA[5];
-int POT1B;
-char POT1SB[5];
-int POT1C;
-char POT1SC[5];
-char PUNTO1[5];
-
-
-
-void setup(void);
-
-
-
-
-
-void main(void) {
-
-    setup();
-
-
-
-
-
-    while (1) {
-        ADC_Init();
-
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        adc=ADC_Read(0,0);
-
-        voltaje = (adc*5.0)/255.0;
-        V1 = (voltaje)*100;
-        POT1A = V1%10;
-        itoa(POT1SA,POT1A,10);
-        POT1B = (V1/10)%10;
-        itoa(POT1SB,POT1B,10);
-        POT1C = (V1/100)%10;
-        itoa(POT1SC,POT1C,10);
-        strcpy(PUNTO1,".");
-        strcat(POT1SB,POT1SA);
-        strcat(PUNTO1,POT1SB);
-        strcat(POT1SC,PUNTO1);
-    }
+int CONTADOR (int n){
+    Destination = n;
+    return ((Destination)*1);
 }
 
+void SERIAL_Init(void){
+    SPBRG = 25;
 
+    TXSTAbits.BRGH = 1;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.TX9 = 0;
 
+    RCSTAbits.CREN = 1;
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
 
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+}
 
-void setup(void) {
-    ANSEL = 0b00001001;
-    ANSELH= 0b00000000;
-    TRISA = 0b00001001;
-    TRISB = 0b00000000;
-    TRISD = 0b00000000;
-    TRISE = 0;
+uint8_t UART_READ(){
+    while(!RCIF);
+    return RCREG;
+}
 
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
+uint8_t UART_TX_Empty(){
 
-    OSCCONbits.IRCF = 0b110;
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1;
+  return TRMT;
+}
+
+void UART_Write(uint8_t a){
+  while(!TRMT);
+  TXREG = a;
 }

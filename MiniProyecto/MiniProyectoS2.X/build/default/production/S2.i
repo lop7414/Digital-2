@@ -2909,46 +2909,46 @@ void main(void) {
 
          switch (BBB){
             case 0:
-                PORTC = 0;
+                PORTD = 0;
             break;
 
             case 1:
-                PORTCbits.RC0 = 1;
+                PORTDbits.RD1 = 0;
+                PORTDbits.RD0 = 1;
             break;
 
             case 2:
-                PORTCbits.RC0 = 0;
-                PORTCbits.RC1 = 1;
+                PORTDbits.RD2 = 0;
+                PORTDbits.RD1 = 1;
             break;
 
             case 3:
-                PORTCbits.RC1 = 0;
-                PORTCbits.RC2 = 1;
+                PORTDbits.RD3 = 0;
+                PORTDbits.RD2 = 1;
             break;
 
             case 4:
-                PORTCbits.RC2 = 0;
-                PORTCbits.RC3 = 1;
+                PORTDbits.RD4 = 0;
+                PORTDbits.RD3 = 1;
             break;
 
             case 5:
-                PORTCbits.RC3 = 0;
-                PORTCbits.RC4 = 1;
+                PORTDbits.RD5 = 0;
+                PORTDbits.RD4 = 1;
             break;
 
             case 6:
-                PORTCbits.RC4 = 0;
-                PORTCbits.RC5 = 1;
+                PORTDbits.RD6 = 0;
+                PORTDbits.RD5 = 1;
             break;
 
             case 7:
-                PORTCbits.RC5 = 0;
-                PORTCbits.RC6 = 1;
+                PORTDbits.RD7 = 0;
+                PORTDbits.RD6 = 1;
             break;
 
             case 8:
-                PORTCbits.RC6 = 0;
-                PORTCbits.RC7 = 1;
+                PORTDbits.RD7 = 1;
             break;
 
             case 9:

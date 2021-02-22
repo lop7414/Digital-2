@@ -2647,6 +2647,55 @@ typedef uint16_t uintptr_t;
 # 1 "./SPI.h" 1
 # 45 "Master.c" 2
 
+# 1 "./LCD.h" 1
+# 41 "./LCD.h"
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
+# 46 "Master.c" 2
+
+# 1 "./UART.h" 1
+
+
+
+
+
+
+
+int O;
+int Destination;
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 12 "./UART.h" 2
+
+
+
+
+int CONTADOR(int n);
+
+void SERIAL_Init(void);
+
+uint8_t UART_READ();
+
+uint8_t UART_TX_Empty();
+
+void UART_Write(uint8_t a);
+# 47 "Master.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
 
@@ -2744,7 +2793,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 46 "Master.c" 2
+# 48 "Master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2829,7 +2878,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 47 "Master.c" 2
+# 49 "Master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
@@ -2862,12 +2911,31 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 48 "Master.c" 2
-# 57 "Master.c"
+# 50 "Master.c" 2
+
+
+
+
+
+
+
+char Contador;
+char COMPARE[5];
+
+
+
 void setup(void);
 
 
 
+
+void __attribute__((picinterrupt(("")))) ISR(void){
+    if (RCIF==1){
+        O = CONTADOR ((int)RCREG);
+        itoa(COMPARE,O,10);
+        RCIF=0;
+    }
+}
 
 
 void main(void) {
@@ -2879,7 +2947,9 @@ void main(void) {
 
 
     while (1) {
+        Lcd_Init();
 
+        Lcd_Write_String("S1    S2    S3  ");
     }
 }
 

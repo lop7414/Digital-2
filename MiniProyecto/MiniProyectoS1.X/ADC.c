@@ -5,11 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int CONTADOR (int  n){
-    Destination = n;
-    return ((Destination)*1);
-}
-
 void ADC_Init (void){
     ADCON0bits.ADCS0 = 1;
     ADCON0bits.ADCS1 = 0;
