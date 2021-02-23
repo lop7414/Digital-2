@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flope\AppData\Local\Temp\s6bk.o
+$C:\Users\flope\AppData\Local\Temp\s74k.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -19,26 +19,26 @@ $dist/default/production\MiniProyectoS1.X.production.o
 cinit CODE 0 F F 19 2
 text1 CODE 0 D98 D98 23 2
 text2 CODE 0 E0A E0A 2B 2
-text3 CODE 0 D59 D59 1F 2
+text3 CODE 0 D78 D78 20 2
 text4 CODE 0 DBB DBB 26 2
 text5 CODE 0 F12 F12 72 2
 text6 CODE 0 E35 E35 3C 2
 text7 CODE 0 E71 E71 46 2
-text8 CODE 0 6DA 6DA BC 2
+text8 CODE 0 6D7 6D7 BC 2
 text9 CODE 0 F84 F84 7C 2
 text10 CODE 0 28 28 361 2
 text11 CODE 0 DE1 DE1 29 2
 text12 CODE 0 389 389 1DD 2
 text13 CODE 0 EB7 EB7 5B 2
-text14 CODE 0 796 796 69 2
-text15 CODE 0 D3A D3A 1F 2
-text16 CODE 0 D27 D27 13 2
-text17 CODE 0 D1C D1C B 2
-text18 CODE 0 D78 D78 20 2
-text19 CODE 0 CFE CFE 6 2
-text20 CODE 0 D13 D13 9 2
-text21 CODE 0 D04 D04 7 2
-maintext CODE 0 566 566 174 2
+text14 CODE 0 793 793 69 2
+text15 CODE 0 D39 D39 1F 2
+text16 CODE 0 D26 D26 13 2
+text17 CODE 0 D1B D1B B 2
+text18 CODE 0 D58 D58 20 2
+text19 CODE 0 CFD CFD 6 2
+text20 CODE 0 D12 D12 9 2
+text21 CODE 0 D03 D03 7 2
+maintext CODE 0 566 566 171 2
 cstackCOMMON COMMON 1 70 70 6 1
 cstackBANK0 BANK0 1 20 20 42 1
 cstackBANK1 BANK1 1 B4 B4 4 1
@@ -46,7 +46,7 @@ intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 62 62 B 1
 bssBANK1 BANK1 1 A0 A0 14 1
 strings STRING 0 800 800 8 2
-clrtext CODE 0 D0B D0B 8 2
+clrtext CODE 0 D0A D0A 8 2
 bssCOMMON COMMON 1 76 76 4 1
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -64,18 +64,18 @@ BANK1 B8-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 7FF-7FF 2
-CONST 808-CFD 2
+CONST 7FC-7FF 2
+CONST 808-CFC 2
 CONST 1000-1FFF 2
 ENTRY 3-3 2
-ENTRY 7FF-7FF 2
-ENTRY 808-CFD 2
+ENTRY 7FC-7FF 2
+ENTRY 808-CFC 2
 ENTRY 1000-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 7FF-7FF 2
-CODE 808-CFD 2
+CODE 7FC-7FF 2
+CODE 808-CFC 2
 CODE 1000-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -84,12 +84,12 @@ SFR3 180-18F 1
 COMMON 7A-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 7FF-7FF 2
-STRCODE 808-CFD 2
+STRCODE 7FC-7FF 2
+STRCODE 808-CFC 2
 STRCODE 1000-1FFF 2
 STRING 3-3 2
-STRING 7FF-7FF 2
-STRING 808-CFD 2
+STRING 7FC-7FF 2
+STRING 808-CFC 2
 STRING 1000-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -105,96 +105,96 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MiniProyectoS1.X.production.o
-F cinit CODE >843:C:\Users\flope\AppData\Local\Temp\s6bk.s
-F cinit CODE >846:C:\Users\flope\AppData\Local\Temp\s6bk.s
-F cinit CODE >911:C:\Users\flope\AppData\Local\Temp\s6bk.s
-10 cinit CODE >912:C:\Users\flope\AppData\Local\Temp\s6bk.s
-11 cinit CODE >913:C:\Users\flope\AppData\Local\Temp\s6bk.s
-12 cinit CODE >914:C:\Users\flope\AppData\Local\Temp\s6bk.s
-13 cinit CODE >917:C:\Users\flope\AppData\Local\Temp\s6bk.s
-14 cinit CODE >918:C:\Users\flope\AppData\Local\Temp\s6bk.s
-15 cinit CODE >919:C:\Users\flope\AppData\Local\Temp\s6bk.s
-16 cinit CODE >920:C:\Users\flope\AppData\Local\Temp\s6bk.s
-17 cinit CODE >921:C:\Users\flope\AppData\Local\Temp\s6bk.s
-1C cinit CODE >924:C:\Users\flope\AppData\Local\Temp\s6bk.s
-1D cinit CODE >925:C:\Users\flope\AppData\Local\Temp\s6bk.s
-1E cinit CODE >926:C:\Users\flope\AppData\Local\Temp\s6bk.s
-1F cinit CODE >927:C:\Users\flope\AppData\Local\Temp\s6bk.s
-24 cinit CODE >933:C:\Users\flope\AppData\Local\Temp\s6bk.s
-24 cinit CODE >935:C:\Users\flope\AppData\Local\Temp\s6bk.s
-25 cinit CODE >936:C:\Users\flope\AppData\Local\Temp\s6bk.s
+F cinit CODE >843:C:\Users\flope\AppData\Local\Temp\s74k.s
+F cinit CODE >846:C:\Users\flope\AppData\Local\Temp\s74k.s
+F cinit CODE >911:C:\Users\flope\AppData\Local\Temp\s74k.s
+10 cinit CODE >912:C:\Users\flope\AppData\Local\Temp\s74k.s
+11 cinit CODE >913:C:\Users\flope\AppData\Local\Temp\s74k.s
+12 cinit CODE >914:C:\Users\flope\AppData\Local\Temp\s74k.s
+13 cinit CODE >917:C:\Users\flope\AppData\Local\Temp\s74k.s
+14 cinit CODE >918:C:\Users\flope\AppData\Local\Temp\s74k.s
+15 cinit CODE >919:C:\Users\flope\AppData\Local\Temp\s74k.s
+16 cinit CODE >920:C:\Users\flope\AppData\Local\Temp\s74k.s
+17 cinit CODE >921:C:\Users\flope\AppData\Local\Temp\s74k.s
+1C cinit CODE >924:C:\Users\flope\AppData\Local\Temp\s74k.s
+1D cinit CODE >925:C:\Users\flope\AppData\Local\Temp\s74k.s
+1E cinit CODE >926:C:\Users\flope\AppData\Local\Temp\s74k.s
+1F cinit CODE >927:C:\Users\flope\AppData\Local\Temp\s74k.s
+24 cinit CODE >933:C:\Users\flope\AppData\Local\Temp\s74k.s
+24 cinit CODE >935:C:\Users\flope\AppData\Local\Temp\s74k.s
+25 cinit CODE >936:C:\Users\flope\AppData\Local\Temp\s74k.s
 4 intentry CODE >76:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D04 text21 CODE >31:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D04 text21 CODE >33:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D0A text21 CODE >34:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D13 text20 CODE >43:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D13 text20 CODE >44:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D18 text20 CODE >45:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D1B text20 CODE >46:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-CFE text19 CODE >27:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-CFF text19 CODE >28:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D03 text19 CODE >29:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D78 text18 CODE >76:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D78 text18 CODE >77:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D7E text18 CODE >78:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D88 text18 CODE >79:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D8E text18 CODE >80:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D91 text18 CODE >82:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D1C text17 CODE >8:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D1C text17 CODE >9:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D1F text17 CODE >10:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D20 text17 CODE >11:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D21 text17 CODE >12:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D24 text17 CODE >13:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D25 text17 CODE >14:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D26 text17 CODE >15:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D27 text16 CODE >17:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D27 text16 CODE >18:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D2E text16 CODE >19:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D33 text16 CODE >20:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D34 text16 CODE >21:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D35 text16 CODE >22:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D36 text16 CODE >23:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D37 text16 CODE >24:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D38 text16 CODE >25:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D39 text16 CODE >26:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
-D3A text15 CODE >8:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D3B text15 CODE >10:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D3E text15 CODE >11:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D3F text15 CODE >13:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D43 text15 CODE >15:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D49 text15 CODE >16:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D4A text15 CODE >17:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D4B text15 CODE >20:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D52 text15 CODE >21:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D53 text15 CODE >22:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D53 text15 CODE >24:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-D58 text15 CODE >25:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
-796 text14 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-796 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-799 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-79D text14 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7A2 text14 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7A4 text14 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7A8 text14 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7AD text14 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7B1 text14 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7B3 text14 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7B9 text14 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7BB text14 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7BC text14 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7C3 text14 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7C7 text14 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7CB text14 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7D2 text14 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7DC text14 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7E2 text14 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7E3 text14 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7EA text14 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7F0 text14 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7F5 text14 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7FA text14 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
-7FE text14 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+D03 text21 CODE >31:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D03 text21 CODE >33:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D09 text21 CODE >34:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D12 text20 CODE >43:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D12 text20 CODE >44:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D17 text20 CODE >45:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D1A text20 CODE >46:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+CFD text19 CODE >27:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+CFE text19 CODE >28:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D02 text19 CODE >29:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D58 text18 CODE >76:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D58 text18 CODE >77:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D5E text18 CODE >78:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D68 text18 CODE >79:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D6E text18 CODE >80:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D71 text18 CODE >82:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D1B text17 CODE >8:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D1B text17 CODE >9:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D1E text17 CODE >10:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D1F text17 CODE >11:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D20 text17 CODE >12:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D23 text17 CODE >13:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D24 text17 CODE >14:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D25 text17 CODE >15:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D26 text16 CODE >17:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D26 text16 CODE >18:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D2D text16 CODE >19:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D32 text16 CODE >20:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D33 text16 CODE >21:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D34 text16 CODE >22:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D35 text16 CODE >23:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D36 text16 CODE >24:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D37 text16 CODE >25:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D38 text16 CODE >26:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
+D39 text15 CODE >8:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D3A text15 CODE >10:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D3D text15 CODE >11:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D3E text15 CODE >13:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D42 text15 CODE >15:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D48 text15 CODE >16:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D49 text15 CODE >17:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D4A text15 CODE >20:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D51 text15 CODE >21:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D52 text15 CODE >22:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D52 text15 CODE >24:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+D57 text15 CODE >25:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+793 text14 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+793 text14 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+796 text14 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+79A text14 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+79F text14 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7A1 text14 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7A5 text14 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7AA text14 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7AE text14 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7B0 text14 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7B6 text14 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7B8 text14 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7B9 text14 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7C0 text14 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7C4 text14 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7C8 text14 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7CF text14 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7D9 text14 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7DF text14 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7E0 text14 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7E7 text14 CODE >36:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7ED text14 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7F2 text14 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7F7 text14 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
+7FB text14 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awdiv.c
 EB7 text13 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 EB7 text13 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
 EBA text13 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\awmod.c
@@ -416,35 +416,35 @@ FEA text9 CODE >65:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\f
 FEF text9 CODE >67:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
 FF4 text9 CODE >68:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
 FFF text9 CODE >70:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\fltol.c
-6DA text8 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6DD text8 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6E6 text8 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6F5 text8 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6F6 text8 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6FE text8 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-6FE text8 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-706 text8 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-70F text8 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-713 text8 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-714 text8 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-718 text8 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-721 text8 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-728 text8 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-72C text8 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-73A text8 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-743 text8 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-743 text8 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-74A text8 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-74C text8 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-755 text8 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-75F text8 CODE >37:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-763 text8 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-76B text8 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-76D text8 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-783 text8 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-78C text8 CODE >42:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-78D text8 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
-795 text8 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6D7 text8 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6DA text8 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6E3 text8 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6F2 text8 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6F3 text8 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6FB text8 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+6FB text8 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+703 text8 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+70C text8 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+710 text8 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+711 text8 CODE >25:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+715 text8 CODE >26:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+71E text8 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+725 text8 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+729 text8 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+737 text8 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+740 text8 CODE >28:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+740 text8 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+747 text8 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+749 text8 CODE >35:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+752 text8 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+75C text8 CODE >37:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+760 text8 CODE >38:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+768 text8 CODE >39:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+76A text8 CODE >40:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+780 text8 CODE >41:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+789 text8 CODE >42:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+78A text8 CODE >43:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
+792 text8 CODE >44:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\xxtofl.c
 E71 text7 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
 E71 text7 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
 E75 text7 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\lwdiv.c
@@ -496,24 +496,25 @@ DC2 text4 CODE >9:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\it
 DCD text4 CODE >10:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\itoa.c
 DD2 text4 CODE >12:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\itoa.c
 DE0 text4 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\itoa.c
-D59 text3 CODE >121:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D59 text3 CODE >122:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D5D text3 CODE >123:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D5E text3 CODE >124:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D62 text3 CODE >125:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D63 text3 CODE >126:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D65 text3 CODE >127:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D66 text3 CODE >129:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D69 text3 CODE >130:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D6A text3 CODE >131:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D6B text3 CODE >132:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D6C text3 CODE >133:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D6D text3 CODE >135:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D73 text3 CODE >136:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D74 text3 CODE >137:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D75 text3 CODE >138:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D76 text3 CODE >139:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D77 text3 CODE >140:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D78 text3 CODE >120:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D78 text3 CODE >121:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D7C text3 CODE >122:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D7D text3 CODE >123:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D81 text3 CODE >124:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D82 text3 CODE >125:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D84 text3 CODE >126:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D85 text3 CODE >128:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D88 text3 CODE >129:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D89 text3 CODE >130:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D8A text3 CODE >131:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D8B text3 CODE >132:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D8C text3 CODE >134:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D8F text3 CODE >136:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D93 text3 CODE >137:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D94 text3 CODE >138:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D95 text3 CODE >139:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D96 text3 CODE >140:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D97 text3 CODE >141:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 E0A text2 CODE >8:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcat.c
 E0D text2 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcat.c
 E11 text2 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcat.c
@@ -534,31 +535,30 @@ DBA text1 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\s
 566 maintext CODE >87:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 56B maintext CODE >94:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 570 maintext CODE >95:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-573 maintext CODE >96:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-57E maintext CODE >99:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-588 maintext CODE >100:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-59A maintext CODE >102:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-5F7 maintext CODE >103:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-621 maintext CODE >104:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-634 maintext CODE >105:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-642 maintext CODE >106:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-666 maintext CODE >107:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-674 maintext CODE >108:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-698 maintext CODE >109:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-6A6 maintext CODE >110:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-6B2 maintext CODE >111:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-6BE maintext CODE >112:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-6CA maintext CODE >113:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-D0B clrtext CODE >898:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0B clrtext CODE >899:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0C clrtext CODE >900:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0C clrtext CODE >901:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0D clrtext CODE >902:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0E clrtext CODE >903:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D0F clrtext CODE >904:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D10 clrtext CODE >905:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D11 clrtext CODE >906:C:\Users\flope\AppData\Local\Temp\s6bk.s
-D12 clrtext CODE >907:C:\Users\flope\AppData\Local\Temp\s6bk.s
+57B maintext CODE >98:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+585 maintext CODE >99:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+597 maintext CODE >101:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+5F4 maintext CODE >102:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+61E maintext CODE >103:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+631 maintext CODE >104:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+63F maintext CODE >105:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+663 maintext CODE >106:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+671 maintext CODE >107:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+695 maintext CODE >108:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+6A3 maintext CODE >109:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+6AF maintext CODE >110:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+6BB maintext CODE >111:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+6C7 maintext CODE >112:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+D0A clrtext CODE >898:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0A clrtext CODE >899:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0B clrtext CODE >900:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0B clrtext CODE >901:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0C clrtext CODE >902:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0D clrtext CODE >903:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0E clrtext CODE >904:C:\Users\flope\AppData\Local\Temp\s74k.s
+D0F clrtext CODE >905:C:\Users\flope\AppData\Local\Temp\s74k.s
+D10 clrtext CODE >906:C:\Users\flope\AppData\Local\Temp\s74k.s
+D11 clrtext CODE >907:C:\Users\flope\AppData\Local\Temp\s74k.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -584,12 +584,12 @@ SPI_Init@sTransmitEdge 22 0 BANK0 1 cstackBANK0 dist/default/production\MiniProy
 _V1 76 0 COMMON 1 bssCOMMON dist/default/production\MiniProyectoS1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 itoa@base 32 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s6bk.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s74k.o
 _itoa 1B76 0 CODE 0 text4 dist/default/production\MiniProyectoS1.X.production.o
 _main ACC 0 CODE 0 maintext dist/default/production\MiniProyectoS1.X.production.o
 _utoa 1E24 0 CODE 0 text5 dist/default/production\MiniProyectoS1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s6bk.o
+start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s74k.o
 ___flmul@aexp 3C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___flmul@bexp 41 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___flmul@prod 42 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -606,7 +606,7 @@ __size_of_utoa 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __size_of___lwmod 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
-__end_of_SPI_Write 1A08 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_SPI_Write 1A06 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
 __size_of_SPI_Write 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 SPI_Init@sType 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
@@ -615,16 +615,16 @@ __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.producti
 __size_of_ADC_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 utoa@c 2E 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 utoa@v 2C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s6bk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s74k.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 strcat@from 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-_SPI_Write 19FC 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
+_SPI_Write 19FA 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 ___awdiv@sign 25 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -638,11 +638,11 @@ __Lmaintext 0 0 ABS 0 maintext -
 ___fldiv@aexp 61 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@bexp 60 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@sign 59 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-_ADC_Init 1A38 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
-_ADC_Read 1A4E 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
+_ADC_Init 1A36 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
+_ADC_Read 1A4C 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
 ___awdiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___lwmod@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-__end_of___awdiv FFE 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
+__end_of___awdiv FF8 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
 __end_of___awmod 1E24 0 CODE 0 text13 dist/default/production\MiniProyectoS1.X.production.o
 __Umul8_16 1BC2 0 CODE 0 text11 dist/default/production\MiniProyectoS1.X.production.o
 __end_of___fldiv ACC 0 CODE 0 text12 dist/default/production\MiniProyectoS1.X.production.o
@@ -651,10 +651,10 @@ __end_of___fltol 2000 0 CODE 0 text9 dist/default/production\MiniProyectoS1.X.pr
 __end_of___lwdiv 1D6E 0 CODE 0 text7 dist/default/production\MiniProyectoS1.X.production.o
 __end_of___lwmod 1CE2 0 CODE 0 text6 dist/default/production\MiniProyectoS1.X.production.o
 __Umul8_16@multiplicand 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
-__end_of_ADC_Init 1A4E 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
-__end_of_ADC_Read 1A74 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s6bk.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s6bk.o
+__end_of_ADC_Init 1A4C 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_ADC_Read 1A72 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s74k.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s74k.o
 ___lwdiv@quotient 25 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@a 48 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@b 4C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -672,7 +672,7 @@ _TRISAbits 85 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _PUNTO1 A0 0 BANK1 1 bssBANK1 dist/default/production\MiniProyectoS1.X.production.o
 ADC_Read@a 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ADC_Read@b 22 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-clear_ram0 1A16 0 CODE 0 clrtext dist/default/production\MiniProyectoS1.X.production.o
+clear_ram0 1A14 0 CODE 0 clrtext dist/default/production\MiniProyectoS1.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __pcstackBANK1 B4 0 BANK1 1 cstackBANK1 dist/default/production\MiniProyectoS1.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
@@ -684,7 +684,7 @@ utoa@buf 2F 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.produ
 utoa@val 27 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __size_of_SPI_Init 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __size_of_SPI_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s6bk.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s74k.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -729,7 +729,7 @@ __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_ISR 1AF0 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
+_ISR 1AB0 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
 __S0 1000 0 ABS 0 - -
 __S1 B8 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
@@ -737,21 +737,21 @@ __S3 0 0 ABS 0 - -
 _adc 79 0 COMMON 1 bssCOMMON dist/default/production\MiniProyectoS1.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 utoa@base 29 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-_SPI_Init 1A74 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
-_SPI_Read 1A26 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
+_SPI_Init 1A72 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
+_SPI_Read 1A24 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
 strcat@cp 21 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 strcat@to 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-___xxtofl DB4 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
+___xxtofl DAE 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
 SPI_Write@a 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 strcpy@cp 21 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 strcpy@to 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-__end_of_ISR 1B30 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
-__end_of_SPI_Init 1AB2 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
-__end_of_SPI_Read 1A38 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_ISR 1AF0 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_SPI_Init 1AB0 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_SPI_Read 1A36 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 __stringtab 1000 0 STRING 0 strings dist/default/production\MiniProyectoS1.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s6bk.o
-__end_of___xxtofl F2C 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s74k.o
+__end_of___xxtofl F26 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 ___awmod@counter 2C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -759,15 +759,15 @@ __ptext10 50 0 CODE 0 text10 dist/default/production\MiniProyectoS1.X.production
 __ptext11 1BC2 0 CODE 0 text11 dist/default/production\MiniProyectoS1.X.production.o
 __ptext12 712 0 CODE 0 text12 dist/default/production\MiniProyectoS1.X.production.o
 __ptext13 1D6E 0 CODE 0 text13 dist/default/production\MiniProyectoS1.X.production.o
-__ptext14 F2C 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
-__ptext15 1A74 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
-__ptext16 1A4E 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
-__ptext17 1A38 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
-__ptext18 1AF0 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
-__ptext19 19FC 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
-__ptext20 1A26 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
-__ptext21 1A08 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
-___awdiv F2C 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
+__ptext14 F26 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
+__ptext15 1A72 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
+__ptext16 1A4C 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
+__ptext17 1A36 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
+__ptext18 1AB0 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
+__ptext19 19FA 0 CODE 0 text19 dist/default/production\MiniProyectoS1.X.production.o
+__ptext20 1A24 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
+__ptext21 1A06 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
+___awdiv F26 0 CODE 0 text14 dist/default/production\MiniProyectoS1.X.production.o
 ___awmod 1D6E 0 CODE 0 text13 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv 712 0 CODE 0 text12 dist/default/production\MiniProyectoS1.X.production.o
 ___flmul 50 0 CODE 0 text10 dist/default/production\MiniProyectoS1.X.production.o
@@ -824,12 +824,12 @@ __size_of_strcat 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production
 __size_of_strcpy 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __ptext1 1B30 0 CODE 0 text1 dist/default/production\MiniProyectoS1.X.production.o
 __ptext2 1C14 0 CODE 0 text2 dist/default/production\MiniProyectoS1.X.production.o
-__ptext3 1AB2 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
+__ptext3 1AF0 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
 __ptext4 1B76 0 CODE 0 text4 dist/default/production\MiniProyectoS1.X.production.o
 __ptext5 1E24 0 CODE 0 text5 dist/default/production\MiniProyectoS1.X.production.o
 __ptext6 1C6A 0 CODE 0 text6 dist/default/production\MiniProyectoS1.X.production.o
 __ptext7 1CE2 0 CODE 0 text7 dist/default/production\MiniProyectoS1.X.production.o
-__ptext8 DB4 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
+__ptext8 DAE 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
 __ptext9 1F08 0 CODE 0 text9 dist/default/production\MiniProyectoS1.X.production.o
 ?__Umul8_16 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
@@ -842,13 +842,13 @@ ___fltol@f1 48 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.pr
 __end_of__initialization 48 0 CODE 0 cinit dist/default/production\MiniProyectoS1.X.production.o
 ___awmod@divisor 28 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-_spiReceiveWait 1A08 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
+_spiReceiveWait 1A06 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
 __end_of_itoa 1BC2 0 CODE 0 text4 dist/default/production\MiniProyectoS1.X.production.o
-__end_of_main DB4 0 CODE 0 maintext dist/default/production\MiniProyectoS1.X.production.o
+__end_of_main DAE 0 CODE 0 maintext dist/default/production\MiniProyectoS1.X.production.o
 __end_of_utoa 1F08 0 CODE 0 text5 dist/default/production\MiniProyectoS1.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
@@ -864,11 +864,11 @@ _TRISA 85 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-__end_of_setup 1AF0 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_setup 1B30 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\MiniProyectoS1.X.production.o
-_setup 1AB2 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
+_setup 1AF0 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
 _slave 6C 0 BANK0 1 bssBANK0 dist/default/production\MiniProyectoS1.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MiniProyectoS1.X.production.o
@@ -878,7 +878,7 @@ ___xxtofl@sign 28 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X
 __pbssBANK0 62 0 BANK0 1 bssBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\MiniProyectoS1.X.production.o
 __pstrings 1000 0 STRING 0 strings dist/default/production\MiniProyectoS1.X.production.o
-__end_of_spiReceiveWait 1A16 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_spiReceiveWait 1A14 0 CODE 0 text21 dist/default/production\MiniProyectoS1.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -906,7 +906,7 @@ __end_of_spiReceiveWait 1A16 0 CODE 0 text21 dist/default/production\MiniProyect
 %SEGMENTS
 text1 0 D98 1B30 23 2
 text2 0 E0A 1C14 2B 2
-text3 0 D59 1AB2 1F 2
+text3 0 D78 1AF0 20 2
 text4 0 DBB 1B76 26 2
 text5 0 F12 1E24 72 2
 text6 0 E35 1C6A 3C 2
@@ -914,20 +914,20 @@ text7 0 E71 1CE2 46 2
 text9 0 F84 1F08 7C 2
 text11 0 DE1 1BC2 29 2
 text13 0 EB7 1D6E 5B 2
-text15 0 D3A 1A74 1F 2
-text16 0 D27 1A4E 13 2
-text17 0 D1C 1A38 B 2
-text18 0 D78 1AF0 20 2
-text19 0 CFE 19FC 6 2
-text20 0 D13 1A26 9 2
-text21 0 D04 1A08 7 2
+text15 0 D39 1A72 1F 2
+text16 0 D26 1A4C 13 2
+text17 0 D1B 1A36 B 2
+text18 0 D58 1AB0 20 2
+text19 0 CFD 19FA 6 2
+text20 0 D12 1A24 9 2
+text21 0 D03 1A06 7 2
 cstackCOMMON 1 70 70 A 1
 cstackBANK0 1 20 20 4D 1
-intentry 0 4 8 7FB 2
+intentry 0 4 8 7F8 2
 reset_vec 0 0 0 3 2
 bssBANK1 1 A0 A0 18 1
 strings 0 800 1000 8 2
-clrtext 0 D0B 1A16 8 2
+clrtext 0 D0A 1A14 8 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

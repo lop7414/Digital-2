@@ -2981,7 +2981,6 @@ void main(void) {
 
     while (1) {
         ADC_Init();
-        TRISAbits.TRISA5 = 1;
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
 
@@ -3020,6 +3019,8 @@ void setup(void) {
     PORTC = 0;
     PORTD = 0;
     PORTE = 0;
+
+    TRISAbits.TRISA5 = 1;
 
     OSCCONbits.IRCF = 0b110;
     OSCCONbits.OSTS= 0;

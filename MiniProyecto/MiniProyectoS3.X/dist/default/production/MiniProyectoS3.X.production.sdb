@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"85 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
+"83 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
 [e E1349 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -57,7 +57,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _ISR ISR `II(v  1 e 1 0 ]
 "73
 [v _main main `(v  1 e 1 0 ]
-"93
+"91
 [v _setup setup `(v  1 e 1 0 ]
 "8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\SPI.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
@@ -83,7 +83,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S36 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S71 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -93,8 +93,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S45 . 1 `S36 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES45  1 e 1 @133 ]
+[u S80 . 1 `S71 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES80  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
@@ -165,9 +165,9 @@ SPI_ACTIVE_2_IDLE 64
 "73
 [v _main main `(v  1 e 1 0 ]
 {
-"87
+"85
 } 0
-"93
+"91
 [v _setup setup `(v  1 e 1 0 ]
 {
 "106

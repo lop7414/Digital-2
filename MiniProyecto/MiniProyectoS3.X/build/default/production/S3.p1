@@ -14,19 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 S3.c
 [; ;S3.c: 59: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
-"1422 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1422:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1421
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1421: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1433
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"85 S3.c
-[; ;S3.c: 85:         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"83
+[; ;S3.c: 83:         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1349 32 33 34 35 36 37 .. ]
 [n E1349 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1357 0 128 .. ]
@@ -71,6 +60,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "414
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"1422
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1422:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1421
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1421: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"1433
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
+[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "17 S3.c
 [p x FOSC  =  XT ]
 "18
@@ -381,60 +381,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 147 ]
 {
 "83
-[; ;S3.c: 83:         TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"85
-[; ;S3.c: 85:         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[; ;S3.c: 83:         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _SPI_Init (4 , , , . `E1349 4 . `E1357 0 . `E1361 1 . `E1365 0 ]
-"86
-[; ;S3.c: 86:     }
+"84
+[; ;S3.c: 84:     }
 }
 [e :U 146 ]
 [e $U 147  ]
 [e :U 148 ]
-"87
-[; ;S3.c: 87: }
+"85
+[; ;S3.c: 85: }
 [e :UE 145 ]
 }
-"93
-[; ;S3.c: 93: void setup(void) {
+"91
+[; ;S3.c: 91: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"94
-[; ;S3.c: 94:     ANSEL = 0;
+"92
+[; ;S3.c: 92:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"95
-[; ;S3.c: 95:     ANSELH= 0;
+"93
+[; ;S3.c: 93:     ANSELH= 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"96
-[; ;S3.c: 96:     TRISA = 0;
+"94
+[; ;S3.c: 94:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"97
-[; ;S3.c: 97:     TRISB = 0;
+"95
+[; ;S3.c: 95:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"98
-[; ;S3.c: 98:     TRISC = 0b00010000;
+"96
+[; ;S3.c: 96:     TRISC = 0b00010000;
 [e = _TRISC -> -> 16 `i `uc ]
-"99
-[; ;S3.c: 99:     TRISD = 0;
+"97
+[; ;S3.c: 97:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"101
-[; ;S3.c: 101:     PORTA = 0;
+"99
+[; ;S3.c: 99:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"102
-[; ;S3.c: 102:     PORTB = 0;
+"100
+[; ;S3.c: 100:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"103
-[; ;S3.c: 103:     PORTC = 0;
+"101
+[; ;S3.c: 101:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"104
-[; ;S3.c: 104:     PORTD = 0;
+"102
+[; ;S3.c: 102:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"105
-[; ;S3.c: 105:     PORTE = 0;
+"103
+[; ;S3.c: 103:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
+"105
+[; ;S3.c: 105:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
 "106
 [; ;S3.c: 106: }
 [e :UE 149 ]

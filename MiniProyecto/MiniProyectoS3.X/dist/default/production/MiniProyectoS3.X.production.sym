@@ -8,7 +8,7 @@ __Lintentry 4 0 CODE 0
 __pintentry 4 0 CODE 0
 _SPI_Read 7B 0 CODE 0
 _Data 79 0 COMMON 1
-_main 53 0 CODE 0
+_main 69 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start C 0 CODE 0
@@ -31,7 +31,7 @@ __Lconfig 0 0 CONFIG 4
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 _slave 77 0 COMMON 1
-_setup 68 0 CODE 0
+_setup 53 0 CODE 0
 _SPI_Init 16 0 CODE 0
 __end_of_ISR 53 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
@@ -68,7 +68,7 @@ __pcstackBANK0 20 0 BANK0 1
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main 68 0 CODE 0
+__end_of_main 7B 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 12 0 CODE 0
@@ -91,7 +91,7 @@ ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 _SSPSTAT 94 0 ABS 0
 __Lpowerup 0 0 CODE 0
-__ptext1 68 0 CODE 0
+__ptext1 53 0 CODE 0
 __ptext2 16 0 CODE 0
 __ptext3 35 0 CODE 0
 __ptext4 8B 0 CODE 0
@@ -129,7 +129,7 @@ __Hend_init F 0 CODE 0
 __Lend_init C 0 CODE 0
 SPI_Init@sDataSample 74 0 COMMON 1
 __size_of_SPI_Init 0 0 ABS 0
-__end_of_setup 7B 0 CODE 0
+__end_of_setup 69 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 SPI_Init@sTransmitEdge 76 0 COMMON 1
@@ -147,7 +147,7 @@ start_initialization F 0 CODE 0
 SPI_Write@a 70 0 COMMON 1
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
-__pmaintext 53 0 CODE 0
+__pmaintext 69 0 CODE 0
 __initialization F 0 CODE 0
 __size_of_spiReceiveWait 0 0 ABS 0
 %segments
@@ -157,7 +157,7 @@ cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 20 BANK0 20 1
 %locals
 dist/default/production\MiniProyectoS3.X.production.o
-C:\Users\flope\AppData\Local\Temp\s7j8.s
+C:\Users\flope\AppData\Local\Temp\sc20.s
 629 F 0 CODE 0
 632 F 0 CODE 0
 649 F 0 CODE 0
@@ -167,23 +167,24 @@ C:\Users\flope\AppData\Local\Temp\s7j8.s
 659 12 0 CODE 0
 660 13 0 CODE 0
 S3.c
-73 53 0 CODE 0
-75 53 0 CODE 0
-83 58 0 CODE 0
-85 5B 0 CODE 0
-93 68 0 CODE 0
-94 68 0 CODE 0
-95 6B 0 CODE 0
-96 6C 0 CODE 0
-97 6F 0 CODE 0
-98 70 0 CODE 0
-99 72 0 CODE 0
-101 73 0 CODE 0
-102 76 0 CODE 0
-103 77 0 CODE 0
-104 78 0 CODE 0
-105 79 0 CODE 0
-106 7A 0 CODE 0
+73 69 0 CODE 0
+75 69 0 CODE 0
+81 6E 0 CODE 0
+83 6E 0 CODE 0
+91 53 0 CODE 0
+92 53 0 CODE 0
+93 56 0 CODE 0
+94 57 0 CODE 0
+95 5A 0 CODE 0
+96 5B 0 CODE 0
+97 5D 0 CODE 0
+99 5E 0 CODE 0
+100 61 0 CODE 0
+101 62 0 CODE 0
+102 63 0 CODE 0
+103 64 0 CODE 0
+105 65 0 CODE 0
+106 68 0 CODE 0
 SPI.c
 8 16 0 CODE 0
 10 19 0 CODE 0

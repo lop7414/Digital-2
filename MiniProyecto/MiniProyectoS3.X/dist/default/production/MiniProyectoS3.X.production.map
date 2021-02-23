@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\MiniProyectoS3.X.production.sym \
   --cmf=dist/default/production\MiniProyectoS3.X.production.cmf -z -Q16F887 \
-  -oC:\Users\flope\AppData\Local\Temp\s7j8.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\flope\AppData\Local\Temp\sc20.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MiniProyectoS3.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\s7j8.o \
+  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\sc20.o \
   dist/default/production\MiniProyectoS3.X.production.o 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\flope\AppData\Local\Temp\s7j8.o
+C:\Users\flope\AppData\Local\Temp\sc20.o
                 end_init                              C        C        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        2        0       4
@@ -41,8 +41,8 @@ dist/default/production\MiniProyectoS3.X.production.o
                 text4                                8B       8B        6        8       0
                 text3                                35       35       1E        8       0
                 text2                                16       16       1F        8       0
-                text1                                68       68       13        8       0
-                maintext                             53       53       15        8       0
+                text1                                53       53       16        8       0
+                maintext                             69       69       12        8       0
                 cstackBANK0                          20       20        1       20       1
                 cstackCOMMON                         70       70        7       70       1
                 bssCOMMON                            77       77        3       70       1
@@ -60,8 +60,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text4                                8B       8B        6         0
                 text3                                35       35       1E         0
                 text2                                16       16       1F         0
-                text1                                68       68       13         0
-                maintext                             53       53       15         0
+                text1                                53       53       16         0
+                maintext                             69       69       12         0
 
         CLASS   STRCODE        
 
@@ -258,16 +258,16 @@ __end_of_SPI_Init        text2        0035
 __end_of_SPI_Read        text5        0084
 __end_of_SPI_Write       text4        0091
 __end_of__initialization cinit        0012
-__end_of_main            maintext     0068
-__end_of_setup           text1        007B
+__end_of_main            maintext     007B
+__end_of_setup           text1        0069
 __end_of_spiReceiveWait  text6        008B
 __initialization         cinit        000F
 __pbssCOMMON             bssCOMMON    0077
 __pcstackBANK0           cstackBANK0  0020
 __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
-__pmaintext              maintext     0053
-__ptext1                 text1        0068
+__pmaintext              maintext     0069
+__ptext1                 text1        0053
 __ptext2                 text2        0016
 __ptext3                 text3        0035
 __ptext4                 text4        008B
@@ -280,8 +280,8 @@ __size_of_SPI_Write      (abs)        0000
 __size_of_main           (abs)        0000
 __size_of_setup          (abs)        0000
 __size_of_spiReceiveWait (abs)        0000
-_main                    maintext     0053
-_setup                   text1        0068
+_main                    maintext     0069
+_setup                   text1        0053
 _slave                   bssCOMMON    0077
 _spiReceiveWait          text6        0084
 btemp                    (abs)        007E
@@ -334,7 +334,7 @@ Total ram usage:        0 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 93 in file "S3.c"
+		line 91 in file "S3.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -520,8 +520,8 @@ MODULE INFORMATION
 Module		Function		Class		Link	Load	Size
 S3.c
 		_ISR           		CODE           	0035	0000	30
-		_main          		CODE           	0053	0000	21
-		_setup         		CODE           	0068	0000	19
+		_main          		CODE           	0069	0000	18
+		_setup         		CODE           	0053	0000	22
 
 S3.c estimated size: 70
 
