@@ -2999,6 +2999,22 @@ void main(void) {
         strcat(POT1SB,POT1SA);
         strcat(PUNTO1,POT1SB);
         strcat(POT1SC,PUNTO1);
+
+        if (voltaje<=2){
+            PORTBbits.RB0 = 1;
+            PORTBbits.RB1 = 0;
+            PORTBbits.RB2 = 0;
+        }
+        else if (voltaje<=3){
+            PORTBbits.RB0 = 0;
+            PORTBbits.RB1 = 1;
+            PORTBbits.RB2 = 0;
+        }
+        else {
+            PORTBbits.RB0 = 0;
+            PORTBbits.RB1 = 0;
+            PORTBbits.RB2 = 1;
+        }
     }
 }
 
