@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "Master.c" 2
-# 17 "Master.c"
+# 18 "Master.c"
 #pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -22,7 +22,7 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 39 "Master.c"
+# 40 "Master.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,7 +2503,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 39 "Master.c" 2
+# 40 "Master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2638,7 +2638,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 40 "Master.c" 2
+# 41 "Master.c" 2
 
 
 
@@ -2791,7 +2791,7 @@ void SPI_Write(char a);
 unsigned SPI_Ready(void);
 
 char SPI_Read(void);
-# 45 "Master.c" 2
+# 46 "Master.c" 2
 
 # 1 "./LCD.h" 1
 # 41 "./LCD.h"
@@ -2810,7 +2810,7 @@ void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 
 void Lcd_Shift_Left(void);
-# 46 "Master.c" 2
+# 47 "Master.c" 2
 
 # 1 "./UART.h" 1
 
@@ -2840,7 +2840,7 @@ uint8_t UART_READ();
 uint8_t UART_TX_Empty();
 
 void UART_Write(uint8_t a);
-# 47 "Master.c" 2
+# 48 "Master.c" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
@@ -2926,7 +2926,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 49 "Master.c" 2
+# 50 "Master.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\string.h" 3
@@ -2959,7 +2959,7 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 50 "Master.c" 2
+# 51 "Master.c" 2
 
 
 
@@ -3057,11 +3057,13 @@ void main(void) {
 
 
 void setup(void) {
-    ANSEL = 0b00001001;
+    ANSEL = 0b00000000;
     ANSELH= 0b00000000;
-    TRISA = 0b00001001;
+    TRISA = 0b00000000;
     TRISB = 0b00000000;
-    TRISC = 0b00010000;
+    TRISC = 0;
+    TRISCbits.TRISC5 = 1;
+    TRISCbits.TRISC7 = 1;
     TRISD = 0b00000000;
     TRISE = 0;
 

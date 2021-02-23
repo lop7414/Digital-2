@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"88 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
+"89 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
 [e E1349 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -69,11 +69,11 @@ SPI_ACTIVE_2_IDLE 64
 [v _Lcd_Write_Char Lcd_Write_Char `(v  1 e 1 0 ]
 "83
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"70 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
+"71 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"78
+"79
 [v _main main `(v  1 e 1 0 ]
-"146
+"147
 [v _setup setup `(v  1 e 1 0 ]
 "8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\SPI.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
@@ -113,7 +113,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S270 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S291 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -123,18 +123,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S279 . 1 `uc 1 . 1 0 :2:0 
+[s S300 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S284 . 1 `S270 1 . 1 0 `S279 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES284  1 e 1 @11 ]
+[u S305 . 1 `S291 1 . 1 0 `S300 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES305  1 e 1 @11 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S409 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S438 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -144,18 +144,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S418 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S447 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S422 . 1 `uc 1 . 1 0 :6:0 
+[s S451 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S425 . 1 `uc 1 . 1 0 :6:0 
+[s S454 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S428 . 1 `S409 1 . 1 0 `S418 1 . 1 0 `S422 1 . 1 0 `S425 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES428  1 e 1 @24 ]
+[u S457 . 1 `S438 1 . 1 0 `S447 1 . 1 0 `S451 1 . 1 0 `S454 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES457  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
@@ -166,11 +166,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S245 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1557
+[u S254 . 1 `S245 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES254  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S251 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S272 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -179,8 +191,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S259 . 1 `S251 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES259  1 e 1 @140 ]
+[u S280 . 1 `S272 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES280  1 e 1 @140 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 [s S44 . 1 `uc 1 BF 1 0 :1:0 
@@ -226,7 +238,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S84 . 1 `S44 1 . 1 0 `S53 1 . 1 0 `S58 1 . 1 0 `S64 1 . 1 0 `S69 1 . 1 0 `S74 1 . 1 0 `S79 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES84  1 e 1 @148 ]
-[s S372 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S401 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -236,15 +248,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S381 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S410 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S385 . 1 `uc 1 . 1 0 :6:0 
+[s S414 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S388 . 1 `S372 1 . 1 0 `S381 1 . 1 0 `S385 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES388  1 e 1 @152 ]
+[u S417 . 1 `S401 1 . 1 0 `S410 1 . 1 0 `S414 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES417  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "3387
@@ -267,23 +279,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
 "4508
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
-"56 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
+"57 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
 [v _Slave1 Slave1 `uc  1 e 1 0 ]
-"57
-[v _Slave2 Slave2 `uc  1 e 1 0 ]
 "58
+[v _Slave2 Slave2 `uc  1 e 1 0 ]
+"59
 [v _Slave3 Slave3 `uc  1 e 1 0 ]
-"61
+"62
 [v _COMPARE COMPARE `[5]uc  1 e 5 0 ]
-"78
+"79
 [v _main main `(v  1 e 1 0 ]
 {
-"140
+"141
 } 0
-"146
+"147
 [v _setup setup `(v  1 e 1 0 ]
 {
-"164
+"167
 } 0
 "27 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\SPI.c
 [v _SPI_Write SPI_Write `(v  1 e 1 0 ]
@@ -349,10 +361,10 @@ SPI_ACTIVE_2_IDLE 64
 [v Lcd_Cmd@a a `uc  1 a 1 17 ]
 "34
 } 0
-"70 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
+"71 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"76
+"77
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\itoa.c
 [v _itoa itoa `(*.4uc  1 e 1 0 ]

@@ -5,6 +5,7 @@
  * se Adaptaron librerias de Ligo George
  * extraidas de la pagina https://electrosome.com/lcd-pic-mplab-xc8/#Example
  * 
+ *
  * Created on February 19, 2021, 4:59 PM
  * 
  */
@@ -144,11 +145,13 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    ANSEL = 0b00001001;
+    ANSEL = 0b00000000;
     ANSELH= 0b00000000;
-    TRISA = 0b00001001;
+    TRISA = 0b00000000;
     TRISB = 0b00000000; 
-    TRISC = 0b00010000;
+    TRISC = 0;
+    TRISCbits.TRISC5 = 1;
+    TRISCbits.TRISC7 = 1;
     TRISD = 0b00000000;
     TRISE = 0;
     

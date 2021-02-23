@@ -2946,11 +2946,7 @@ void main(void) {
 
     while (1) {
 
-        GIE = 1;
-        PEIE = 1;
-        SSPIF = 0;
-        SSPIE = 1;
-        ADCON1 = 0x07;
+        TRISAbits.TRISA5 = 1;
 
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     }
@@ -2961,14 +2957,16 @@ void main(void) {
 
 
 void setup(void) {
-    TRISA5 = 1;
-    TRISB = 0b00000000;
-    TRISC = 0b00011000;
-    TRISD = 0b00000000;
-    TRISE = 0;
+    ANSEL = 0;
+    ANSELH= 0;
+    TRISA = 0;
+    TRISB = 0;
+    TRISC = 0b00010000;
+    TRISD = 0;
 
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
     PORTD = 0;
     PORTE = 0;
 }
