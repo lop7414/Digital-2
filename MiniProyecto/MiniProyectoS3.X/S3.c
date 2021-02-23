@@ -43,6 +43,7 @@
 
 #include "pic16f887.h"
 #include "SPI.h"
+#include "ADC.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,7 +51,18 @@
 //******************************************************************************
 // Variables
 //******************************************************************************
-char    Data;
+uint8_t adc;
+
+float   voltaje;
+int     V1;
+int     POT1A;
+char    POT1SA[5];
+int     POT1B;
+char    POT1SB[5];
+int     POT1C;
+char    POT1SC[5];
+char    PUNTO1[5];
+
 char    Ready;
 char    slave;
 //******************************************************************************
@@ -64,7 +76,7 @@ void setup(void);
 void __interrupt() ISR(void){
     if (SSPIF == 1){
         slave = SPI_Read();
-        SPI_Write(Data);
+        SPI_Write(POT1SC);
         SSPIF = 0;
     }
 }
@@ -79,8 +91,41 @@ void main(void) {
 //**************************************************************************
         
     while (1) {
-        
+        ADC_Init();
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+        
+        
+        __delay_ms(1);
+        adc=ADC_Read(0,0);
+        
+        voltaje = (adc*5.0)/255.0;
+        V1 = (voltaje)*100;
+        POT1A = V1%10;
+        itoa(POT1SA,POT1A,10);
+        POT1B = (V1/10)%10;
+        itoa(POT1SB,POT1B,10);
+        POT1C = (V1/100)%10;
+        itoa(POT1SC,POT1C,10);
+        strcpy(PUNTO1,".");
+        strcat(POT1SB,POT1SA);
+        strcat(PUNTO1,POT1SB);
+        strcat(POT1SC,PUNTO1);
+        
+        if (voltaje<=0.25){
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 0;
+        }
+        else if (voltaje<=0.36){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 1;
+            PORTDbits.RD2 = 0;
+        }
+        else {
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 1;
+        }
     }
 }
 
@@ -89,9 +134,9 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    ANSEL = 0;
-    ANSELH= 0;
-    TRISA = 0;
+    ANSEL = 0b00100001;
+    ANSELH= 0b00000000;
+    TRISA = 0b00100001;
     TRISB = 0;
     TRISC = 0b00010000;
     TRISD = 0;
@@ -103,6 +148,12 @@ void setup(void) {
     PORTE = 0;
     
     TRISAbits.TRISA5 = 1;
+    
+    OSCCONbits.IRCF = 0b110; //4Mhz
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1; 
 }
 
 //******************************************************************************

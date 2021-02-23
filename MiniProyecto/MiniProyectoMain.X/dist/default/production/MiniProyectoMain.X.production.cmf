@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flope\AppData\Local\Temp\sakk.o
+$C:\Users\flope\AppData\Local\Temp\s7r0.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -85,27 +85,27 @@ STRING 3BB-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MiniProyectoMain.X.production.o
-13 cinit CODE >1029:C:\Users\flope\AppData\Local\Temp\sakk.s
-13 cinit CODE >1032:C:\Users\flope\AppData\Local\Temp\sakk.s
-13 cinit CODE >1064:C:\Users\flope\AppData\Local\Temp\sakk.s
-14 cinit CODE >1065:C:\Users\flope\AppData\Local\Temp\sakk.s
-15 cinit CODE >1066:C:\Users\flope\AppData\Local\Temp\sakk.s
-16 cinit CODE >1067:C:\Users\flope\AppData\Local\Temp\sakk.s
-17 cinit CODE >1068:C:\Users\flope\AppData\Local\Temp\sakk.s
-18 cinit CODE >1069:C:\Users\flope\AppData\Local\Temp\sakk.s
-19 cinit CODE >1070:C:\Users\flope\AppData\Local\Temp\sakk.s
-1A cinit CODE >1071:C:\Users\flope\AppData\Local\Temp\sakk.s
-1B cinit CODE >1072:C:\Users\flope\AppData\Local\Temp\sakk.s
-1C cinit CODE >1073:C:\Users\flope\AppData\Local\Temp\sakk.s
-1D cinit CODE >1074:C:\Users\flope\AppData\Local\Temp\sakk.s
-1E cinit CODE >1075:C:\Users\flope\AppData\Local\Temp\sakk.s
-1F cinit CODE >1076:C:\Users\flope\AppData\Local\Temp\sakk.s
-20 cinit CODE >1077:C:\Users\flope\AppData\Local\Temp\sakk.s
-21 cinit CODE >1078:C:\Users\flope\AppData\Local\Temp\sakk.s
-22 cinit CODE >1079:C:\Users\flope\AppData\Local\Temp\sakk.s
-23 cinit CODE >1085:C:\Users\flope\AppData\Local\Temp\sakk.s
-23 cinit CODE >1087:C:\Users\flope\AppData\Local\Temp\sakk.s
-24 cinit CODE >1088:C:\Users\flope\AppData\Local\Temp\sakk.s
+13 cinit CODE >1029:C:\Users\flope\AppData\Local\Temp\s7r0.s
+13 cinit CODE >1032:C:\Users\flope\AppData\Local\Temp\s7r0.s
+13 cinit CODE >1064:C:\Users\flope\AppData\Local\Temp\s7r0.s
+14 cinit CODE >1065:C:\Users\flope\AppData\Local\Temp\s7r0.s
+15 cinit CODE >1066:C:\Users\flope\AppData\Local\Temp\s7r0.s
+16 cinit CODE >1067:C:\Users\flope\AppData\Local\Temp\s7r0.s
+17 cinit CODE >1068:C:\Users\flope\AppData\Local\Temp\s7r0.s
+18 cinit CODE >1069:C:\Users\flope\AppData\Local\Temp\s7r0.s
+19 cinit CODE >1070:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1A cinit CODE >1071:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1B cinit CODE >1072:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1C cinit CODE >1073:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1D cinit CODE >1074:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1E cinit CODE >1075:C:\Users\flope\AppData\Local\Temp\s7r0.s
+1F cinit CODE >1076:C:\Users\flope\AppData\Local\Temp\s7r0.s
+20 cinit CODE >1077:C:\Users\flope\AppData\Local\Temp\s7r0.s
+21 cinit CODE >1078:C:\Users\flope\AppData\Local\Temp\s7r0.s
+22 cinit CODE >1079:C:\Users\flope\AppData\Local\Temp\s7r0.s
+23 cinit CODE >1085:C:\Users\flope\AppData\Local\Temp\s7r0.s
+23 cinit CODE >1087:C:\Users\flope\AppData\Local\Temp\s7r0.s
+24 cinit CODE >1088:C:\Users\flope\AppData\Local\Temp\s7r0.s
 4 intentry CODE >71:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\Master.c
 39A text16 CODE >8:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\UART.c
 39A text16 CODE >9:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoMain.X\UART.c
@@ -336,13 +336,13 @@ __Hstrings 0 0 ABS 0 strings -
 itoa@base 26 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
 _RCIF 65 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\sakk.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s7r0.o
 _itoa 59A 0 CODE 0 text12 dist/default/production\MiniProyectoMain.X.production.o
 _main 4E 0 CODE 0 maintext dist/default/production\MiniProyectoMain.X.production.o
 _utoa 24E 0 CODE 0 text13 dist/default/production\MiniProyectoMain.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 _Lcd_Write_Char 3BA 0 CODE 0 text8 dist/default/production\MiniProyectoMain.X.production.o
-start 20 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\sakk.o
+start 20 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s7r0.o
 CONTADOR@n 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoMain.X.production.o
 __size_of_itoa 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
@@ -355,12 +355,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 SPI_Init@sType 32 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
 utoa@c 22 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
 utoa@v 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sakk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s7r0.o
 _SPI_Write 76A 0 CODE 0 text2 dist/default/production\MiniProyectoMain.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -372,8 +372,8 @@ __Lmaintext 0 0 ABS 0 maintext -
 ___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoMain.X.production.o
 __end_of___lwdiv 3BA 0 CODE 0 text15 dist/default/production\MiniProyectoMain.X.production.o
 __end_of___lwmod 53A 0 CODE 0 text14 dist/default/production\MiniProyectoMain.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\sakk.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\sakk.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s7r0.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s7r0.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoMain.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 itoa@buf 29 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
@@ -397,7 +397,7 @@ utoa@val 78 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoMain.X.p
 __size_of_Lcd_Cmd 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 __size_of_SPI_Init 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 __size_of_SPI_Read 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\sakk.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s7r0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -461,7 +461,7 @@ __Lintentry 8 0 CODE 0 intentry -
 __size_of_Lcd_Write_String 0 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o
 __stringtab 6DC 0 STRING 0 strings dist/default/production\MiniProyectoMain.X.production.o
 Lcd_Write_String@a 33 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoMain.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\sakk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s7r0.o
 __end_of_Lcd_Cmd 4C6 0 CODE 0 text10 dist/default/production\MiniProyectoMain.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\MiniProyectoMain.X.production.o

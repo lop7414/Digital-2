@@ -3007,9 +3007,9 @@ void main(void) {
 
 
 void setup(void) {
-    ANSEL = 0b00000001;
+    ANSEL = 0b00100001;
     ANSELH= 0b00000000;
-    TRISA = 0b00000001;
+    TRISA = 0b00100001;
     TRISB = 0;
     TRISC = 0b00010000;
     TRISD = 0;

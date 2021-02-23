@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Tue Feb 23 01:46:16 2021
+                                                                                               Tue Feb 23 08:04:03 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1509,8 +1509,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1494                           ; Regs used in _setup: [wreg+status,2+status,0]
   1495                           
   1496                           
-  1497                           ;S1.c: 121:     ANSEL = 0b00000001;
-  1498  0D78  3001               	movlw	1
+  1497                           ;S1.c: 121:     ANSEL = 0b00100001;
+  1498  0D78  3021               	movlw	33
   1499  0D79  1683               	bsf	3,5	;RP0=1, select bank3
   1500  0D7A  1703               	bsf	3,6	;RP1=1, select bank3
   1501  0D7B  0088               	movwf	8	;volatile
@@ -1520,8 +1520,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1505  0D7C  0189               	clrf	9	;volatile
   1506  0D7D                     l1548:
   1507                           
-  1508                           ;S1.c: 123:     TRISA = 0b00000001;
-  1509  0D7D  3001               	movlw	1
+  1508                           ;S1.c: 123:     TRISA = 0b00100001;
+  1509  0D7D  3021               	movlw	33
   1510  0D7E  1683               	bsf	3,5	;RP0=1, select bank1
   1511  0D7F  1303               	bcf	3,6	;RP1=0, select bank1
   1512  0D80  0085               	movwf	5	;volatile
@@ -5546,7 +5546,7 @@ DATA                 0      0      6F      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Tue Feb 23 01:46:16 2021
+Symbol Table                                                                                   Tue Feb 23 08:04:03 2021
 
            ___fldiv@aexp 0061             ___fldiv@bexp 0060                        pc 0002  
            ___fldiv@sign 0059              _SSPSTATbits 0094                       l89 0D97  

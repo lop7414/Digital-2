@@ -1,4 +1,4 @@
-# 1 "S3.c"
+# 1 "ADC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,23 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "S3.c" 2
-# 17 "S3.c"
-#pragma config FOSC = XT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 39 "S3.c"
+# 1 "ADC.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,7 +2487,16 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 39 "S3.c" 2
+# 1 "ADC.c" 2
+
+# 1 "./ADC.h" 1
+
+
+
+
+
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2638,23 +2631,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 40 "S3.c" 2
-
-
-
-
-
-# 1 "./SPI.h" 1
-
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 9 "./SPI.h" 2
+# 9 "./ADC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2753,58 +2730,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 10 "./SPI.h" 2
-
-
-typedef enum
-{
-    SPI_MASTER_OSC_DIV4 = 0b00100000,
-    SPI_MASTER_OSC_DIV16 = 0b00100001,
-    SPI_MASTER_OSC_DIV64 = 0b00100010,
-    SPI_MASTER_TMR2 = 0b00100011,
-    SPI_SLAVE_SS_EN = 0b00100100,
-    SPI_SLAVE_SS_DIS = 0b00100101
-}Spi_Type;
-
-typedef enum
-{
-    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
-    SPI_DATA_SAMPLE_END = 0b10000000
-}Spi_Data_Sample;
-
-typedef enum
-{
-    SPI_CLOCK_IDLE_HIGH = 0b00010000,
-    SPI_CLOCK_IDLE_LOW = 0b00000000
-}Spi_Clock_Idle;
-
-typedef enum
-{
-    SPI_IDLE_2_ACTIVE = 0b00000000,
-    SPI_ACTIVE_2_IDLE = 0b01000000
-}Spi_Transmit_Edge;
-
-void SPI_Init(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
-
-void SPI_Write(char a);
-
-unsigned SPI_Ready(void);
-
-char SPI_Read(void);
-# 45 "S3.c" 2
-
-# 1 "./ADC.h" 1
-
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 9 "./ADC.h" 2
-
+# 10 "./ADC.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2931,116 +2857,31 @@ extern char * strrichr(const char *, int);
 void ADC_Init(void);
 
 unsigned char ADC_Read(int a,int b);
-# 46 "S3.c" 2
+# 2 "ADC.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 3 "ADC.c" 2
 
 
 
 
 
-
-
-
-uint8_t adc;
-
-float voltaje;
-int V1;
-int POT1A;
-char POT1SA[5];
-int POT1B;
-char POT1SB[5];
-int POT1C;
-char POT1SC[5];
-char PUNTO1[5];
-
-char Ready;
-char slave;
-
-
-
-void setup(void);
-
-
-
-
-void __attribute__((picinterrupt(("")))) ISR(void){
-    if (SSPIF == 1){
-        slave = SPI_Read();
-        SPI_Write(POT1SC);
-        SSPIF = 0;
-    }
+void ADC_Init (void){
+    ADCON0bits.ADCS0 = 1;
+    ADCON0bits.ADCS1 = 0;
+    ADCON0bits.ADON = 1;
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
 }
 
-
-void main(void) {
-
-    setup();
-
-
-
-
-
-    while (1) {
-        ADC_Init();
-        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
-
-        _delay((unsigned long)((1)*(8000000/4000.0)));
-        adc=ADC_Read(0,0);
-
-        voltaje = (adc*5.0)/255.0;
-        V1 = (voltaje)*100;
-        POT1A = V1%10;
-        itoa(POT1SA,POT1A,10);
-        POT1B = (V1/10)%10;
-        itoa(POT1SB,POT1B,10);
-        POT1C = (V1/100)%10;
-        itoa(POT1SC,POT1C,10);
-        strcpy(PUNTO1,".");
-        strcat(POT1SB,POT1SA);
-        strcat(PUNTO1,POT1SB);
-        strcat(POT1SC,PUNTO1);
-
-        if (voltaje<=0.25){
-            PORTDbits.RD0 = 1;
-            PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 0;
-        }
-        else if (voltaje<=0.36){
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 1;
-            PORTDbits.RD2 = 0;
-        }
-        else {
-            PORTDbits.RD0 = 0;
-            PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 1;
-        }
-    }
-}
-
-
-
-
-
-void setup(void) {
-    ANSEL = 0b00100001;
-    ANSELH= 0b00000000;
-    TRISA = 0b00100001;
-    TRISB = 0;
-    TRISC = 0b00010000;
-    TRISD = 0;
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-
-    TRISAbits.TRISA5 = 1;
-
-    OSCCONbits.IRCF = 0b110;
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1;
+unsigned char ADC_Read(int a,int b){
+    ADCON0bits.CHS0 = a;
+    ADCON0bits.CHS1 = b;
+    ADCON0bits.CHS2 = 0;
+    ADCON0bits.CHS3 = 0;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GO = 1;
+    PIR1bits.ADIF = 0;
+    return(ADRESH);
 }
