@@ -14,7 +14,7 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = XT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -39,7 +39,7 @@
 #include <xc.h>
 #include <stdint.h>
 
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 #include "pic16f887.h"
 #include "SPI.h"
@@ -64,6 +64,7 @@ char    POT1SC[5];
 char    PUNTO1[5];
 
 char    Ready;
+char    slave;
 //******************************************************************************
 // Funciones
 //******************************************************************************
@@ -72,6 +73,14 @@ void setup(void);
 //******************************************************************************
 // Main
 //******************************************************************************
+void __interrupt() SPI_Slave_Read(){
+    if (SSPIF == 1){
+        slave = SPI_Read();
+        SPI_Write(POT1SC);
+        SSPIF = 0;
+    }
+}
+
 
 void main(void) {
     
@@ -83,26 +92,30 @@ void main(void) {
         
     while (1) {
         ADC_Init();
+        GIE = 1;
+        PEIE = 1;
+        SSPIF = 0;
+        SSPIE = 1;
+        ADCON1 = 0x07;
+        
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+        
         
         __delay_ms(1);
         adc=ADC_Read(0,0);
         
-//        voltaje = (adc*5.0)/255.0;
-//        V1 = (voltaje)*100;
-//        POT1A = V1%10;
-//        itoa(POT1SA,POT1A,10);
-//        POT1B = (V1/10)%10;
-//        itoa(POT1SB,POT1B,10);
-//        POT1C = (V1/100)%10;
-//        itoa(POT1SC,POT1C,10);
-//        strcpy(PUNTO1,".");
-//        strcat(POT1SB,POT1SA);
-//        strcat(PUNTO1,POT1SB);
-//        strcat(POT1SC,PUNTO1);
-        
-        SPI_Write(adc);
-            
+        voltaje = (adc*5.0)/255.0;
+        V1 = (voltaje)*100;
+        POT1A = V1%10;
+        itoa(POT1SA,POT1A,10);
+        POT1B = (V1/10)%10;
+        itoa(POT1SB,POT1B,10);
+        POT1C = (V1/100)%10;
+        itoa(POT1SC,POT1C,10);
+        strcpy(PUNTO1,".");
+        strcat(POT1SB,POT1SA);
+        strcat(PUNTO1,POT1SB);
+        strcat(POT1SC,PUNTO1);
     }
 }
 
@@ -111,17 +124,17 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    ANSEL = 0b00001001;
+    ANSEL = 0b00100001;
     ANSELH= 0b00000000;
-    TRISA = 0b00001001;
+    ADCON1 = 0x07;
+    TRISA = 0b00100001;
     TRISB = 0b00000000; 
     TRISD = 0b00000000;
-    TRISC = 0b00001000;
+    TRISC = 0b00011000;
     TRISE = 0;
     
     PORTA = 0;
     PORTB = 0;
-    PORTC = 0;
     PORTD = 0;
     PORTE = 0;
     

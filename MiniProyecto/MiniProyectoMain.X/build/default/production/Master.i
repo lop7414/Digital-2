@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "Master.c" 2
 # 17 "Master.c"
-#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2966,9 +2966,9 @@ extern char * strrichr(const char *, int);
 
 
 char Ready;
-char Slave1 = 0;
-char Slave2 = 0;
-char Slave3 = 0;
+char Slave1;
+char Slave2;
+char Slave3;
 
 char Contador;
 char COMPARE[5];
@@ -2988,7 +2988,6 @@ void __attribute__((picinterrupt(("")))) ISR(void){
     }
 }
 
-
 void main(void) {
 
     setup();
@@ -3007,31 +3006,49 @@ void main(void) {
 
         PORTB = 0;
 
-        PORTBbits.RB0 = 1;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTBbits.RB0 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
 
+        SPI_Write(1);
         Slave1 = SPI_Read();
+
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTBbits.RB0 = 1;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
         Lcd_Write_Char(Slave1);
 
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        PORTBbits.RB0 = 0;
-        Lcd_Write_String(" ");
-        PORTBbits.RB1 = 1;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        Lcd_Write_String("A");
 
+
+        PORTBbits.RB1 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+
+        SPI_Write(1);
         Slave2 = SPI_Read();
+
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTBbits.RB1 = 1;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
         Lcd_Write_Char(Slave2);
 
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        PORTBbits.RB1 = 0;
-        Lcd_Write_String(" ");
-        PORTBbits.RB2 = 1;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
+        Lcd_Write_String("A");
 
+
+        PORTBbits.RB2 = 0;
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+
+        SPI_Write(1);
         Slave3 = SPI_Read();
+
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        PORTBbits.RB2 = 1;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+
         Lcd_Write_Char(Slave3);
 
-        PORTBbits.RB3 = 0;
+        Lcd_Write_String("A");
     }
 }
 
@@ -3044,7 +3061,7 @@ void setup(void) {
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
     TRISB = 0b00000000;
-    TRISC = 0b00000000;
+    TRISC = 0b00010000;
     TRISD = 0b00000000;
     TRISE = 0;
 

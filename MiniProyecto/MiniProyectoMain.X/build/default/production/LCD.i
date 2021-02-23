@@ -2520,11 +2520,11 @@ void Lcd_Cmd(char a){
     RE0 = 0;
     RE1 = 1;
     RE2 = 0;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 1;
     if (PORTD == 0x80){
     RE2 = 0;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 1;
     }
     else{
@@ -2533,7 +2533,7 @@ void Lcd_Cmd(char a){
     RE0 = 0;
     RE1 = 0;
     RE2 = 1;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 0;
 }
 
@@ -2567,11 +2567,11 @@ void Lcd_Write_Char(char a){
     RE0 = 0;
     RE1 = 1;
     RE2 = 0;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 1;
     if (PORTD == 0x80){
     RE2 = 0;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 1;
     }
     else{
@@ -2580,7 +2580,7 @@ void Lcd_Write_Char(char a){
     RE0 = 1;
     RE1 = 0;
     RE2 = 1;
-    _delay((unsigned long)((30)*(4000000/4000.0)));
+    _delay((unsigned long)((30)*(8000000/4000.0)));
     RE2 = 0;
 }
 

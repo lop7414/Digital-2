@@ -2,7 +2,7 @@
 #define	__UART_H
 
 #ifndef _XTAL_FREQ
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 #endif
 
 int O;

@@ -2916,6 +2916,11 @@ void SPI_Write(char a){
     SSPBUF = a;
 }
 
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF );
+}
+
 unsigned SPI_Ready(void){
     if(SSPSTATbits.BF)
         return 1;
@@ -2924,6 +2929,6 @@ unsigned SPI_Ready(void){
 }
 
 char SPI_Read(void){
-    while ( !SSPSTATbits.BF );
+    spiReceiveWait();
     return (SSPBUF);
 }

@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "S1.c" 2
 # 17 "S1.c"
-#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2953,6 +2953,7 @@ char POT1SC[5];
 char PUNTO1[5];
 
 char Ready;
+char slave;
 
 
 
@@ -2960,6 +2961,14 @@ void setup(void);
 
 
 
+
+void __attribute__((picinterrupt(("")))) SPI_Slave_Read(){
+    if (SSPIF == 1){
+        slave = SPI_Read();
+        SPI_Write(POT1SC);
+        SSPIF = 0;
+    }
+}
 
 
 void main(void) {
@@ -2972,13 +2981,30 @@ void main(void) {
 
     while (1) {
         ADC_Init();
+        GIE = 1;
+        PEIE = 1;
+        SSPIF = 0;
+        SSPIE = 1;
+        ADCON1 = 0x07;
+
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        adc=ADC_Read(0,0);
-# 104 "S1.c"
-        SPI_Write(adc);
 
+        _delay((unsigned long)((1)*(8000000/4000.0)));
+        adc=ADC_Read(0,0);
+
+        voltaje = (adc*5.0)/255.0;
+        V1 = (voltaje)*100;
+        POT1A = V1%10;
+        itoa(POT1SA,POT1A,10);
+        POT1B = (V1/10)%10;
+        itoa(POT1SB,POT1B,10);
+        POT1C = (V1/100)%10;
+        itoa(POT1SC,POT1C,10);
+        strcpy(PUNTO1,".");
+        strcat(POT1SB,POT1SA);
+        strcat(PUNTO1,POT1SB);
+        strcat(POT1SC,PUNTO1);
     }
 }
 
@@ -2987,17 +3013,17 @@ void main(void) {
 
 
 void setup(void) {
-    ANSEL = 0b00001001;
+    ANSEL = 0b00100001;
     ANSELH= 0b00000000;
-    TRISA = 0b00001001;
+    ADCON1 = 0x07;
+    TRISA = 0b00100001;
     TRISB = 0b00000000;
     TRISD = 0b00000000;
-    TRISC = 0b00001000;
+    TRISC = 0b00011000;
     TRISE = 0;
 
     PORTA = 0;
     PORTB = 0;
-    PORTC = 0;
     PORTD = 0;
     PORTE = 0;
 

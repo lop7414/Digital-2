@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "S2.c" 2
 # 17 "S2.c"
-#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2919,6 +2919,7 @@ extern char * strrichr(const char *, int);
 char BBB;
 char START;
 char Ready;
+char slave;
 
 
 
@@ -2927,6 +2928,14 @@ void PLUS(void);
 void MINUS(void);
 
 
+
+void __attribute__((picinterrupt(("")))) SPI_Slave_Read(){
+    if (SSPIF == 1){
+        slave = SPI_Read();
+        SPI_Write(BBB);
+        SSPIF = 0;
+    }
+}
 
 
 void main(void) {
@@ -2938,6 +2947,12 @@ void main(void) {
 
 
     while (1) {
+
+        GIE = 1;
+        PEIE = 1;
+        SSPIF = 0;
+        SSPIE = 1;
+        ADCON1 = 0x07;
 
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
@@ -3006,10 +3021,6 @@ void main(void) {
             case 9:
                 BBB = 0;
         }
-
-        SPI_Write(BBB);
-
-
     }
 }
 
@@ -3018,14 +3029,12 @@ void main(void) {
 
 
 void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
+    TRISA5 = 1;
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
     PORTB = 0;
-    TRISC = 0b00001000;
-    PORTC = 0;
+    TRISC = 0b00011000;
     TRISD = 0;
     PORTD = 0;
 }
@@ -3035,12 +3044,12 @@ void setup(void) {
 
 void PLUS(void){
     BBB++;
-    _delay((unsigned long)((100)*(4000000/4000.0)));
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     return;
 }
 
 void MINUS(void){
     BBB--;
-    _delay((unsigned long)((100)*(4000000/4000.0)));
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     return;
 }

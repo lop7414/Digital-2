@@ -14,7 +14,7 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = XT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -39,7 +39,7 @@
 #include <xc.h>
 #include <stdint.h>
 
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 #include "pic16f887.h"
 #include "SPI.h"
@@ -53,9 +53,9 @@
 // Variables
 //******************************************************************************
 char    Ready;
-char    Slave1 = 0;
-char    Slave2 = 0;
-char    Slave3 = 0;
+char    Slave1;
+char    Slave2;
+char    Slave3;
 
 char    Contador;
 char    COMPARE[5];
@@ -75,7 +75,6 @@ void __interrupt() ISR(void){
     }
 }
 
-
 void main(void) {
     
     setup();
@@ -94,31 +93,49 @@ void main(void) {
                
         PORTB = 0;
         
-        PORTBbits.RB0 = 1;
+        PORTBbits.RB0 = 0;
         __delay_ms(1);
         
+        SPI_Write(1);
         Slave1 = SPI_Read();
+        
+        __delay_ms(1);
+        PORTBbits.RB0 = 1;
+        __delay_ms(100);
+        
         Lcd_Write_Char(Slave1);
         
-        __delay_ms(1);
-        PORTBbits.RB0 = 0;
-        Lcd_Write_String(" ");
-        PORTBbits.RB1 = 1;
+        Lcd_Write_String("A");
+        
+//        PORTBbits.RB0 = 0;
+        PORTBbits.RB1 = 0;
         __delay_ms(1);
         
+        SPI_Write(1);
         Slave2 = SPI_Read();
+        
+        __delay_ms(1);
+        PORTBbits.RB1 = 1;
+        __delay_ms(100);
+        
         Lcd_Write_Char(Slave2);
         
-        __delay_ms(1);
-        PORTBbits.RB1 = 0;
-        Lcd_Write_String(" ");
-        PORTBbits.RB2 = 1;
+        Lcd_Write_String("A");
+        
+//        PORTBbits.RB1 = 0;
+        PORTBbits.RB2 = 0;
         __delay_ms(1);
         
+        SPI_Write(1);
         Slave3 = SPI_Read();
+        
+        __delay_ms(1);
+        PORTBbits.RB2 = 1;
+        __delay_ms(100);
+        
         Lcd_Write_Char(Slave3);
         
-        PORTBbits.RB3 = 0;
+        Lcd_Write_String("A");
     }
 }
 
@@ -131,7 +148,7 @@ void setup(void) {
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
     TRISB = 0b00000000; 
-    TRISC = 0b00000000;
+    TRISC = 0b00010000;
     TRISD = 0b00000000;
     TRISE = 0;
     

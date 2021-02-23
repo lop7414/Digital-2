@@ -20,8 +20,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47 ./LCD.h
 [; ;./LCD.h: 47: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"89 Master.c
-[; ;Master.c: 89:         SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"88 Master.c
+[; ;Master.c: 88:         SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1349 32 33 34 35 36 37 .. ]
 [n E1349 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1357 0 128 .. ]
@@ -60,7 +60,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"46 ./SPI.h
+"42 ./SPI.h
+[; ;./SPI.h: 42: void SPI_Write(char a);
+[v _SPI_Write `(v ~T0 @X0 0 ef1`uc ]
+"46
 [; ;./SPI.h: 46: char SPI_Read(void);
 [v _SPI_Read `(uc ~T0 @X0 0 ef ]
 "49 ./LCD.h
@@ -126,7 +129,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 "17 Master.c
-[p x FOSC  =  INTRC_NOCLKOUT ]
+[p x FOSC  =  XT ]
 "18
 [p x WDTE  =  OFF        ]
 "19
@@ -393,23 +396,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Master.c: 55: char Ready;
 [v _Ready `uc ~T0 @X0 1 e ]
 "56
-[; ;Master.c: 56: char Slave1 = 0;
+[; ;Master.c: 56: char Slave1;
 [v _Slave1 `uc ~T0 @X0 1 e ]
-[i _Slave1
--> -> 0 `i `uc
-]
 "57
-[; ;Master.c: 57: char Slave2 = 0;
+[; ;Master.c: 57: char Slave2;
 [v _Slave2 `uc ~T0 @X0 1 e ]
-[i _Slave2
--> -> 0 `i `uc
-]
 "58
-[; ;Master.c: 58: char Slave3 = 0;
+[; ;Master.c: 58: char Slave3;
 [v _Slave3 `uc ~T0 @X0 1 e ]
-[i _Slave3
--> -> 0 `i `uc
-]
 "60
 [; ;Master.c: 60: char Contador;
 [v _Contador `uc ~T0 @X0 1 e ]
@@ -445,159 +439,184 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"79
-[; ;Master.c: 79: void main(void) {
+"78
+[; ;Master.c: 78: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"81
-[; ;Master.c: 81:     setup();
+"80
+[; ;Master.c: 80:     setup();
 [e ( _setup ..  ]
-"87
-[; ;Master.c: 87:     while (1) {
+"86
+[; ;Master.c: 86:     while (1) {
 [e :U 147 ]
 {
-"88
-[; ;Master.c: 88:         Lcd_Init();
+"87
+[; ;Master.c: 87:         Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"89
-[; ;Master.c: 89:         SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"88
+[; ;Master.c: 88:         SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _SPI_Init (4 , , , . `E1349 0 . `E1357 0 . `E1361 1 . `E1365 0 ]
-"90
-[; ;Master.c: 90:         SERIAL_Init();
+"89
+[; ;Master.c: 89:         SERIAL_Init();
 [e ( _SERIAL_Init ..  ]
-"92
-[; ;Master.c: 92:         Lcd_Write_String("S1    S2    S3  ");
+"91
+[; ;Master.c: 91:         Lcd_Write_String("S1    S2    S3  ");
 [e ( _Lcd_Write_String (1 :s 1C ]
-"93
-[; ;Master.c: 93:         Lcd_Cmd(0xC0);
+"92
+[; ;Master.c: 92:         Lcd_Cmd(0xC0);
 [e ( _Lcd_Cmd (1 -> -> 192 `i `uc ]
-"95
-[; ;Master.c: 95:         PORTB = 0;
+"94
+[; ;Master.c: 94:         PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
+"96
+[; ;Master.c: 96:         PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
 "97
-[; ;Master.c: 97:         PORTBbits.RB0 = 1;
-[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
-"98
-[; ;Master.c: 98:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Master.c: 97:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"99
+[; ;Master.c: 99:         SPI_Write(1);
+[e ( _SPI_Write (1 -> -> 1 `i `uc ]
 "100
 [; ;Master.c: 100:         Slave1 = SPI_Read();
 [e = _Slave1 ( _SPI_Read ..  ]
-"101
-[; ;Master.c: 101:         Lcd_Write_Char(Slave1);
-[e ( _Lcd_Write_Char (1 _Slave1 ]
+"102
+[; ;Master.c: 102:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "103
-[; ;Master.c: 103:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Master.c: 103:         PORTBbits.RB0 = 1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "104
-[; ;Master.c: 104:         PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"105
-[; ;Master.c: 105:         Lcd_Write_String(" ");
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;Master.c: 104:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "106
-[; ;Master.c: 106:         PORTBbits.RB1 = 1;
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"107
-[; ;Master.c: 107:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"109
-[; ;Master.c: 109:         Slave2 = SPI_Read();
-[e = _Slave2 ( _SPI_Read ..  ]
-"110
-[; ;Master.c: 110:         Lcd_Write_Char(Slave2);
-[e ( _Lcd_Write_Char (1 _Slave2 ]
-"112
-[; ;Master.c: 112:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"113
-[; ;Master.c: 113:         PORTBbits.RB1 = 0;
+[; ;Master.c: 106:         Lcd_Write_Char(Slave1);
+[e ( _Lcd_Write_Char (1 _Slave1 ]
+"108
+[; ;Master.c: 108:         Lcd_Write_String("A");
+[e ( _Lcd_Write_String (1 :s 2C ]
+"111
+[; ;Master.c: 111:         PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"112
+[; ;Master.c: 112:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "114
-[; ;Master.c: 114:         Lcd_Write_String(" ");
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;Master.c: 114:         SPI_Write(1);
+[e ( _SPI_Write (1 -> -> 1 `i `uc ]
 "115
-[; ;Master.c: 115:         PORTBbits.RB2 = 1;
-[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
-"116
-[; ;Master.c: 116:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Master.c: 115:         Slave2 = SPI_Read();
+[e = _Slave2 ( _SPI_Read ..  ]
+"117
+[; ;Master.c: 117:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "118
-[; ;Master.c: 118:         Slave3 = SPI_Read();
-[e = _Slave3 ( _SPI_Read ..  ]
+[; ;Master.c: 118:         PORTBbits.RB1 = 1;
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
 "119
-[; ;Master.c: 119:         Lcd_Write_Char(Slave3);
-[e ( _Lcd_Write_Char (1 _Slave3 ]
+[; ;Master.c: 119:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "121
-[; ;Master.c: 121:         PORTBbits.RB3 = 0;
-[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-"122
-[; ;Master.c: 122:     }
+[; ;Master.c: 121:         Lcd_Write_Char(Slave2);
+[e ( _Lcd_Write_Char (1 _Slave2 ]
+"123
+[; ;Master.c: 123:         Lcd_Write_String("A");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"126
+[; ;Master.c: 126:         PORTBbits.RB2 = 0;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+"127
+[; ;Master.c: 127:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"129
+[; ;Master.c: 129:         SPI_Write(1);
+[e ( _SPI_Write (1 -> -> 1 `i `uc ]
+"130
+[; ;Master.c: 130:         Slave3 = SPI_Read();
+[e = _Slave3 ( _SPI_Read ..  ]
+"132
+[; ;Master.c: 132:         _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"133
+[; ;Master.c: 133:         PORTBbits.RB2 = 1;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"134
+[; ;Master.c: 134:         _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"136
+[; ;Master.c: 136:         Lcd_Write_Char(Slave3);
+[e ( _Lcd_Write_Char (1 _Slave3 ]
+"138
+[; ;Master.c: 138:         Lcd_Write_String("A");
+[e ( _Lcd_Write_String (1 :s 4C ]
+"139
+[; ;Master.c: 139:     }
 }
 [e :U 146 ]
 [e $U 147  ]
 [e :U 148 ]
-"123
-[; ;Master.c: 123: }
+"140
+[; ;Master.c: 140: }
 [e :UE 145 ]
 }
-"129
-[; ;Master.c: 129: void setup(void) {
+"146
+[; ;Master.c: 146: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"130
-[; ;Master.c: 130:     ANSEL = 0b00001001;
-[e = _ANSEL -> -> 9 `i `uc ]
-"131
-[; ;Master.c: 131:     ANSELH= 0b00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
-"132
-[; ;Master.c: 132:     TRISA = 0b00001001;
-[e = _TRISA -> -> 9 `i `uc ]
-"133
-[; ;Master.c: 133:     TRISB = 0b00000000;
-[e = _TRISB -> -> 0 `i `uc ]
-"134
-[; ;Master.c: 134:     TRISC = 0b00000000;
-[e = _TRISC -> -> 0 `i `uc ]
-"135
-[; ;Master.c: 135:     TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"136
-[; ;Master.c: 136:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"138
-[; ;Master.c: 138:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"139
-[; ;Master.c: 139:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"140
-[; ;Master.c: 140:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"141
-[; ;Master.c: 141:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"142
-[; ;Master.c: 142:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
-"144
-[; ;Master.c: 144:     PIE1bits.RCIE = 1;
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"145
-[; ;Master.c: 145:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"146
-[; ;Master.c: 146:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "147
-[; ;Master.c: 147: }
+[; ;Master.c: 147:     ANSEL = 0b00001001;
+[e = _ANSEL -> -> 9 `i `uc ]
+"148
+[; ;Master.c: 148:     ANSELH= 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
+"149
+[; ;Master.c: 149:     TRISA = 0b00001001;
+[e = _TRISA -> -> 9 `i `uc ]
+"150
+[; ;Master.c: 150:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"151
+[; ;Master.c: 151:     TRISC = 0b00010000;
+[e = _TRISC -> -> 16 `i `uc ]
+"152
+[; ;Master.c: 152:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
+"153
+[; ;Master.c: 153:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"155
+[; ;Master.c: 155:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"156
+[; ;Master.c: 156:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"157
+[; ;Master.c: 157:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"158
+[; ;Master.c: 158:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"159
+[; ;Master.c: 159:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"161
+[; ;Master.c: 161:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"162
+[; ;Master.c: 162:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"163
+[; ;Master.c: 163:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"164
+[; ;Master.c: 164: }
 [e :UE 149 ]
 }
+[a 2C 65 0 ]
+[a 3C 65 0 ]
+[a 4C 65 0 ]
 [a 1C 83 49 32 32 32 32 83 50 32 32 32 32 83 51 32 32 0 ]
-[a 2C 32 0 ]
-[a 3C 32 0 ]

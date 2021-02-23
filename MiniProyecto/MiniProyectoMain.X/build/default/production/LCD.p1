@@ -272,8 +272,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 18:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
 "19
-[; ;LCD.c: 19:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 19:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "20
 [; ;LCD.c: 20:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
@@ -285,8 +285,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 22:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
 "23
-[; ;LCD.c: 23:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 23:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "24
 [; ;LCD.c: 24:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
@@ -315,8 +315,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 31:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
 "32
-[; ;LCD.c: 32:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 32:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "33
 [; ;LCD.c: 33:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
@@ -430,8 +430,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 65:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
 "66
-[; ;LCD.c: 66:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 66:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "67
 [; ;LCD.c: 67:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
@@ -443,8 +443,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 69:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]
 "70
-[; ;LCD.c: 70:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 70:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "71
 [; ;LCD.c: 71:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
@@ -473,8 +473,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LCD.c: 78:     RE2 = 1;
 [e = _RE2 -> -> 1 `i `b ]
 "79
-[; ;LCD.c: 79:     _delay((unsigned long)((30)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;LCD.c: 79:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "80
 [; ;LCD.c: 80:     RE2 = 0;
 [e = _RE2 -> -> 0 `i `b ]

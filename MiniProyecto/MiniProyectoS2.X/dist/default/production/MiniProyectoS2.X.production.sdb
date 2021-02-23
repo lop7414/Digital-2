@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"76 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\S2.c
+"91 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\S2.c
 [e E1349 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -54,20 +54,26 @@ SPI_ACTIVE_2_IDLE 64
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "66 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\S2.c
+[v _SPI_Slave_Read SPI_Slave_Read `II(v  1 e 1 0 ]
+"75
 [v _main main `(v  1 e 1 0 ]
-"154
+"165
 [v _setup setup `(v  1 e 1 0 ]
-"170
+"179
 [v _PLUS PLUS `(v  1 e 1 0 ]
-"176
+"185
 [v _MINUS MINUS `(v  1 e 1 0 ]
 "8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\SPI.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 "27
 [v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"31
+[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
+"43
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
 "228 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S50 . 1 `uc 1 RB0 1 0 :1:0 
+[s S64 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -77,13 +83,11 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S59 . 1 `S50 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES59  1 e 1 @6 ]
-"290
-[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[u S73 . 1 `S64 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES73  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S80 . 1 `uc 1 RD0 1 0 :1:0 
+[s S94 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -93,10 +97,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S89 . 1 `S80 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES89  1 e 1 @8 ]
-"414
-[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[u S103 . 1 `S94 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES103  1 e 1 @8 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -107,11 +109,9 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-"1664
-[v _TRISE TRISE `VEuc  1 e 1 @137 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S170 . 1 `uc 1 BF 1 0 :1:0 
+[s S183 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -121,43 +121,55 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S179 . 1 `uc 1 . 1 0 :2:0 
+[s S192 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S184 . 1 `uc 1 . 1 0 :2:0 
+[s S197 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S190 . 1 `uc 1 . 1 0 :2:0 
+[s S203 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S195 . 1 `uc 1 . 1 0 :2:0 
+[s S208 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S200 . 1 `uc 1 . 1 0 :2:0 
+[s S213 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S205 . 1 `uc 1 . 1 0 :2:0 
+[s S218 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S210 . 1 `S170 1 . 1 0 `S179 1 . 1 0 `S184 1 . 1 0 `S190 1 . 1 0 `S195 1 . 1 0 `S200 1 . 1 0 `S205 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES210  1 e 1 @148 ]
+[u S223 . 1 `S183 1 . 1 0 `S192 1 . 1 0 `S197 1 . 1 0 `S203 1 . 1 0 `S208 1 . 1 0 `S213 1 . 1 0 `S218 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES223  1 e 1 @148 ]
+"2977
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3896
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"4040
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"4274
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"4277
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"4415
+[v _TRISA5 TRISA5 `VEb  1 e 0 @1069 ]
 "4457
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4460
@@ -168,15 +180,44 @@ SPI_ACTIVE_2_IDLE 64
 [v _BBB BBB `uc  1 e 1 0 ]
 "54
 [v _START START `uc  1 e 1 0 ]
-"66
+"56
+[v _slave slave `uc  1 e 1 0 ]
+"75
 [v _main main `(v  1 e 1 0 ]
 {
-"148
+"159
 } 0
-"154
+"165
 [v _setup setup `(v  1 e 1 0 ]
 {
-"165
+"174
+} 0
+"8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\SPI.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+{
+[v SPI_Init@sType sType `E1349  1 a 1 wreg ]
+[v SPI_Init@sType sType `E1349  1 a 1 wreg ]
+[v SPI_Init@sDataSample sDataSample `E1357  1 p 1 0 ]
+[v SPI_Init@sClockIdle sClockIdle `E1361  1 p 1 1 ]
+[v SPI_Init@sTransmitEdge sTransmitEdge `E1365  1 p 1 2 ]
+"10
+[v SPI_Init@sType sType `E1349  1 a 1 4 ]
+"25
+} 0
+"179 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\S2.c
+[v _PLUS PLUS `(v  1 e 1 0 ]
+{
+"183
+} 0
+"185
+[v _MINUS MINUS `(v  1 e 1 0 ]
+{
+"189
+} 0
+"66
+[v _SPI_Slave_Read SPI_Slave_Read `II(v  1 e 1 0 ]
+{
+"72
 } 0
 "27 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\SPI.c
 [v _SPI_Write SPI_Write `(v  1 e 1 0 ]
@@ -186,25 +227,13 @@ SPI_ACTIVE_2_IDLE 64
 [v SPI_Write@a a `uc  1 a 1 0 ]
 "29
 } 0
-"8
-[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+"43
+[v _SPI_Read SPI_Read `(uc  1 e 1 0 ]
 {
-[v SPI_Init@sType sType `E1349  1 a 1 wreg ]
-[v SPI_Init@sType sType `E1349  1 a 1 wreg ]
-[v SPI_Init@sDataSample sDataSample `E1357  1 p 1 0 ]
-[v SPI_Init@sClockIdle sClockIdle `E1361  1 p 1 1 ]
-[v SPI_Init@sTransmitEdge sTransmitEdge `E1365  1 p 1 2 ]
-"10
-[v SPI_Init@sType sType `E1349  1 a 1 3 ]
-"25
+"46
 } 0
-"170 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS2.X\S2.c
-[v _PLUS PLUS `(v  1 e 1 0 ]
+"31
+[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
 {
-"174
-} 0
-"176
-[v _MINUS MINUS `(v  1 e 1 0 ]
-{
-"180
+"34
 } 0

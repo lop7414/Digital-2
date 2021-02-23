@@ -14,7 +14,7 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+#pragma config FOSC = XT// Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
@@ -39,7 +39,7 @@
 #include <xc.h>
 #include <stdint.h>
 
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 
 #include "pic16f887.h"
 #include "SPI.h"
@@ -50,9 +50,10 @@
 //******************************************************************************
 // Variables
 //******************************************************************************
-char BBB;
-char START;
-char Ready;
+char    BBB;
+char    START;
+char    Ready;
+char    slave;
 //******************************************************************************
 // Funciones
 //******************************************************************************
@@ -62,6 +63,14 @@ void MINUS(void);
 //******************************************************************************
 // Main
 //******************************************************************************
+void __interrupt() SPI_Slave_Read(){
+    if (SSPIF == 1){
+        slave = SPI_Read();
+        SPI_Write(BBB);
+        SSPIF = 0;
+    }
+}
+
 
 void main(void) {
     
@@ -72,6 +81,12 @@ void main(void) {
 //**************************************************************************
         
     while (1) {
+        
+        GIE = 1;
+        PEIE = 1;
+        SSPIF = 0;
+        SSPIE = 1;
+        ADCON1 = 0x07;
         
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         
@@ -140,10 +155,6 @@ void main(void) {
             case 9:
                 BBB = 0;
         }
-        
-        SPI_Write(BBB);
-            
-         
     }
 }
 
@@ -152,14 +163,12 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    TRISE = 0;
-    PORTE = 0;
+    TRISA5 = 1;
     ANSEL = 0;
     ANSELH = 0;
     TRISB = 0;
     PORTB = 0;
-    TRISC = 0b00001000;
-    PORTC = 0;
+    TRISC = 0b00011000;
     TRISD = 0;
     PORTD = 0;
 }

@@ -8,7 +8,7 @@
 # 2 "<built-in>" 2
 # 1 "S3.c" 2
 # 17 "S3.c"
-#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config FOSC = XT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
@@ -2918,6 +2918,7 @@ extern char * strrichr(const char *, int);
 
 char Data;
 char Ready;
+char slave;
 
 
 
@@ -2925,6 +2926,14 @@ void setup(void);
 
 
 
+
+void __attribute__((picinterrupt(("")))) SPI_Slave_Read(){
+    if (SSPIF == 1){
+        slave = SPI_Read();
+        SPI_Write(Data);
+        SSPIF = 0;
+    }
+}
 
 
 void main(void) {
@@ -2937,11 +2946,13 @@ void main(void) {
 
     while (1) {
 
+        GIE = 1;
+        PEIE = 1;
+        SSPIF = 0;
+        SSPIE = 1;
+        ADCON1 = 0x07;
+
         SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
-        Data = 0;
-
-        SPI_Write(Data);
     }
 }
 
@@ -2950,11 +2961,14 @@ void main(void) {
 
 
 void setup(void) {
-    ANSEL = 0b00001001;
-    ANSELH= 0b00000000;
-    TRISA = 0b00001001;
+    TRISA5 = 1;
     TRISB = 0b00000000;
-    TRISC = 0b00001000;
+    TRISC = 0b00011000;
     TRISD = 0b00000000;
     TRISE = 0;
+
+    PORTA = 0;
+    PORTB = 0;
+    PORTD = 0;
+    PORTE = 0;
 }
