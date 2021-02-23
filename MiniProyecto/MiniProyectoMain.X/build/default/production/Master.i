@@ -2645,56 +2645,16 @@ typedef uint16_t uintptr_t;
 
 
 # 1 "./SPI.h" 1
-# 45 "Master.c" 2
-
-# 1 "./LCD.h" 1
-# 41 "./LCD.h"
-void Lcd_Cmd(char a);
-
-void Lcd_Clear(void);
-
-void Lcd_Set_Cursor(char a, char b);
-
-void Lcd_Init(void);
-
-void Lcd_Write_Char(char a);
-
-void Lcd_Write_String(char *a);
-
-void Lcd_Shift_Right(void);
-
-void Lcd_Shift_Left(void);
-# 46 "Master.c" 2
-
-# 1 "./UART.h" 1
 
 
 
 
 
-
-
-int O;
-int Destination;
 
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 12 "./UART.h" 2
-
-
-
-
-int CONTADOR(int n);
-
-void SERIAL_Init(void);
-
-uint8_t UART_READ();
-
-uint8_t UART_TX_Empty();
-
-void UART_Write(uint8_t a);
-# 47 "Master.c" 2
+# 9 "./SPI.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2793,7 +2753,67 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 48 "Master.c" 2
+# 10 "./SPI.h" 2
+
+
+void SPI_Init(unsigned char a);
+
+void SPI_Write(char a);
+
+void SPI_Ready(unsigned char a);
+
+void SPI_Read(char a);
+# 45 "Master.c" 2
+
+# 1 "./LCD.h" 1
+# 41 "./LCD.h"
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
+# 46 "Master.c" 2
+
+# 1 "./UART.h" 1
+
+
+
+
+
+
+
+int O;
+int Destination;
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 12 "./UART.h" 2
+
+
+
+
+int CONTADOR(int n);
+
+void SERIAL_Init(void);
+
+uint8_t UART_READ();
+
+uint8_t UART_TX_Empty();
+
+void UART_Write(uint8_t a);
+# 47 "Master.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2917,7 +2937,10 @@ extern char * strrichr(const char *, int);
 
 
 
-
+char Ready;
+char Slave1 = 0;
+char Slave2 = 0;
+char Slave3 = 0;
 
 char Contador;
 char COMPARE[5];
@@ -2948,8 +2971,33 @@ void main(void) {
 
     while (1) {
         Lcd_Init();
+        SPI_Init(0);
+        SERIAL_Init();
 
         Lcd_Write_String("S1    S2    S3  ");
+
+        SPI_Ready(Ready);
+
+        PORTB = 0;
+        PORTBbits.RB0 = 1;
+        SPI_Read(Slave1);
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTBbits.RB0 = 0;
+        PORTBbits.RB1 = 1;
+        SPI_Read(Slave2);
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        PORTBbits.RB1 = 0;
+        PORTBbits.RB2 = 1;
+        SPI_Read(Slave3);
+
+        PORTB = 0;
+
+        Lcd_Cmd(0xC0);
+        Lcd_Write_Char(Slave1);
+        Lcd_Write_String("L ");
+        Lcd_Write_String(Slave2);
+        Lcd_Write_String(" ");
+        Lcd_Write_String(Slave3);
     }
 }
 
@@ -2962,6 +3010,7 @@ void setup(void) {
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
     TRISB = 0b00000000;
+    TRISC = 0b00000000;
     TRISD = 0b00000000;
     TRISE = 0;
 

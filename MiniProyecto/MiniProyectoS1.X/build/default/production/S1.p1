@@ -1,11 +1,14 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"68 S1.c
-[; ;S1.c: 68: void setup(void);
+"70 S1.c
+[; ;S1.c: 70: void setup(void);
 [v _setup `(v ~T0 @X0 0 ef ]
 "17 ./ADC.h
 [; ;./ADC.h: 17: void ADC_Init(void);
 [v _ADC_Init `(v ~T0 @X0 0 ef ]
+"12 ./SPI.h
+[; ;./SPI.h: 12: void SPI_Init(unsigned char a);
+[v _SPI_Init `(v ~T0 @X0 0 ef1`uc ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
@@ -22,6 +25,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h: 36: extern char * strcat(char *, const char *);
 [v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"16 ./SPI.h
+[; ;./SPI.h: 16: void SPI_Ready(unsigned char a);
+[v _SPI_Ready `(v ~T0 @X0 0 ef1`uc ]
+"14
+[; ;./SPI.h: 14: void SPI_Write(char a);
+[v _SPI_Write `(v ~T0 @X0 0 ef1`uc ]
 "3387 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
@@ -358,131 +367,143 @@ Version 4.0 HI-TECH Software Intermediate Code
 "64
 [; ;S1.c: 64: char PUNTO1[5];
 [v _PUNTO1 `uc ~T0 @X0 -> 5 `i e ]
+"66
+[; ;S1.c: 66: char Ready;
+[v _Ready `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"74
-[; ;S1.c: 74: void main(void) {
+"76
+[; ;S1.c: 76: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"76
-[; ;S1.c: 76:     setup();
+"78
+[; ;S1.c: 78:     setup();
 [e ( _setup ..  ]
-"82
-[; ;S1.c: 82:     while (1) {
+"84
+[; ;S1.c: 84:     while (1) {
 [e :U 145 ]
 {
-"83
-[; ;S1.c: 83:         ADC_Init();
-[e ( _ADC_Init ..  ]
 "85
-[; ;S1.c: 85:         _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;S1.c: 85:         ADC_Init();
+[e ( _ADC_Init ..  ]
 "86
-[; ;S1.c: 86:         adc=ADC_Read(0,0);
-[e = _adc ( _ADC_Read (2 , -> 0 `i -> 0 `i ]
+[; ;S1.c: 86:         SPI_Init(3);
+[e ( _SPI_Init (1 -> -> 3 `i `uc ]
 "88
-[; ;S1.c: 88:         voltaje = (adc*5.0)/255.0;
-[e = _voltaje -> / * -> -> _adc `i `d .5.0 .255.0 `f ]
+[; ;S1.c: 88:         _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "89
-[; ;S1.c: 89:         V1 = (voltaje)*100;
-[e = _V1 -> * _voltaje -> -> 100 `i `f `i ]
-"90
-[; ;S1.c: 90:         POT1A = V1%10;
-[e = _POT1A % _V1 -> 10 `i ]
+[; ;S1.c: 89:         adc=ADC_Read(0,0);
+[e = _adc ( _ADC_Read (2 , -> 0 `i -> 0 `i ]
 "91
-[; ;S1.c: 91:         itoa(POT1SA,POT1A,10);
-[e ( _itoa (3 , , &U _POT1SA _POT1A -> 10 `i ]
+[; ;S1.c: 91:         voltaje = (adc*5.0)/255.0;
+[e = _voltaje -> / * -> -> _adc `i `d .5.0 .255.0 `f ]
 "92
-[; ;S1.c: 92:         POT1B = (V1/10)%10;
-[e = _POT1B % / _V1 -> 10 `i -> 10 `i ]
+[; ;S1.c: 92:         V1 = (voltaje)*100;
+[e = _V1 -> * _voltaje -> -> 100 `i `f `i ]
 "93
-[; ;S1.c: 93:         itoa(POT1SB,POT1B,10);
-[e ( _itoa (3 , , &U _POT1SB _POT1B -> 10 `i ]
+[; ;S1.c: 93:         POT1A = V1%10;
+[e = _POT1A % _V1 -> 10 `i ]
 "94
-[; ;S1.c: 94:         POT1C = (V1/100)%10;
-[e = _POT1C % / _V1 -> 100 `i -> 10 `i ]
+[; ;S1.c: 94:         itoa(POT1SA,POT1A,10);
+[e ( _itoa (3 , , &U _POT1SA _POT1A -> 10 `i ]
 "95
-[; ;S1.c: 95:         itoa(POT1SC,POT1C,10);
-[e ( _itoa (3 , , &U _POT1SC _POT1C -> 10 `i ]
+[; ;S1.c: 95:         POT1B = (V1/10)%10;
+[e = _POT1B % / _V1 -> 10 `i -> 10 `i ]
 "96
-[; ;S1.c: 96:         strcpy(PUNTO1,".");
-[e ( _strcpy (2 , &U _PUNTO1 :s 1C ]
+[; ;S1.c: 96:         itoa(POT1SB,POT1B,10);
+[e ( _itoa (3 , , &U _POT1SB _POT1B -> 10 `i ]
 "97
-[; ;S1.c: 97:         strcat(POT1SB,POT1SA);
-[e ( _strcat (2 , &U _POT1SB -> &U _POT1SA `*Cuc ]
+[; ;S1.c: 97:         POT1C = (V1/100)%10;
+[e = _POT1C % / _V1 -> 100 `i -> 10 `i ]
 "98
-[; ;S1.c: 98:         strcat(PUNTO1,POT1SB);
-[e ( _strcat (2 , &U _PUNTO1 -> &U _POT1SB `*Cuc ]
+[; ;S1.c: 98:         itoa(POT1SC,POT1C,10);
+[e ( _itoa (3 , , &U _POT1SC _POT1C -> 10 `i ]
 "99
-[; ;S1.c: 99:         strcat(POT1SC,PUNTO1);
-[e ( _strcat (2 , &U _POT1SC -> &U _PUNTO1 `*Cuc ]
+[; ;S1.c: 99:         strcpy(PUNTO1,".");
+[e ( _strcpy (2 , &U _PUNTO1 :s 1C ]
 "100
-[; ;S1.c: 100:     }
+[; ;S1.c: 100:         strcat(POT1SB,POT1SA);
+[e ( _strcat (2 , &U _POT1SB -> &U _POT1SA `*Cuc ]
+"101
+[; ;S1.c: 101:         strcat(PUNTO1,POT1SB);
+[e ( _strcat (2 , &U _PUNTO1 -> &U _POT1SB `*Cuc ]
+"102
+[; ;S1.c: 102:         strcat(POT1SC,PUNTO1);
+[e ( _strcat (2 , &U _POT1SC -> &U _PUNTO1 `*Cuc ]
+"104
+[; ;S1.c: 104:         SPI_Ready(Ready);
+[e ( _SPI_Ready (1 -> _Ready `uc ]
+"106
+[; ;S1.c: 106:         SPI_Write(POT1SC);
+[e ( _SPI_Write (1 -> &U _POT1SC `uc ]
+"108
+[; ;S1.c: 108:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"101
-[; ;S1.c: 101: }
+"109
+[; ;S1.c: 109: }
 [e :UE 143 ]
 }
-"107
-[; ;S1.c: 107: void setup(void) {
+"115
+[; ;S1.c: 115: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"108
-[; ;S1.c: 108:     ANSEL = 0b00001001;
-[e = _ANSEL -> -> 9 `i `uc ]
-"109
-[; ;S1.c: 109:     ANSELH= 0b00000000;
-[e = _ANSELH -> -> 0 `i `uc ]
-"110
-[; ;S1.c: 110:     TRISA = 0b00001001;
-[e = _TRISA -> -> 9 `i `uc ]
-"111
-[; ;S1.c: 111:     TRISB = 0b00000000;
-[e = _TRISB -> -> 0 `i `uc ]
-"112
-[; ;S1.c: 112:     TRISD = 0b00000000;
-[e = _TRISD -> -> 0 `i `uc ]
-"113
-[; ;S1.c: 113:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"115
-[; ;S1.c: 115:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
 "116
-[; ;S1.c: 116:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;S1.c: 116:     ANSEL = 0b00001001;
+[e = _ANSEL -> -> 9 `i `uc ]
 "117
-[; ;S1.c: 117:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;S1.c: 117:     ANSELH= 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
 "118
-[; ;S1.c: 118:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;S1.c: 118:     TRISA = 0b00001001;
+[e = _TRISA -> -> 9 `i `uc ]
 "119
-[; ;S1.c: 119:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;S1.c: 119:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"120
+[; ;S1.c: 120:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
 "121
-[; ;S1.c: 121:     OSCCONbits.IRCF = 0b110;
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-"122
-[; ;S1.c: 122:     OSCCONbits.OSTS= 0;
-[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+[; ;S1.c: 121:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "123
-[; ;S1.c: 123:     OSCCONbits.HTS = 0;
-[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+[; ;S1.c: 123:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "124
-[; ;S1.c: 124:     OSCCONbits.LTS = 0;
-[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+[; ;S1.c: 124:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "125
-[; ;S1.c: 125:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+[; ;S1.c: 125:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
 "126
-[; ;S1.c: 126: }
+[; ;S1.c: 126:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"127
+[; ;S1.c: 127:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"129
+[; ;S1.c: 129:     OSCCONbits.IRCF = 0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
+"130
+[; ;S1.c: 130:     OSCCONbits.OSTS= 0;
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
+"131
+[; ;S1.c: 131:     OSCCONbits.HTS = 0;
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+"132
+[; ;S1.c: 132:     OSCCONbits.LTS = 0;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+"133
+[; ;S1.c: 133:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"134
+[; ;S1.c: 134: }
 [e :UE 147 ]
 }
 [a 1C 46 0 ]

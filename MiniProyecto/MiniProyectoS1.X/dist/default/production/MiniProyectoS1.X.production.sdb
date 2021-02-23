@@ -39,10 +39,16 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"74 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+"76 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 [v _main main `(v  1 e 1 0 ]
-"107
+"115
 [v _setup setup `(v  1 e 1 0 ]
+"8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+"51
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"56
+[v _SPI_Ready SPI_Ready `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
@@ -53,7 +59,7 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S181 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S197 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -62,17 +68,21 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S189 . 1 `S181 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES189  1 e 1 @12 ]
+[u S205 . 1 `S197 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES205  1 e 1 @12 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S120 . 1 `uc 1 ADON 1 0 :1:0 
+[s S136 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S125 . 1 `uc 1 . 1 0 :1:0 
+[s S141 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -81,49 +91,106 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S134 . 1 `uc 1 . 1 0 :1:0 
+[s S150 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S137 . 1 `uc 1 . 1 0 :1:0 
+[s S153 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S140 . 1 `S120 1 . 1 0 `S125 1 . 1 0 `S134 1 . 1 0 `S137 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES140  1 e 1 @31 ]
+[u S156 . 1 `S136 1 . 1 0 `S141 1 . 1 0 `S150 1 . 1 0 `S153 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES156  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S245 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1557
+[u S254 . 1 `S245 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES254  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S72 . 1 `uc 1 SCS 1 0 :1:0 
+[s S87 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S78 . 1 `uc 1 . 1 0 :4:0 
+[s S93 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S83 . 1 `S72 1 . 1 0 `S78 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES83  1 e 1 @143 ]
-[s S166 . 1 `uc 1 . 1 0 :4:0 
+[u S98 . 1 `S87 1 . 1 0 `S93 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES98  1 e 1 @143 ]
+[s S266 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2231
+[s S275 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S280 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S286 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S291 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S296 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S301 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S306 . 1 `S266 1 . 1 0 `S275 1 . 1 0 `S280 1 . 1 0 `S286 1 . 1 0 `S291 1 . 1 0 `S296 1 . 1 0 `S301 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES306  1 e 1 @148 ]
+[s S182 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S172 . 1 `S166 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES172  1 e 1 @159 ]
+[u S188 . 1 `S182 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES188  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"4277
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "54 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 [v _adc adc `uc  1 e 1 0 ]
 "56
@@ -144,10 +211,10 @@
 [v _POT1SC POT1SC `[5]uc  1 e 5 0 ]
 "64
 [v _PUNTO1 PUNTO1 `[5]uc  1 e 5 0 ]
-"74
+"76
 [v _main main `(v  1 e 1 0 ]
 {
-"101
+"109
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\strcpy.c
 [v _strcpy strcpy `(*.4uc  1 e 1 0 ]
@@ -175,10 +242,10 @@
 [v strcat@to to `*.4uc  1 a 1 2 ]
 "26
 } 0
-"107 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
+"115 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"126
+"134
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\itoa.c
 [v _itoa itoa `(*.4uc  1 e 1 0 ]
@@ -256,17 +323,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S523 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S676 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S528 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S531 . 4 `l 1 i 4 0 `d 1 f 4 0 `S523 1 fAsBytes 4 0 `S528 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S531  1 a 4 20 ]
+[s S681 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S684 . 4 `l 1 i 4 0 `d 1 f 4 0 `S676 1 fAsBytes 4 0 `S681 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S684  1 a 4 20 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 14 ]
-[s S600 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S753 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S603 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S600 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S603  1 a 2 24 ]
+[u S756 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S753 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S756  1 a 2 24 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 19 ]
 "11
@@ -335,6 +402,29 @@
 [v ___awdiv@divisor divisor `i  1 p 2 0 ]
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
+} 0
+"51 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+{
+[v SPI_Write@a a `uc  1 a 1 wreg ]
+[v SPI_Write@a a `uc  1 a 1 wreg ]
+[v SPI_Write@a a `uc  1 a 1 0 ]
+"54
+} 0
+"56
+[v _SPI_Ready SPI_Ready `(v  1 e 1 0 ]
+{
+[v SPI_Ready@a a `uc  1 a 1 wreg ]
+[v SPI_Ready@a a `uc  1 a 1 wreg ]
+"63
+} 0
+"8
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+{
+[v SPI_Init@a a `uc  1 a 1 wreg ]
+[v SPI_Init@a a `uc  1 a 1 wreg ]
+[v SPI_Init@a a `uc  1 a 1 2 ]
+"49
 } 0
 "17 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\ADC.c
 [v _ADC_Read ADC_Read `(uc  1 e 1 0 ]

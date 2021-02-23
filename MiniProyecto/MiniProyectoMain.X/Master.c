@@ -52,7 +52,10 @@
 //******************************************************************************
 // Variables
 //******************************************************************************
-
+char    Ready;
+char    Slave1 = 0;
+char    Slave2 = 0;
+char    Slave3 = 0;
 
 char    Contador;
 char    COMPARE[5];
@@ -83,8 +86,33 @@ void main(void) {
         
     while (1) {
         Lcd_Init();
+        SPI_Init(0);
+        SERIAL_Init();
         
         Lcd_Write_String("S1    S2    S3  ");
+                
+        SPI_Ready(Ready);
+               
+        PORTB = 0;
+        PORTBbits.RB0 = 1;
+        SPI_Read(Slave1);
+        __delay_ms(1);
+        PORTBbits.RB0 = 0;
+        PORTBbits.RB1 = 1;
+        SPI_Read(Slave2);
+        __delay_ms(1);
+        PORTBbits.RB1 = 0;
+        PORTBbits.RB2 = 1;
+        SPI_Read(Slave3);
+        
+        PORTB = 0;
+        
+        Lcd_Cmd(0xC0);
+        Lcd_Write_Char(Slave1);
+        Lcd_Write_String("L ");
+        Lcd_Write_String(Slave2);
+        Lcd_Write_String(" ");
+        Lcd_Write_String(Slave3);
     }
 }
 
@@ -97,6 +125,7 @@ void setup(void) {
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
     TRISB = 0b00000000; 
+    TRISC = 0b00000000;
     TRISD = 0b00000000;
     TRISE = 0;
     

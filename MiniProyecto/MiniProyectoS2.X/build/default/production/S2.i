@@ -2645,7 +2645,16 @@ typedef uint16_t uintptr_t;
 
 
 # 1 "./SPI.h" 1
-# 45 "S2.c" 2
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 9 "./SPI.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2744,7 +2753,18 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 46 "S2.c" 2
+# 10 "./SPI.h" 2
+
+
+void SPI_Init(unsigned char a);
+
+void SPI_Write(char a);
+
+void SPI_Ready(unsigned char a);
+
+void SPI_Read(char a);
+# 45 "S2.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2868,8 +2888,9 @@ extern char * strrichr(const char *, int);
 
 
 
-char BBB = 0;
-char START = 0;
+char BBB;
+char START;
+char Ready;
 
 
 
@@ -2889,6 +2910,9 @@ void main(void) {
 
 
     while (1) {
+
+        SPI_Init(3);
+
         if (PORTBbits.RB1 == 0){
             if (PORTBbits.RB2 == 0){
                 START = 1;
@@ -2954,6 +2978,11 @@ void main(void) {
             case 9:
                 BBB = 0;
         }
+
+        SPI_Ready(Ready);
+
+        SPI_Write(BBB);
+
 
     }
 }

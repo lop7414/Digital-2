@@ -62,6 +62,8 @@ char    POT1SB[5];
 int     POT1C;
 char    POT1SC[5];
 char    PUNTO1[5];
+
+char    Ready;
 //******************************************************************************
 // Funciones
 //******************************************************************************
@@ -81,6 +83,7 @@ void main(void) {
         
     while (1) {
         ADC_Init();
+        SPI_Init(3);
         
         __delay_ms(1);
         adc=ADC_Read(0,0);
@@ -97,6 +100,11 @@ void main(void) {
         strcat(POT1SB,POT1SA);
         strcat(PUNTO1,POT1SB);
         strcat(POT1SC,PUNTO1);
+        
+        SPI_Ready(Ready);
+        
+        SPI_Write(POT1SC);
+            
     }
 }
 

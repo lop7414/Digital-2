@@ -2645,7 +2645,16 @@ typedef uint16_t uintptr_t;
 
 
 # 1 "./SPI.h" 1
-# 45 "S3.c" 2
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 9 "./SPI.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2744,7 +2753,18 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 46 "S3.c" 2
+# 10 "./SPI.h" 2
+
+
+void SPI_Init(unsigned char a);
+
+void SPI_Write(char a);
+
+void SPI_Ready(unsigned char a);
+
+void SPI_Read(char a);
+# 45 "S3.c" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2863,7 +2883,16 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 48 "S3.c" 2
-# 57 "S3.c"
+
+
+
+
+
+char Data;
+char Ready;
+
+
+
 void setup(void);
 
 
@@ -2880,6 +2909,10 @@ void main(void) {
 
     while (1) {
 
+        SPI_Init(3);
+
+        SPI_Ready(Ready);
+        SPI_Write(Data);
     }
 }
 

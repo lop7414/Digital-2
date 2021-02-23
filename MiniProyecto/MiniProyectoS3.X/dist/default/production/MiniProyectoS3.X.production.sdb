@@ -11,10 +11,16 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"63 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
+"64 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
 [v _main main `(v  1 e 1 0 ]
-"80
+"85
 [v _setup setup `(v  1 e 1 0 ]
+"8 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\SPI.c
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+"51
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+"56
+[v _SPI_Ready SPI_Ready `(v  1 e 1 0 ]
 "166 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
@@ -25,39 +31,123 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"843
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"850
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S91 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1557
+[u S100 . 1 `S91 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES100  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S37 . 1 `uc 1 SCS 1 0 :1:0 
+[s S52 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S43 . 1 `uc 1 . 1 0 :4:0 
+[s S58 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S48 . 1 `S37 1 . 1 0 `S43 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES48  1 e 1 @143 ]
+[u S63 . 1 `S52 1 . 1 0 `S58 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES63  1 e 1 @143 ]
+[s S112 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"2231
+[s S121 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S126 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S132 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S137 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S142 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S147 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S152 . 1 `S112 1 . 1 0 `S121 1 . 1 0 `S126 1 . 1 0 `S132 1 . 1 0 `S137 1 . 1 0 `S142 1 . 1 0 `S147 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES152  1 e 1 @148 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"63 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
+"4277
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"64 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
 [v _main main `(v  1 e 1 0 ]
 {
-"74
+"79
 } 0
-"80
+"85
 [v _setup setup `(v  1 e 1 0 ]
 {
-"99
+"104
+} 0
+"51 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\SPI.c
+[v _SPI_Write SPI_Write `(v  1 e 1 0 ]
+{
+[v SPI_Write@a a `uc  1 a 1 wreg ]
+[v SPI_Write@a a `uc  1 a 1 wreg ]
+[v SPI_Write@a a `uc  1 a 1 0 ]
+"54
+} 0
+"56
+[v _SPI_Ready SPI_Ready `(v  1 e 1 0 ]
+{
+[v SPI_Ready@a a `uc  1 a 1 wreg ]
+[v SPI_Ready@a a `uc  1 a 1 wreg ]
+"63
+} 0
+"8
+[v _SPI_Init SPI_Init `(v  1 e 1 0 ]
+{
+[v SPI_Init@a a `uc  1 a 1 wreg ]
+[v SPI_Init@a a `uc  1 a 1 wreg ]
+[v SPI_Init@a a `uc  1 a 1 2 ]
+"49
 } 0

@@ -2645,9 +2645,6 @@ typedef uint16_t uintptr_t;
 
 
 # 1 "./SPI.h" 1
-# 45 "S1.c" 2
-
-# 1 "./ADC.h" 1
 
 
 
@@ -2657,7 +2654,7 @@ typedef uint16_t uintptr_t;
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 9 "./ADC.h" 2
+# 9 "./SPI.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2756,7 +2753,30 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 10 "./ADC.h" 2
+# 10 "./SPI.h" 2
+
+
+void SPI_Init(unsigned char a);
+
+void SPI_Write(char a);
+
+void SPI_Ready(unsigned char a);
+
+void SPI_Read(char a);
+# 45 "S1.c" 2
+
+# 1 "./ADC.h" 1
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 9 "./ADC.h" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2904,6 +2924,8 @@ int POT1C;
 char POT1SC[5];
 char PUNTO1[5];
 
+char Ready;
+
 
 
 void setup(void);
@@ -2922,6 +2944,7 @@ void main(void) {
 
     while (1) {
         ADC_Init();
+        SPI_Init(3);
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
         adc=ADC_Read(0,0);
@@ -2938,6 +2961,11 @@ void main(void) {
         strcat(POT1SB,POT1SA);
         strcat(PUNTO1,POT1SB);
         strcat(POT1SC,PUNTO1);
+
+        SPI_Ready(Ready);
+
+        SPI_Write(POT1SC);
+
     }
 }
 
