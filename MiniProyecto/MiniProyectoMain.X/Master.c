@@ -86,33 +86,39 @@ void main(void) {
         
     while (1) {
         Lcd_Init();
-        SPI_Init(0);
+        SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         SERIAL_Init();
         
         Lcd_Write_String("S1    S2    S3  ");
-                
-        SPI_Ready(Ready);
+        Lcd_Cmd(0xC0);
                
         PORTB = 0;
+        
         PORTBbits.RB0 = 1;
-        SPI_Read(Slave1);
+        __delay_ms(1);
+        
+        Slave1 = SPI_Read();
+        Lcd_Write_Char(Slave1);
+        
         __delay_ms(1);
         PORTBbits.RB0 = 0;
+        Lcd_Write_String(" ");
         PORTBbits.RB1 = 1;
-        SPI_Read(Slave2);
+        __delay_ms(1);
+        
+        Slave2 = SPI_Read();
+        Lcd_Write_Char(Slave2);
+        
         __delay_ms(1);
         PORTBbits.RB1 = 0;
-        PORTBbits.RB2 = 1;
-        SPI_Read(Slave3);
-        
-        PORTB = 0;
-        
-        Lcd_Cmd(0xC0);
-        Lcd_Write_Char(Slave1);
-        Lcd_Write_String("L ");
-        Lcd_Write_String(Slave2);
         Lcd_Write_String(" ");
-        Lcd_Write_String(Slave3);
+        PORTBbits.RB2 = 1;
+        __delay_ms(1);
+        
+        Slave3 = SPI_Read();
+        Lcd_Write_Char(Slave3);
+        
+        PORTBbits.RB3 = 0;
     }
 }
 
@@ -135,11 +141,9 @@ void setup(void) {
     PORTD = 0;
     PORTE = 0;
     
-    OSCCONbits.IRCF = 0b110; //4Mhz
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1; 
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 }
 
 //******************************************************************************

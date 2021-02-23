@@ -2756,13 +2756,41 @@ extern int printf(const char *, ...);
 # 10 "./SPI.h" 2
 
 
-void SPI_Init(unsigned char a);
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+void SPI_Init(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 
 void SPI_Write(char a);
 
-void SPI_Ready(unsigned char a);
+unsigned SPI_Ready(void);
 
-void SPI_Read(char a);
+char SPI_Read(void);
 # 45 "S1.c" 2
 
 # 1 "./ADC.h" 1
@@ -2944,27 +2972,12 @@ void main(void) {
 
     while (1) {
         ADC_Init();
-        SPI_Init(3);
+        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
         adc=ADC_Read(0,0);
-
-        voltaje = (adc*5.0)/255.0;
-        V1 = (voltaje)*100;
-        POT1A = V1%10;
-        itoa(POT1SA,POT1A,10);
-        POT1B = (V1/10)%10;
-        itoa(POT1SB,POT1B,10);
-        POT1C = (V1/100)%10;
-        itoa(POT1SC,POT1C,10);
-        strcpy(PUNTO1,".");
-        strcat(POT1SB,POT1SA);
-        strcat(PUNTO1,POT1SB);
-        strcat(POT1SC,PUNTO1);
-
-        SPI_Ready(Ready);
-
-        SPI_Write(POT1SC);
+# 104 "S1.c"
+        SPI_Write(adc);
 
     }
 }
@@ -2979,6 +2992,7 @@ void setup(void) {
     TRISA = 0b00001001;
     TRISB = 0b00000000;
     TRISD = 0b00000000;
+    TRISC = 0b00001000;
     TRISE = 0;
 
     PORTA = 0;

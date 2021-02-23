@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\MiniProyectoS3.X.production.sym \
   --cmf=dist/default/production\MiniProyectoS3.X.production.cmf -z -Q16F887 \
-  -oC:\Users\flope\AppData\Local\Temp\s8cs.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\flope\AppData\Local\Temp\scjs.3 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/MiniProyectoS3.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\s8cs.o \
+  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\scjs.o \
   dist/default/production\MiniProyectoS3.X.production.o 
 
 Object code version is 3.11
@@ -28,19 +28,18 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\flope\AppData\Local\Temp\s8cs.o
+C:\Users\flope\AppData\Local\Temp\scjs.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\MiniProyectoS3.X.production.o
                 cinit                               7FA      7FA        6      FF4       0
                 config                             2007     2007        2        0       4
-                text4                               7B0      7B0       4A      F60       0
-                text3                               76B      76B        C      ED6       0
-                text2                               764      764        7      EC8       0
-                text1                               792      792       1E      F24       0
-                maintext                            777      777       1B      EEE       0
-                cstackCOMMON                         70       70        3       70       1
-                bssCOMMON                            73       73        2       70       1
+                text3                               7CA      7CA       17      F94       0
+                text2                               7B5      7B5        6      F6A       0
+                text1                               7BB      7BB        F      F76       0
+                maintext                            7E1      7E1       19      FC2       0
+                cstackCOMMON                         70       70        4       70       1
+                bssCOMMON                            74       74        2       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -48,11 +47,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        3         0
                 cinit                               7FA      7FA        6         0
-                text4                               7B0      7B0       4A         0
-                text3                               76B      76B        C         0
-                text2                               764      764        7         0
-                text1                               792      792       1E         0
-                maintext                            777      777       1B         0
+                text3                               7CA      7CA       17         0
+                text2                               7B5      7B5        6         0
+                text1                               7BB      7BB        F         0
+                maintext                            7E1      7E1       19         0
 
         CLASS   STRCODE        
 
@@ -63,8 +61,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        3         1
-                bssCOMMON                            73       73        2         1
+                cstackCOMMON                         70       70        4         1
+                bssCOMMON                            74       74        2         1
 
         CLASS   BANK0          
 
@@ -99,12 +97,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                cstackCOMMON                   000070  000005  000075        70       1  COMMON      1
-                text2                          000764  000007  00076B       EC8       0  CODE        2
-                text3                          00076B  00000C  000777       ED6       0  CODE        2
-                maintext                       000777  00001B  000792       EEE       0  CODE        2
-                text1                          000792  00001E  0007B0       F24       0  CODE        2
-                text4                          0007B0  00004A  0007FA       F60       0  CODE        2
+                cstackCOMMON                   000070  000006  000076        70       1  COMMON      1
+                text2                          0007B5  000006  0007BB       F6A       0  CODE        2
+                text1                          0007BB  00000F  0007CA       F76       0  CODE        2
+                text3                          0007CA  000017  0007E1       F94       0  CODE        2
+                maintext                       0007E1  000019  0007FA       FC2       0  CODE        2
                 cinit                          0007FA  000006  000800       FF4       0  CODE        2
 
 
@@ -115,13 +112,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0763            761           2
+        CODE             0003-07B4            7B2           2
                          0800-1FFF            800
-        COMMON           0075-007D              9           1
-        CONST            0003-0763            100           2
+        COMMON           0076-007D              8           1
+        CONST            0003-07B4            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0763            100           2
+        ENTRY            0003-07B4            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -133,34 +130,33 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0763            761           2
+        STRCODE          0003-07B4            7B2           2
                          0800-1FFF           1800
-        STRING           0003-0763            100           2
+        STRING           0003-07B4            100           2
                          0800-1FFF            100
 
                                   Symbol Table
 
-SPI_Init@a               cstackCOMMON 0072
-SPI_Ready@a              cstackCOMMON 0070
+SPI_Init@sClockIdle      cstackCOMMON 0071
+SPI_Init@sDataSample     cstackCOMMON 0070
+SPI_Init@sTransmitEdge   cstackCOMMON 0072
+SPI_Init@sType           cstackCOMMON 0073
 SPI_Write@a              cstackCOMMON 0070
 _ANSEL                   (abs)        0188
 _ANSELH                  (abs)        0189
-_OSCCONbits              (abs)        008F
-_PORTA                   (abs)        0005
-_PORTB                   (abs)        0006
-_PORTC                   (abs)        0007
-_PORTD                   (abs)        0008
-_PORTE                   (abs)        0009
-_SPI_Init                text4        07B0
-_SPI_Ready               text3        076B
-_SPI_Write               text2        0764
+_Data                    bssCOMMON    0075
+_SPI_Init                text3        07CA
+_SPI_Write               text2        07B5
 _SSPBUF                  (abs)        0013
 _SSPCON                  (abs)        0014
-_SSPIF                   (abs)        0063
+_SSPSTAT                 (abs)        0094
 _SSPSTATbits             (abs)        0094
 _TRISA                   (abs)        0085
 _TRISB                   (abs)        0086
-_TRISCbits               (abs)        0087
+_TRISC                   (abs)        0087
+_TRISC3                  (abs)        043B
+_TRISC4                  (abs)        043C
+_TRISC5                  (abs)        043D
 _TRISD                   (abs)        0088
 _TRISE                   (abs)        0089
 __Habs1                  abs1         0000
@@ -189,7 +185,7 @@ __Hsfr1                  sfr1         0000
 __Hsfr2                  sfr2         0000
 __Hsfr3                  sfr3         0000
 __Hspace_0               (abs)        0800
-__Hspace_1               (abs)        0075
+__Hspace_1               (abs)        0076
 __Hspace_2               (abs)        0000
 __Hspace_3               (abs)        0000
 __Hspace_4               (abs)        4010
@@ -230,7 +226,7 @@ __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
 __S0                     (abs)        0800
-__S1                     (abs)        0075
+__S1                     (abs)        0076
 __S2                     (abs)        0000
 __S3                     (abs)        0000
 ___int_sp                stack        0000
@@ -238,27 +234,24 @@ ___latbits               (abs)        0002
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
-__end_of_SPI_Init        text4        07FA
-__end_of_SPI_Ready       text3        0777
-__end_of_SPI_Write       text2        076B
+__end_of_SPI_Init        text3        07E1
+__end_of_SPI_Write       text2        07BB
 __end_of__initialization cinit        07FC
-__end_of_main            maintext     0792
-__end_of_setup           text1        07B0
+__end_of_main            maintext     07FA
+__end_of_setup           text1        07CA
 __initialization         cinit        07FA
-__pbssCOMMON             bssCOMMON    0073
+__pbssCOMMON             bssCOMMON    0074
 __pcstackCOMMON          cstackCOMMON 0070
-__pmaintext              maintext     0777
-__ptext1                 text1        0792
-__ptext2                 text2        0764
-__ptext3                 text3        076B
-__ptext4                 text4        07B0
+__pmaintext              maintext     07E1
+__ptext1                 text1        07BB
+__ptext2                 text2        07B5
+__ptext3                 text3        07CA
 __size_of_SPI_Init       (abs)        0000
-__size_of_SPI_Ready      (abs)        0000
 __size_of_SPI_Write      (abs)        0000
 __size_of_main           (abs)        0000
 __size_of_setup          (abs)        0000
-_main                    maintext     0777
-_setup                   text1        0792
+_main                    maintext     07E1
+_setup                   text1        07BB
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FC
 intlevel0                functab      0000
@@ -285,7 +278,7 @@ FUNCTION INFORMATION:
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+		wreg, status,2, status,0, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -299,7 +292,6 @@ Total ram usage:        0 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		_SPI_Init
-		_SPI_Ready
 		_SPI_Write
 		_setup
  This function is called by:
@@ -309,7 +301,7 @@ Total ram usage:        0 bytes
 
  *************** function _setup *****************
  Defined at:
-		line 85 in file "S3.c"
+		line 86 in file "S3.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -317,7 +309,7 @@ Total ram usage:        0 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -338,7 +330,7 @@ Total ram usage:        0 bytes
 
  *************** function _SPI_Write *****************
  Defined at:
-		line 51 in file "SPI.c"
+		line 27 in file "SPI.c"
  Parameters:    Size  Location     Type
   a               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -365,56 +357,30 @@ Total ram usage:        1 bytes
  This function uses a non-reentrant model
 
 
- *************** function _SPI_Ready *****************
- Defined at:
-		line 56 in file "SPI.c"
- Parameters:    Size  Location     Type
-  a               1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  a               1    0[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
-      Locals:         0       0       0       0       0
-      Temps:          0       0       0       0       0
-      Totals:         0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
  *************** function _SPI_Init *****************
  Defined at:
 		line 8 in file "SPI.c"
  Parameters:    Size  Location     Type
-  a               1    wreg     unsigned char 
+  sType           1    wreg     enum E1349
+  sDataSample     1    0[COMMON] enum E1357
+  sClockIdle      1    1[COMMON] enum E1361
+  sTransmitEdg    1    2[COMMON] enum E1365
  Auto vars:     Size  Location     Type
-  a               1    2[COMMON] unsigned char 
+  sType           1    3[COMMON] enum E1349
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0
+		wreg, status,2, status,0
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-      Params:         0       0       0       0       0
+      Params:         3       0       0       0       0
       Locals:         1       0       0       0       0
-      Temps:          2       0       0       0       0
-      Totals:         3       0       0       0       0
-Total ram usage:        3 bytes
+      Temps:          0       0       0       0       0
+      Totals:         4       0       0       0       0
+Total ram usage:        4 bytes
  Hardware stack levels used:    1
  This function calls:
 		Nothing
@@ -428,10 +394,10 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 S3.c
-		_main          		CODE           	0777	0000	27
-		_setup         		CODE           	0792	0000	30
+		_main          		CODE           	07E1	0000	25
+		_setup         		CODE           	07BB	0000	15
 
-S3.c estimated size: 57
+S3.c estimated size: 40
 
 shared
 		__initialization		CODE           	07FA	0000	2
@@ -439,9 +405,8 @@ shared
 shared estimated size: 2
 
 SPI.c
-		_SPI_Write     		CODE           	0764	0000	7
-		_SPI_Ready     		CODE           	076B	0000	12
-		_SPI_Init      		CODE           	07B0	0000	74
+		_SPI_Write     		CODE           	07B5	0000	6
+		_SPI_Init      		CODE           	07CA	0000	23
 
-SPI.c estimated size: 93
+SPI.c estimated size: 29
 

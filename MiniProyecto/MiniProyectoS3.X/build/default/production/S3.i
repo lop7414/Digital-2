@@ -2756,13 +2756,41 @@ extern int printf(const char *, ...);
 # 10 "./SPI.h" 2
 
 
-void SPI_Init(unsigned char a);
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+void SPI_Init(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 
 void SPI_Write(char a);
 
-void SPI_Ready(unsigned char a);
+unsigned SPI_Ready(void);
 
-void SPI_Read(char a);
+char SPI_Read(void);
 # 45 "S3.c" 2
 
 
@@ -2909,9 +2937,10 @@ void main(void) {
 
     while (1) {
 
-        SPI_Init(3);
+        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
-        SPI_Ready(Ready);
+        Data = 0;
+
         SPI_Write(Data);
     }
 }
@@ -2925,18 +2954,7 @@ void setup(void) {
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
     TRISB = 0b00000000;
+    TRISC = 0b00001000;
     TRISD = 0b00000000;
     TRISE = 0;
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-
-    OSCCONbits.IRCF = 0b110;
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1;
 }

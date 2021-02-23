@@ -71,9 +71,10 @@ void main(void) {
         
     while (1) {
         
-        SPI_Init(3);
+        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         
-        SPI_Ready(Ready);
+        Data = 0;
+        
         SPI_Write(Data);
     }
 }
@@ -86,21 +87,10 @@ void setup(void) {
     ANSEL = 0b00001001;
     ANSELH= 0b00000000;
     TRISA = 0b00001001;
-    TRISB = 0b00000000; 
+    TRISB = 0b00000000;
+    TRISC = 0b00001000;
     TRISD = 0b00000000;
     TRISE = 0;
-    
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
-    
-    OSCCONbits.IRCF = 0b110; //4Mhz
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1; 
 }
 
 //******************************************************************************

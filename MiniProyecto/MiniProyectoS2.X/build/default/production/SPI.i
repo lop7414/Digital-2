@@ -2733,13 +2733,41 @@ extern int printf(const char *, ...);
 # 10 "./SPI.h" 2
 
 
-void SPI_Init(unsigned char a);
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+void SPI_Init(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 
 void SPI_Write(char a);
 
-void SPI_Ready(unsigned char a);
+unsigned SPI_Ready(void);
 
-void SPI_Read(char a);
+char SPI_Read(void);
 # 2 "SPI.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
@@ -2865,64 +2893,37 @@ extern char * strrichr(const char *, int);
 # 6 "SPI.c" 2
 
 
-void SPI_Init(unsigned char a){
-    switch(a){
-        case 0:
-            TRISCbits.TRISC5 = 0;
-            TRISCbits.TRISC3 = 0;
-            SSPSTATbits.SMP = 0;
-            SSPSTATbits.CKE = 0;
-            SSPSTATbits.BF = 0;
-            SSPCON = 0b00100000;
+void SPI_Init(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    TRISC4 = 1;
 
-
-            break;
-        case 1:
-            TRISCbits.TRISC5 = 0;
-            TRISCbits.TRISC3 = 0;
-            SSPSTATbits.SMP = 0;
-            SSPSTATbits.CKE = 0;
-            SSPSTATbits.BF = 0;
-            SSPCON = 0b00100001;
-
-
-            break;
-        case 2:
-            TRISCbits.TRISC5 = 0;
-            TRISCbits.TRISC3 = 0;
-            SSPSTATbits.SMP = 0;
-            SSPSTATbits.CKE = 0;
-            SSPSTATbits.BF = 0;
-            SSPCON = 0b00100010;
-
-
-            break;
-        case 3:
-            TRISCbits.TRISC5 = 0;
-            TRISCbits.TRISC3 = 1;
-            TRISCbits.TRISC4 = 1;
-            SSPSTATbits.SMP = 0;
-            SSPSTATbits.CKE = 0;
-            SSPSTATbits.BF = 0;
-            SSPCON = 0b00100100;
+    if(sType & 0b00000100)
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
     }
+    else
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
+
+    SSPCON = sType | sClockIdle;
 }
 
 void SPI_Write(char a){
     SSPBUF = a;
-    SSPIF = 0;
 }
 
-void SPI_Ready(unsigned char a){
-    if (SSPSTATbits.BF == 1){
-        a = 1;
-    }
-    else if (SSPSTATbits.BF == 0){
-        a = 0;
-    }
+unsigned SPI_Ready(void){
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
 }
 
-void SPI_Read(char a){
-    a = SSPBUF;
-    SSPIF = 0;
+char SPI_Read(void){
+    while ( !SSPSTATbits.BF );
+    return (SSPBUF);
 }

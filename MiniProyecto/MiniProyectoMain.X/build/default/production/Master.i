@@ -2756,13 +2756,41 @@ extern int printf(const char *, ...);
 # 10 "./SPI.h" 2
 
 
-void SPI_Init(unsigned char a);
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
+
+void SPI_Init(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 
 void SPI_Write(char a);
 
-void SPI_Ready(unsigned char a);
+unsigned SPI_Ready(void);
 
-void SPI_Read(char a);
+char SPI_Read(void);
 # 45 "Master.c" 2
 
 # 1 "./LCD.h" 1
@@ -2971,33 +2999,39 @@ void main(void) {
 
     while (1) {
         Lcd_Init();
-        SPI_Init(0);
+        SPI_Init(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         SERIAL_Init();
 
         Lcd_Write_String("S1    S2    S3  ");
-
-        SPI_Ready(Ready);
+        Lcd_Cmd(0xC0);
 
         PORTB = 0;
+
         PORTBbits.RB0 = 1;
-        SPI_Read(Slave1);
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+        Slave1 = SPI_Read();
+        Lcd_Write_Char(Slave1);
+
         _delay((unsigned long)((1)*(4000000/4000.0)));
         PORTBbits.RB0 = 0;
+        Lcd_Write_String(" ");
         PORTBbits.RB1 = 1;
-        SPI_Read(Slave2);
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+        Slave2 = SPI_Read();
+        Lcd_Write_Char(Slave2);
+
         _delay((unsigned long)((1)*(4000000/4000.0)));
         PORTBbits.RB1 = 0;
-        PORTBbits.RB2 = 1;
-        SPI_Read(Slave3);
-
-        PORTB = 0;
-
-        Lcd_Cmd(0xC0);
-        Lcd_Write_Char(Slave1);
-        Lcd_Write_String("L ");
-        Lcd_Write_String(Slave2);
         Lcd_Write_String(" ");
-        Lcd_Write_String(Slave3);
+        PORTBbits.RB2 = 1;
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+
+        Slave3 = SPI_Read();
+        Lcd_Write_Char(Slave3);
+
+        PORTBbits.RB3 = 0;
     }
 }
 
@@ -3020,9 +3054,7 @@ void setup(void) {
     PORTD = 0;
     PORTE = 0;
 
-    OSCCONbits.IRCF = 0b110;
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1;
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 }

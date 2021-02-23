@@ -73,7 +73,7 @@ void main(void) {
         
     while (1) {
         
-        SPI_Init(3);
+        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         
         if (PORTBbits.RB1 == 0){
             if (PORTBbits.RB2 == 0){
@@ -140,8 +140,6 @@ void main(void) {
             case 9:
                 BBB = 0;
         }
-         
-        SPI_Ready(Ready);
         
         SPI_Write(BBB);
             
@@ -160,16 +158,10 @@ void setup(void) {
     ANSELH = 0;
     TRISB = 0;
     PORTB = 0;
-    TRISC = 0;
+    TRISC = 0b00001000;
     PORTC = 0;
     TRISD = 0;
     PORTD = 0;
-    
-    OSCCONbits.IRCF = 0b110; //4Mhz
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1; 
 }
 
 //******************************************************************************

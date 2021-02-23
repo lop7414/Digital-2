@@ -83,27 +83,25 @@ void main(void) {
         
     while (1) {
         ADC_Init();
-        SPI_Init(3);
+        SPI_Init(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
         
         __delay_ms(1);
         adc=ADC_Read(0,0);
         
-        voltaje = (adc*5.0)/255.0;
-        V1 = (voltaje)*100;
-        POT1A = V1%10;
-        itoa(POT1SA,POT1A,10);
-        POT1B = (V1/10)%10;
-        itoa(POT1SB,POT1B,10);
-        POT1C = (V1/100)%10;
-        itoa(POT1SC,POT1C,10);
-        strcpy(PUNTO1,".");
-        strcat(POT1SB,POT1SA);
-        strcat(PUNTO1,POT1SB);
-        strcat(POT1SC,PUNTO1);
+//        voltaje = (adc*5.0)/255.0;
+//        V1 = (voltaje)*100;
+//        POT1A = V1%10;
+//        itoa(POT1SA,POT1A,10);
+//        POT1B = (V1/10)%10;
+//        itoa(POT1SB,POT1B,10);
+//        POT1C = (V1/100)%10;
+//        itoa(POT1SC,POT1C,10);
+//        strcpy(PUNTO1,".");
+//        strcat(POT1SB,POT1SA);
+//        strcat(PUNTO1,POT1SB);
+//        strcat(POT1SC,PUNTO1);
         
-        SPI_Ready(Ready);
-        
-        SPI_Write(POT1SC);
+        SPI_Write(adc);
             
     }
 }
@@ -118,6 +116,7 @@ void setup(void) {
     TRISA = 0b00001001;
     TRISB = 0b00000000; 
     TRISD = 0b00000000;
+    TRISC = 0b00001000;
     TRISE = 0;
     
     PORTA = 0;
