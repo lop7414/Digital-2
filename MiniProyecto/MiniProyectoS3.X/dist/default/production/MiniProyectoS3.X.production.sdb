@@ -54,7 +54,7 @@ SPI_ACTIVE_2_IDLE 64
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "64 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
-[v _SPI_Slave_Read SPI_Slave_Read `II(v  1 e 1 0 ]
+[v _ISR ISR `II(v  1 e 1 0 ]
 "73
 [v _main main `(v  1 e 1 0 ]
 "97
@@ -177,7 +177,7 @@ SPI_ACTIVE_2_IDLE 64
 "25
 } 0
 "64 C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
-[v _SPI_Slave_Read SPI_Slave_Read `II(v  1 e 1 0 ]
+[v _ISR ISR `II(v  1 e 1 0 ]
 {
 "70
 } 0

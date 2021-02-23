@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flope\AppData\Local\Temp\s2is.o
+$C:\Users\flope\AppData\Local\Temp\sd60.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -75,14 +75,14 @@ STRING 94-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MiniProyectoS3.X.production.o
-F cinit CODE >631:C:\Users\flope\AppData\Local\Temp\s2is.s
-F cinit CODE >634:C:\Users\flope\AppData\Local\Temp\s2is.s
-F cinit CODE >651:C:\Users\flope\AppData\Local\Temp\s2is.s
-10 cinit CODE >652:C:\Users\flope\AppData\Local\Temp\s2is.s
-11 cinit CODE >653:C:\Users\flope\AppData\Local\Temp\s2is.s
-12 cinit CODE >659:C:\Users\flope\AppData\Local\Temp\s2is.s
-12 cinit CODE >661:C:\Users\flope\AppData\Local\Temp\s2is.s
-13 cinit CODE >662:C:\Users\flope\AppData\Local\Temp\s2is.s
+F cinit CODE >631:C:\Users\flope\AppData\Local\Temp\sd60.s
+F cinit CODE >634:C:\Users\flope\AppData\Local\Temp\sd60.s
+F cinit CODE >651:C:\Users\flope\AppData\Local\Temp\sd60.s
+10 cinit CODE >652:C:\Users\flope\AppData\Local\Temp\sd60.s
+11 cinit CODE >653:C:\Users\flope\AppData\Local\Temp\sd60.s
+12 cinit CODE >659:C:\Users\flope\AppData\Local\Temp\sd60.s
+12 cinit CODE >661:C:\Users\flope\AppData\Local\Temp\sd60.s
+13 cinit CODE >662:C:\Users\flope\AppData\Local\Temp\sd60.s
 4 intentry CODE >64:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\S3.c
 87 text6 CODE >31:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\SPI.c
 87 text6 CODE >33:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS3.X\SPI.c
@@ -152,35 +152,33 @@ __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 SPI_Init@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS3.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-_SPI_Slave_Read 6A 0 CODE 0 text3 dist/default/production\MiniProyectoS3.X.production.o
 _Data 79 0 COMMON 1 bssCOMMON dist/default/production\MiniProyectoS3.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s2is.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\sd60.o
 _main A6 0 CODE 0 maintext dist/default/production\MiniProyectoS3.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
-start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s2is.o
+start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\sd60.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __end_of_SPI_Write 128 0 CODE 0 text4 dist/default/production\MiniProyectoS3.X.production.o
 __size_of_SPI_Write 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 SPI_Init@sType 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS3.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s2is.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\sd60.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _SPI_Write 11C 0 CODE 0 text4 dist/default/production\MiniProyectoS3.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_SPI_Slave_Read A6 0 CODE 0 text3 dist/default/production\MiniProyectoS3.X.production.o
 _ADCON1 9F 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s2is.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s2is.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\sd60.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\sd60.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\MiniProyectoS3.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS3.X.production.o
@@ -192,7 +190,7 @@ _TRISC4 43C 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __size_of_SPI_Init 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __size_of_SPI_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s2is.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\sd60.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -228,6 +226,7 @@ __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
+_ISR 6A 0 CODE 0 text3 dist/default/production\MiniProyectoS3.X.production.o
 __S0 94 0 ABS 0 - -
 __S1 7A 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
@@ -236,11 +235,11 @@ saved_w 7E 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 _SPI_Init 2C 0 CODE 0 text2 dist/default/production\MiniProyectoS3.X.production.o
 _SPI_Read FC 0 CODE 0 text5 dist/default/production\MiniProyectoS3.X.production.o
 SPI_Write@a 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS3.X.production.o
+__end_of_ISR A6 0 CODE 0 text3 dist/default/production\MiniProyectoS3.X.production.o
 __end_of_SPI_Init 6A 0 CODE 0 text2 dist/default/production\MiniProyectoS3.X.production.o
 __end_of_SPI_Read 10E 0 CODE 0 text5 dist/default/production\MiniProyectoS3.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s2is.o
-__size_of_SPI_Slave_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\sd60.o
 __pmaintext A6 0 CODE 0 maintext dist/default/production\MiniProyectoS3.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
@@ -294,6 +293,7 @@ _setup DE 0 CODE 0 text1 dist/default/production\MiniProyectoS3.X.production.o
 _slave 77 0 COMMON 1 bssCOMMON dist/default/production\MiniProyectoS3.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MiniProyectoS3.X.production.o
+__size_of_ISR 0 0 ABS 0 - dist/default/production\MiniProyectoS3.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\MiniProyectoS3.X.production.o
 __end_of_spiReceiveWait 11C 0 CODE 0 text6 dist/default/production\MiniProyectoS3.X.production.o
 # %SPLITSTAB Section

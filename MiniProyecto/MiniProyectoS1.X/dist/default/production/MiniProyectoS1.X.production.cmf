@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\flope\AppData\Local\Temp\s29s.o
+$C:\Users\flope\AppData\Local\Temp\s1uc.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -100,24 +100,24 @@ STRING 1000-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MiniProyectoS1.X.production.o
-F cinit CODE >849:C:\Users\flope\AppData\Local\Temp\s29s.s
-F cinit CODE >852:C:\Users\flope\AppData\Local\Temp\s29s.s
-F cinit CODE >917:C:\Users\flope\AppData\Local\Temp\s29s.s
-10 cinit CODE >918:C:\Users\flope\AppData\Local\Temp\s29s.s
-11 cinit CODE >919:C:\Users\flope\AppData\Local\Temp\s29s.s
-12 cinit CODE >920:C:\Users\flope\AppData\Local\Temp\s29s.s
-13 cinit CODE >923:C:\Users\flope\AppData\Local\Temp\s29s.s
-14 cinit CODE >924:C:\Users\flope\AppData\Local\Temp\s29s.s
-15 cinit CODE >925:C:\Users\flope\AppData\Local\Temp\s29s.s
-16 cinit CODE >926:C:\Users\flope\AppData\Local\Temp\s29s.s
-17 cinit CODE >927:C:\Users\flope\AppData\Local\Temp\s29s.s
-1C cinit CODE >930:C:\Users\flope\AppData\Local\Temp\s29s.s
-1D cinit CODE >931:C:\Users\flope\AppData\Local\Temp\s29s.s
-1E cinit CODE >932:C:\Users\flope\AppData\Local\Temp\s29s.s
-1F cinit CODE >933:C:\Users\flope\AppData\Local\Temp\s29s.s
-24 cinit CODE >939:C:\Users\flope\AppData\Local\Temp\s29s.s
-24 cinit CODE >941:C:\Users\flope\AppData\Local\Temp\s29s.s
-25 cinit CODE >942:C:\Users\flope\AppData\Local\Temp\s29s.s
+F cinit CODE >849:C:\Users\flope\AppData\Local\Temp\s1uc.s
+F cinit CODE >852:C:\Users\flope\AppData\Local\Temp\s1uc.s
+F cinit CODE >917:C:\Users\flope\AppData\Local\Temp\s1uc.s
+10 cinit CODE >918:C:\Users\flope\AppData\Local\Temp\s1uc.s
+11 cinit CODE >919:C:\Users\flope\AppData\Local\Temp\s1uc.s
+12 cinit CODE >920:C:\Users\flope\AppData\Local\Temp\s1uc.s
+13 cinit CODE >923:C:\Users\flope\AppData\Local\Temp\s1uc.s
+14 cinit CODE >924:C:\Users\flope\AppData\Local\Temp\s1uc.s
+15 cinit CODE >925:C:\Users\flope\AppData\Local\Temp\s1uc.s
+16 cinit CODE >926:C:\Users\flope\AppData\Local\Temp\s1uc.s
+17 cinit CODE >927:C:\Users\flope\AppData\Local\Temp\s1uc.s
+1C cinit CODE >930:C:\Users\flope\AppData\Local\Temp\s1uc.s
+1D cinit CODE >931:C:\Users\flope\AppData\Local\Temp\s1uc.s
+1E cinit CODE >932:C:\Users\flope\AppData\Local\Temp\s1uc.s
+1F cinit CODE >933:C:\Users\flope\AppData\Local\Temp\s1uc.s
+24 cinit CODE >939:C:\Users\flope\AppData\Local\Temp\s1uc.s
+24 cinit CODE >941:C:\Users\flope\AppData\Local\Temp\s1uc.s
+25 cinit CODE >942:C:\Users\flope\AppData\Local\Temp\s1uc.s
 4 intentry CODE >76:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 CF4 text21 CODE >31:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
 CF4 text21 CODE >33:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\SPI.c
@@ -549,16 +549,16 @@ DAC text1 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\s
 6B9 maintext CODE >116:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 6C5 maintext CODE >117:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
 6D1 maintext CODE >118:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto\MiniProyectoS1.X\S1.c
-CFB clrtext CODE >904:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFB clrtext CODE >905:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFC clrtext CODE >906:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFC clrtext CODE >907:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFD clrtext CODE >908:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFE clrtext CODE >909:C:\Users\flope\AppData\Local\Temp\s29s.s
-CFF clrtext CODE >910:C:\Users\flope\AppData\Local\Temp\s29s.s
-D00 clrtext CODE >911:C:\Users\flope\AppData\Local\Temp\s29s.s
-D01 clrtext CODE >912:C:\Users\flope\AppData\Local\Temp\s29s.s
-D02 clrtext CODE >913:C:\Users\flope\AppData\Local\Temp\s29s.s
+CFB clrtext CODE >904:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFB clrtext CODE >905:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFC clrtext CODE >906:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFC clrtext CODE >907:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFD clrtext CODE >908:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFE clrtext CODE >909:C:\Users\flope\AppData\Local\Temp\s1uc.s
+CFF clrtext CODE >910:C:\Users\flope\AppData\Local\Temp\s1uc.s
+D00 clrtext CODE >911:C:\Users\flope\AppData\Local\Temp\s1uc.s
+D01 clrtext CODE >912:C:\Users\flope\AppData\Local\Temp\s1uc.s
+D02 clrtext CODE >913:C:\Users\flope\AppData\Local\Temp\s1uc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -583,15 +583,14 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 SPI_Init@sTransmitEdge 22 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 _V1 76 0 COMMON 1 bssCOMMON dist/default/production\MiniProyectoS1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-_SPI_Slave_Read 1A92 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
 itoa@base 32 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 _PEIE 5E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s29s.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s1uc.o
 _itoa 1B5A 0 CODE 0 text4 dist/default/production\MiniProyectoS1.X.production.o
 _main ACC 0 CODE 0 maintext dist/default/production\MiniProyectoS1.X.production.o
 _utoa 1E24 0 CODE 0 text5 dist/default/production\MiniProyectoS1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s29s.o
+start 18 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\s1uc.o
 ___flmul@aexp 3C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___flmul@bexp 41 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___flmul@prod 42 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -617,12 +616,12 @@ __size_of_ADC_Init 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.producti
 __size_of_ADC_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 utoa@c 2E 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 utoa@v 2C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s29s.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\s1uc.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 strcat@from 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
@@ -631,7 +630,6 @@ wtemp0 7E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 ___awdiv@sign 25 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_SPI_Slave_Read 1AD2 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
 _ADCON1 9F 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
@@ -657,8 +655,8 @@ __end_of___lwmod 1CC6 0 CODE 0 text6 dist/default/production\MiniProyectoS1.X.pr
 __Umul8_16@multiplicand 74 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 __end_of_ADC_Init 1A2E 0 CODE 0 text17 dist/default/production\MiniProyectoS1.X.production.o
 __end_of_ADC_Read 1A54 0 CODE 0 text16 dist/default/production\MiniProyectoS1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s29s.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s29s.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s1uc.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\s1uc.o
 ___lwdiv@quotient 25 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@a 48 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 ___fldiv@b 4C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
@@ -687,7 +685,7 @@ utoa@buf 2F 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.produ
 utoa@val 27 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __size_of_SPI_Init 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __size_of_SPI_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s29s.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\s1uc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -733,6 +731,7 @@ __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _GIE 5F 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
+_ISR 1A92 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
 __S0 1000 0 ABS 0 - -
 __S1 B8 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
@@ -748,16 +747,16 @@ ___xxtofl DC2 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production
 SPI_Write@a 70 0 COMMON 1 cstackCOMMON dist/default/production\MiniProyectoS1.X.production.o
 strcpy@cp 21 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 strcpy@to 20 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
+__end_of_ISR 1AD2 0 CODE 0 text18 dist/default/production\MiniProyectoS1.X.production.o
 __end_of_SPI_Init 1A92 0 CODE 0 text15 dist/default/production\MiniProyectoS1.X.production.o
 __end_of_SPI_Read 1A18 0 CODE 0 text20 dist/default/production\MiniProyectoS1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 __stringtab FF0 0 STRING 0 strings dist/default/production\MiniProyectoS1.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s29s.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\s1uc.o
 __end_of___xxtofl F3A 0 CODE 0 text8 dist/default/production\MiniProyectoS1.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 ___awmod@counter 2C 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
-__size_of_SPI_Slave_Read 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __ptext10 50 0 CODE 0 text10 dist/default/production\MiniProyectoS1.X.production.o
 __ptext11 1BA6 0 CODE 0 text11 dist/default/production\MiniProyectoS1.X.production.o
 __ptext12 712 0 CODE 0 text12 dist/default/production\MiniProyectoS1.X.production.o
@@ -876,6 +875,7 @@ _setup 1AD2 0 CODE 0 text3 dist/default/production\MiniProyectoS1.X.production.o
 _slave 6C 0 BANK0 1 bssBANK0 dist/default/production\MiniProyectoS1.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\MiniProyectoS1.X.production.o
+__size_of_ISR 0 0 ABS 0 - dist/default/production\MiniProyectoS1.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\MiniProyectoS1.X.production.o
 ___xxtofl@sign 28 0 BANK0 1 cstackBANK0 dist/default/production\MiniProyectoS1.X.production.o
 __pbssBANK0 62 0 BANK0 1 bssBANK0 dist/default/production\MiniProyectoS1.X.production.o

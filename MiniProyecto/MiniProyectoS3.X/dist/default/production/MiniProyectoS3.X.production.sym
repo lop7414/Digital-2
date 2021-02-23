@@ -3,6 +3,7 @@ __S1 7A 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 _GIE 5F 0 ABS 0
+_ISR 35 0 CODE 0
 __Hintentry C 0 CODE 0
 __Lintentry 4 0 CODE 0
 __pintentry 4 0 CODE 0
@@ -33,6 +34,7 @@ __Lram 0 0 ABS 0
 _slave 77 0 COMMON 1
 _setup 6F 0 CODE 0
 _SPI_Init 16 0 CODE 0
+__end_of_ISR 53 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 _TRISC3 43B 0 ABS 0
@@ -72,14 +74,13 @@ __end_of_main 6F 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 12 0 CODE 0
+__size_of_ISR 0 0 ABS 0
 ___stacklo 0 0 ABS 0
 __size_of_SPI_Write 0 0 ABS 0
-__size_of_SPI_Slave_Read 0 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
-__end_of_SPI_Slave_Read 53 0 CODE 0
 __end_of_SPI_Write 94 0 CODE 0
 __Hbank1 0 0 ABS 0
 __Lbank1 0 0 ABS 0
@@ -107,7 +108,6 @@ __Lstack 0 0 STACK 2
 __Hspace_0 94 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __end_of_SPI_Read 87 0 CODE 0
-_SPI_Slave_Read 35 0 CODE 0
 __Hspace_1 7A 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __size_of_setup 0 0 ABS 0
@@ -158,7 +158,7 @@ cstackCOMMON 70 79 COMMON 70 1
 cstackBANK0 20 20 BANK0 20 1
 %locals
 dist/default/production\MiniProyectoS3.X.production.o
-C:\Users\flope\AppData\Local\Temp\s2is.s
+C:\Users\flope\AppData\Local\Temp\sd60.s
 631 F 0 CODE 0
 634 F 0 CODE 0
 651 F 0 CODE 0

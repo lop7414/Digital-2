@@ -365,12 +365,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;S2.c: 56: char slave;
 [v _slave `uc ~T0 @X0 1 e ]
-[v $root$_SPI_Slave_Read `(v ~T0 @X0 0 e ]
+[v $root$_ISR `(v ~T0 @X0 0 e ]
 "66
-[; ;S2.c: 66: void __attribute__((picinterrupt(("")))) SPI_Slave_Read(){
-[v _SPI_Slave_Read `(v ~T1 @X0 1 ef ]
+[; ;S2.c: 66: void __attribute__((picinterrupt(("")))) ISR(void){
+[v _ISR `(v ~T1 @X0 1 ef ]
 {
-[e :U _SPI_Slave_Read ]
+[e :U _ISR ]
 [f ]
 "67
 [; ;S2.c: 67:     if (SSPIF == 1){

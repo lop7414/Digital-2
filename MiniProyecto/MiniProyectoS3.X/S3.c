@@ -61,7 +61,7 @@ void setup(void);
 //******************************************************************************
 // Main
 //******************************************************************************
-void __interrupt() SPI_Slave_Read(){
+void __interrupt() ISR(void){
     if (SSPIF == 1){
         slave = SPI_Read();
         SPI_Write(Data);

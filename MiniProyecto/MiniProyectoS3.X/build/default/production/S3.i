@@ -2927,7 +2927,7 @@ void setup(void);
 
 
 
-void __attribute__((picinterrupt(("")))) SPI_Slave_Read(){
+void __attribute__((picinterrupt(("")))) ISR(void){
     if (SSPIF == 1){
         slave = SPI_Read();
         SPI_Write(Data);
