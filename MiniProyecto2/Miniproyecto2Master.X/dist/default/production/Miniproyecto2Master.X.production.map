@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Miniproyecto2Master.X.production.sym \
   --cmf=dist/default/production\Miniproyecto2Master.X.production.cmf -z \
-  -Q16F887 -oC:\Users\flope\AppData\Local\Temp\xcAsnm0.4 \
+  -Q16F887 -oC:\Users\flope\AppData\Local\Temp\xcAsco0.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Miniproyecto2Master.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
@@ -19,7 +19,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\xcAsnm0.o \
+  -pfunctab=ENTRY -k C:\Users\flope\AppData\Local\Temp\xcAsco0.o \
   dist/default/production\Miniproyecto2Master.X.production.o 
 
 Object code version is 3.11
@@ -29,7 +29,7 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\flope\AppData\Local\Temp\xcAsnm0.o
+C:\Users\flope\AppData\Local\Temp\xcAsco0.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\Miniproyecto2Master.X.production.o
@@ -129,15 +129,24 @@ UNUSED ADDRESS RANGES
 
 _ANSEL                   (abs)        0188
 _ANSELH                  (abs)        0189
+_INTCONbits              (abs)        000B
+_PIE1bits                (abs)        008C
 _PORTA                   (abs)        0005
 _PORTB                   (abs)        0006
 _PORTC                   (abs)        0007
 _PORTD                   (abs)        0008
 _PORTE                   (abs)        0009
+_RCIF                    (abs)        0065
+_RCREG                   (abs)        001A
+_RCSTAbits               (abs)        0018
+_SPBRG                   (abs)        0099
 _TRISA                   (abs)        0085
 _TRISB                   (abs)        0086
 _TRISD                   (abs)        0088
 _TRISE                   (abs)        0089
+_TRMT                    (abs)        04C1
+_TXREG                   (abs)        0019
+_TXSTAbits               (abs)        0098
 __Habs1                  abs1         0000
 __Hbank0                 bank0        0000
 __Hbank1                 bank1        0000

@@ -42,6 +42,7 @@
 
 #include "pic16f887.h"
 #include "I2C.h"
+#include "UART.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

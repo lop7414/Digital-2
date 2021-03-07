@@ -4,16 +4,21 @@ __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
+_RCIF 65 0 ABS 0
+_TRMT 4C1 0 ABS 0
 _main 7DF 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
+_RCREG 1A 0 ABS 0
 _TRISA 85 0 ABS 0
 _TRISB 86 0 ABS 0
+_TXREG 19 0 ABS 0
 _PORTA 5 0 ABS 0
 reset_vec 0 0 CODE 0
 _TRISD 88 0 ABS 0
 _PORTB 6 0 ABS 0
+_SPBRG 99 0 ABS 0
 _TRISE 89 0 ABS 0
 _PORTC 7 0 ABS 0
 _ANSEL 188 0 ABS 0
@@ -29,6 +34,7 @@ __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
+_PIE1bits 8C 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
@@ -53,6 +59,8 @@ __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 7FC 0 CODE 0
 ___stacklo 0 0 ABS 0
+_RCSTAbits 18 0 ABS 0
+_TXSTAbits 98 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __Hbank0 0 0 ABS 0
@@ -86,6 +94,7 @@ __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __Hspace_4 4010 0 ABS 0
 __Lspace_4 0 0 ABS 0
+_INTCONbits B 0 ABS 0
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
 __end_of_setup 7FC 0 CODE 0
@@ -112,27 +121,27 @@ text1 FD0 FF7 CODE FD0 0
 maintext FBE FCF CODE FBE 0
 %locals
 dist/default/production\Miniproyecto2Master.X.production.o
-C:\Users\flope\AppData\Local\Temp\xcAsnm0.s
-603 7FC 0 CODE 0
-606 7FC 0 CODE 0
-612 7FC 0 CODE 0
-614 7FC 0 CODE 0
-615 7FD 0 CODE 0
+C:\Users\flope\AppData\Local\Temp\xcAsco0.s
+777 7FC 0 CODE 0
+780 7FC 0 CODE 0
+786 7FC 0 CODE 0
+788 7FC 0 CODE 0
+789 7FD 0 CODE 0
 Master.c
-62 7DF 0 CODE 0
-64 7DF 0 CODE 0
-70 7E4 0 CODE 0
-72 7E4 0 CODE 0
-80 7E8 0 CODE 0
+63 7DF 0 CODE 0
+65 7DF 0 CODE 0
+71 7E4 0 CODE 0
+73 7E4 0 CODE 0
 81 7E8 0 CODE 0
-82 7EC 0 CODE 0
-83 7ED 0 CODE 0
-84 7F1 0 CODE 0
-85 7F2 0 CODE 0
-86 7F3 0 CODE 0
-88 7F4 0 CODE 0
-89 7F7 0 CODE 0
-90 7F8 0 CODE 0
-91 7F9 0 CODE 0
-92 7FA 0 CODE 0
-93 7FB 0 CODE 0
+82 7E8 0 CODE 0
+83 7EC 0 CODE 0
+84 7ED 0 CODE 0
+85 7F1 0 CODE 0
+86 7F2 0 CODE 0
+87 7F3 0 CODE 0
+89 7F4 0 CODE 0
+90 7F7 0 CODE 0
+91 7F8 0 CODE 0
+92 7F9 0 CODE 0
+93 7FA 0 CODE 0
+94 7FB 0 CODE 0

@@ -1,4 +1,4 @@
-# 1 "Master.c"
+# 1 "UART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,23 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Master.c" 2
-# 16 "Master.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 38 "Master.c"
+# 1 "UART.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2503,8 +2487,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 38 "Master.c" 2
+# 1 "UART.c" 2
 
+# 1 "./UART.h" 1
+# 10 "./UART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2638,18 +2624,6 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 39 "Master.c" 2
-
-
-
-
-
-# 1 "./I2C.h" 1
-# 44 "Master.c" 2
-
-# 1 "./UART.h" 1
-# 10 "./UART.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
 # 10 "./UART.h" 2
 
 
@@ -2662,7 +2636,10 @@ uint8_t UART_READ();
 uint8_t UART_TX_Empty();
 
 void UART_Write(uint8_t a);
-# 45 "Master.c" 2
+# 2 "UART.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
+# 3 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2761,7 +2738,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 46 "Master.c" 2
+# 4 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2846,7 +2823,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 47 "Master.c" 2
+# 5 "UART.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 3
@@ -2879,43 +2856,37 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 48 "Master.c" 2
-# 57 "Master.c"
-void setup(void);
+# 6 "UART.c" 2
 
 
+void SERIAL_Init(void){
+    SPBRG = 25;
 
+    TXSTAbits.BRGH = 1;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.TX9 = 0;
 
+    RCSTAbits.CREN = 1;
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
 
-void main(void) {
-
-    setup();
-
-
-
-
-
-    while (1) {
-
-    }
-
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 }
 
+uint8_t UART_READ(){
+    while(!RCIF);
+    return RCREG;
+}
 
+uint8_t UART_TX_Empty(){
 
+  return TRMT;
+}
 
-
-void setup(void) {
-    ANSEL = 0b00001001;
-    ANSELH= 0b00000000;
-    TRISA = 0b00001001;
-    TRISB = 0b00000000;
-    TRISD = 0b00000000;
-    TRISE = 0;
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
+void UART_Write(uint8_t a){
+  while(!TRMT);
+  TXREG = a;
 }
