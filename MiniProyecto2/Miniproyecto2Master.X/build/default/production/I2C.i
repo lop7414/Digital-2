@@ -2490,7 +2490,13 @@ extern __bank0 __bit __timeout;
 # 1 "I2C.c" 2
 
 # 1 "./I2C.h" 1
-# 2 "I2C.c" 2
+
+
+
+
+
+
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
@@ -2625,6 +2631,28 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
+# 9 "./I2C.h" 2
+
+
+
+void I2C_Init(const unsigned long c);
+
+void I2C_M_Wait();
+
+void I2C_M_Start();
+
+void I2C_M_Restart();
+
+void I2C_M_Stop();
+
+void I2C_M_Write(unsigned d);
+
+unsigned short I2C_M_Read(unsigned short a);
+
+void I2C_S_Init(uint8_t address);
+# 2 "I2C.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
 # 3 "I2C.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 1 3
@@ -2844,3 +2872,90 @@ extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 6 "I2C.c" 2
 
+
+void I2C_Init(const unsigned long a){
+    SSPCON = 0b00101000;
+    SSPCON2 = 0;
+    SSPADD = (8000000/(4*a))-1;
+    SSPSTAT = 0;
+    TRISCbits.TRISC3 = 1;
+    TRISCbits.TRISC4 = 1;
+}
+
+void I2C_M_Wait(){
+    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+}
+
+
+
+
+
+void I2C_M_Start() {
+    I2C_M_Wait();
+    SSPCON2bits.SEN = 1;
+}
+
+
+
+
+
+void I2C_M_Restart(){
+ I2C_M_Wait();
+    SSPCON2bits.RSEN = 1;
+}
+
+
+
+
+
+void I2C_M_Stop(){
+    I2C_M_Wait();
+    SSPCON2bits.PEN = 1;
+}
+
+
+
+
+
+void I2C_M_Write(unsigned a){
+    I2C_M_Wait();
+    SSPBUF = a;
+}
+
+
+
+
+
+unsigned short I2C_M_Read(unsigned short a){
+    unsigned short temp;
+    I2C_M_Wait();
+    RCEN = 1;
+    I2C_M_Wait();
+    temp = SSPBUF;
+    I2C_M_Wait();
+    if(a == 1){
+        SSPCON2bits.ACKDT = 0;
+    }
+    else{
+        SSPCON2bits.ACKDT = 1;
+    }
+    SSPCON2bits.ACKEN = 1;
+    return temp;
+}
+
+
+
+
+
+void I2C_S_Init(uint8_t address){
+    SSPADD = address;
+    SSPCON = 0x36;
+    SSPSTAT = 0x80;
+    SSPCON2 = 0x01;
+    TRISC3 = 1;
+    TRISC4 = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
+}

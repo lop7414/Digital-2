@@ -43,6 +43,7 @@
 #include "pic16f887.h"
 #include "I2C.h"
 #include "UART.h"
+#include "OSC.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,7 +51,8 @@
 //******************************************************************************
 // Variables
 //******************************************************************************
-
+int sensor;
+char Estado;
 //******************************************************************************
 // Funciones
 //******************************************************************************
@@ -63,13 +65,35 @@ void setup(void);
 void main(void) {
     
     setup();
+    I2C_Init(100000);
+    InitOSC(6);
+    SERIAL_Init();
     
     //**************************************************************************
     // Loop principal
     //**************************************************************************
 
     while (1) {
+        I2C_M_Start();
+        sensor = I2C_M_Read(0);
+        I2C_M_Stop();
         
+        __delay_ms(200);
+        
+        UART_Write(sensor);
+        __delay_ms(10);
+         
+        Estado = UART_READ();
+        __delay_ms(10);
+        
+        if (Estado==1){
+            PORTBbits.RB0 = 1;
+            PORTBbits.RB1 = 0;
+        }
+        else {
+            PORTBbits.RB0 = 0;
+            PORTBbits.RB1 = 1;
+        }
     }
     
 }
@@ -79,18 +103,17 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    ANSEL = 0b00001001;
-    ANSELH= 0b00000000;
-    TRISA = 0b00001001;
-    TRISB = 0b00000000; 
-    TRISD = 0b00000000;
-    TRISE = 0;
+    TRISA=0;
+    TRISB=0;
+    TRISC=0b000011000;
+    TRISD=0;
+    TRISE=0;
     
-    PORTA = 0;
-    PORTB = 0;
-    PORTC = 0;
-    PORTD = 0;
-    PORTE = 0;
+    PORTA=0;
+    PORTB=0;
+    PORTC=0;
+    PORTD=0;
+    PORTE=0;
 }
 
 //******************************************************************************
