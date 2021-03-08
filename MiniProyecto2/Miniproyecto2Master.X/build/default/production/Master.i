@@ -2931,13 +2931,27 @@ extern char * strrichr(const char *, int);
 int sensor;
 char Estado;
 
+int O;
+int Destination;
+
+char COMPARE[5];
+
 
 
 void setup(void);
+int Read(int n);
 
 
 
 
+
+void __attribute__((picinterrupt(("")))) ISR(void){
+    if (RCIF==1){
+        O = Read ((int)RCREG);
+        itoa(COMPARE,O,10);
+        RCIF=0;
+    }
+}
 
 void main(void) {
 
@@ -2960,10 +2974,10 @@ void main(void) {
         UART_Write(sensor);
         _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        Estado = UART_READ();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
 
-        if (Estado==1){
+
+
+        if (COMPARE==1){
             PORTBbits.RB0 = 1;
             PORTBbits.RB1 = 0;
         }
@@ -2991,4 +3005,12 @@ void setup(void) {
     PORTC=0;
     PORTD=0;
     PORTE=0;
+}
+
+
+
+
+int Read (int n){
+    Destination = n;
+    return ((Destination)*1);
 }
