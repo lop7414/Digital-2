@@ -5,7 +5,7 @@
 #define SERIAL_8Nl
 
 // this int will hold the current count for our sketch
-int DATA = 0;
+int DATA = 1;
 int Led = 0;
 
 // set up the 'counter' feed
