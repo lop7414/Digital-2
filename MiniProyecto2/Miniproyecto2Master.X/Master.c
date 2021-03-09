@@ -57,7 +57,7 @@ char    Estado;
 int     O;
 int     Destination;
 
-char    COMPARE[5];
+char    COMPARE = 0;
 //******************************************************************************
 // Funciones
 //******************************************************************************
@@ -88,6 +88,17 @@ void main(void) {
     //**************************************************************************
 
     while (1) {
+        
+        if (COMPARE==0){
+            PORTDbits.RD6 = 1;
+            PORTDbits.RD7 = 0;
+        }
+        else {
+            PORTDbits.RD6 = 0;
+            PORTDbits.RD7 = 1;
+        }
+        
+        
         I2C_M_Start();
         sensor = I2C_M_Read(0);
         I2C_M_Stop();
@@ -99,15 +110,6 @@ void main(void) {
          
 //        Estado = UART_READ();
 //        __delay_ms(10);
-        
-        if (COMPARE==1){
-            PORTBbits.RB0 = 1;
-            PORTBbits.RB1 = 0;
-        }
-        else {
-            PORTBbits.RB0 = 0;
-            PORTBbits.RB1 = 1;
-        }
     }
     
 }
@@ -119,7 +121,7 @@ void main(void) {
 void setup(void) {
     TRISA=0;
     TRISB=0;
-    TRISC=0b000011000;
+    TRISC=0;
     TRISD=0;
     TRISE=0;
     
