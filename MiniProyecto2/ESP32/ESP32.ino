@@ -1,23 +1,34 @@
+// Adafruit IO Publish Example
+//
+// Adafruit invests time and resources providing this open source code.
+// Please support Adafruit and open source hardware by purchasing
+// products from Adafruit!
+//
+// Written by Todd Treece for Adafruit Industries
+// Copyright (c) 2016 Adafruit Industries
+// Licensed under the MIT license.
+//
+// All text above must be included in any redistribution.
+
+/************************** Configuration ***********************************/
+
+// edit the config.h tab and enter your Adafruit IO credentials
+// and any additional configuration needed for WiFi, cellular,
+// or ethernet clients.
 #include "config.h"
 
-#define RXD2 16
-#define TXD2 17
-#define SERIAL_8Nl
+/************************ Example Starts Here *******************************/
 
 // this int will hold the current count for our sketch
-int DATA = 1;
-int Led = 0;
+int DATA = 0;
 
 // set up the 'counter' feed
-AdafruitIO_Feed *DATASend = io.feed("DATASend");
-AdafruitIO_Feed *Estado = io.feed("Estado");
+AdafruitIO_Feed *DATAFeed = io.feed("datasend");
 
 void setup() {
 
   // start the serial connection
-  //  Serial2.begin(9600, SERIAL_8Nl, RXD2, TXD2);
   Serial.begin(115200);
-  
 
   // wait for serial monitor to open
   while(! Serial);
@@ -27,15 +38,12 @@ void setup() {
   // connect to io.adafruit.com
   io.connect();
 
-  Estado->onMessage(handleMessage);
-
   // wait for a connection
   while(io.status() < AIO_CONNECTED) {
     Serial.print(".");
+    Serial.println(io.statusText());
     delay(500);
   }
-
-  Estado->get();
 
   // we are connected
   Serial.println();
@@ -51,28 +59,17 @@ void loop() {
   // io.adafruit.com, and processes any incoming data.
   io.run();
 
-  // Read Serial and save on DATA
-  if(Serial.available()>0){
-    char DATA = Serial.read();
-    Serial.print("sending -> ");
-    Serial.println(DATA);
-    DATASend->save(DATA);        
-  }
+  // save count to the 'counter' feed on Adafruit IO
+  Serial.print("sending -> ");
+  Serial.println(DATA);
+  DATAFeed->save(DATA);
+
+  // increment the count by 1
+  DATA++;
 
   // Adafruit IO is rate limited for publishing, so a delay is required in
   // between feed->save events. In this example, we will wait three seconds
   // (1000 milliseconds == 1 second) during each loop.
   delay(3000);
-
-  
-
-  Serial.write(Led);
-
-}
-
-void handleMessage(AdafruitIO_Data *data) {
-
-  Serial.print("received <- ");
-  Serial.println(data->value());
 
 }

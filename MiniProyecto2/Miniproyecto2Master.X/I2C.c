@@ -8,7 +8,7 @@
 void I2C_Init(const unsigned long a){
     SSPCON = 0b00101000;
     SSPCON2 = 0;
-    SSPADD = (_XTAL_FREQ/(4*a))-1;
+    SSPADD = (_XTAL_FREQ/(8*a))-1;
     SSPSTAT = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;

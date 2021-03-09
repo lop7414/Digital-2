@@ -35,7 +35,7 @@ cstackBANK0 BANK0 1 20 20 29 1
 intentry CODE 0 4 4 C 2
 bssBANK0 BANK0 1 49 49 8 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+$C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -84,21 +84,21 @@ STRING 379-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Miniproyecto2Master.X.production.o
-13 cinit CODE >986:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-13 cinit CODE >989:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-13 cinit CODE >1012:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-14 cinit CODE >1013:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-15 cinit CODE >1014:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-16 cinit CODE >1015:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-17 cinit CODE >1016:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-18 cinit CODE >1017:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-19 cinit CODE >1018:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1A cinit CODE >1019:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1B cinit CODE >1020:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1C cinit CODE >1021:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1D cinit CODE >1027:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1D cinit CODE >1029:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
-1E cinit CODE >1030:C:\Users\flope\AppData\Local\Temp\xcAsr54.s
+13 cinit CODE >986:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+13 cinit CODE >989:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+13 cinit CODE >1012:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+14 cinit CODE >1013:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+15 cinit CODE >1014:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+16 cinit CODE >1015:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+17 cinit CODE >1016:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+18 cinit CODE >1017:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+19 cinit CODE >1018:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1A cinit CODE >1019:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1B cinit CODE >1020:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1C cinit CODE >1021:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1D cinit CODE >1027:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1D cinit CODE >1029:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
+1E cinit CODE >1030:C:\Users\flope\AppData\Local\Temp\xcAse5g.s
 4 intentry CODE >71:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto2\Miniproyecto2Master.X\Master.c
 35C text16 CODE >138:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto2\Miniproyecto2Master.X\Master.c
 35C text16 CODE >139:C:\Users\flope\Desktop\Universidad\Digital 2\Labs\Digital-2\MiniProyecto2\Miniproyecto2Master.X\Master.c
@@ -384,12 +384,12 @@ _RCEN 48B 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 _RCIF 65 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 _Read 6B8 0 CODE 0 text16 dist/default/production\Miniproyecto2Master.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+___sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 _itoa 5E6 0 CODE 0 text12 dist/default/production\Miniproyecto2Master.X.production.o
 _main 144 0 CODE 0 maintext dist/default/production\Miniproyecto2Master.X.production.o
 _utoa 42 0 CODE 0 text13 dist/default/production\Miniproyecto2Master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
-start 20 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+start 20 0 CODE 0 init C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 __size_of_Read 0 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 __size_of_itoa 0 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
@@ -401,12 +401,12 @@ __size_of_I2C_Init 0 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.pro
 __Hpowerup 0 0 CODE 0 powerup -
 utoa@c 23 0 BANK0 1 cstackBANK0 dist/default/production\Miniproyecto2Master.X.production.o
 utoa@v 21 0 BANK0 1 cstackBANK0 dist/default/production\Miniproyecto2Master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 _InitOSC 2EA 0 CODE 0 text4 dist/default/production\Miniproyecto2Master.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
@@ -423,8 +423,8 @@ ___lwmod@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\Miniproyecto
 __end_of___lldiv 2EA 0 CODE 0 text10 dist/default/production\Miniproyecto2Master.X.production.o
 __end_of___lwdiv 42E 0 CODE 0 text15 dist/default/production\Miniproyecto2Master.X.production.o
 __end_of___lwmod 516 0 CODE 0 text14 dist/default/production\Miniproyecto2Master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\xcAsr54.o
-___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+___stackhi 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\xcAse5g.o
+___stacklo 0 0 ABS 0 - C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 __end_of_UART_Write 69E 0 CODE 0 text2 dist/default/production\Miniproyecto2Master.X.production.o
 ___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\Miniproyecto2Master.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
@@ -443,7 +443,7 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Miniproyecto2Master.X.production.o
 utoa@buf 78 0 COMMON 1 cstackCOMMON dist/default/production\Miniproyecto2Master.X.production.o
 utoa@val 7A 0 COMMON 1 cstackCOMMON dist/default/production\Miniproyecto2Master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+___int_sp 0 0 STACK 2 stack C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -498,7 +498,7 @@ __end_of_ISR 582 0 CODE 0 text11 dist/default/production\Miniproyecto2Master.X.p
 InitOSC@frec 32 0 BANK0 1 cstackBANK0 dist/default/production\Miniproyecto2Master.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 30 0 BANK0 1 cstackBANK0 dist/default/production\Miniproyecto2Master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\xcAsr54.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\flope\AppData\Local\Temp\xcAse5g.o
 __end_of_I2C_M_Read 5E6 0 CODE 0 text7 dist/default/production\Miniproyecto2Master.X.production.o
 __end_of_I2C_M_Stop 6E0 0 CODE 0 text5 dist/default/production\Miniproyecto2Master.X.production.o
 __end_of_I2C_M_Wait 6B8 0 CODE 0 text8 dist/default/production\Miniproyecto2Master.X.production.o

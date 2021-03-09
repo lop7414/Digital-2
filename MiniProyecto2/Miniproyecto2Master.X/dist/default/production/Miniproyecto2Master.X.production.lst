@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Tue Mar 09 00:27:52 2021
+                                                                                               Tue Mar 09 16:03:50 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F887
@@ -1753,7 +1753,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1738  021D  0191               	clrf	17	;volatile
   1739  021E                     l1211:
   1740                           
-  1741                           ;I2C.c: 11:     SSPADD = (8000000/(4*a))-1;
+  1741                           ;I2C.c: 11:     SSPADD = (8000000/(8*a))-1;
   1742  021E  1283               	bcf	3,5	;RP0=0, select bank0
   1743  021F  1303               	bcf	3,6	;RP1=0, select bank0
   1744  0220  083E               	movf	I2C_Init@a,w
@@ -1764,7 +1764,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1749  0225  00C4               	movwf	??_I2C_Init+2
   1750  0226  0841               	movf	I2C_Init@a+3,w
   1751  0227  00C5               	movwf	??_I2C_Init+3
-  1752  0228  3002               	movlw	2
+  1752  0228  3003               	movlw	3
   1753  0229                     u595:
   1754  0229  1003               	clrc
   1755  022A  0DC2               	rlf	??_I2C_Init,f
@@ -2935,7 +2935,7 @@ DATA                 0      0      3F      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Tue Mar 09 00:27:52 2021
+Symbol Table                                                                                   Tue Mar 09 16:03:50 2021
 
                       _O 004B      __size_of_I2C_M_Read 0032      __size_of_I2C_M_Wait 000D  
     __size_of_I2C_M_Stop 0009                       l70 00CB                       l77 0340  
