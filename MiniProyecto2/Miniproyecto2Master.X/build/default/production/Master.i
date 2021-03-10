@@ -2929,7 +2929,8 @@ extern char * strrichr(const char *, int);
 
 
 int sensor;
-char Estado;
+int Enviar;
+int DatoIntermedio;
 
 int O;
 int Destination;
@@ -2982,11 +2983,14 @@ void main(void) {
 
         _delay((unsigned long)((200)*(8000000/4000.0)));
 
-        UART_Write(sensor);
+        Enviar = (sensor*30.0)/255.0;
+
+
+        UART_Write(Enviar);
         _delay((unsigned long)((10)*(8000000/4000.0)));
 
-
-
+        COMPARE = UART_READ();
+        _delay((unsigned long)((10)*(8000000/4000.0)));
     }
 
 }

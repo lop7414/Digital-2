@@ -52,7 +52,8 @@
 // Variables
 //******************************************************************************
 int     sensor;
-char    Estado;
+int     Enviar;
+int     DatoIntermedio;
 
 int     O;
 int     Destination;
@@ -105,11 +106,14 @@ void main(void) {
         
         __delay_ms(200);
         
-        UART_Write(sensor);
+        Enviar = (sensor*30.0)/255.0;
+//        Enviar = (DatoIntermedio)+25;
+        
+        UART_Write(Enviar);
         __delay_ms(10);
          
-//        Estado = UART_READ();
-//        __delay_ms(10);
+        COMPARE = UART_READ();
+        __delay_ms(10);
     }
     
 }
@@ -142,6 +146,27 @@ int Read (int  n){
 
 
 /*Precodigo
+ * En este caso se debera conectar por I2C a un sensor de temperatura
+ * La idea es agarrar los datos provenientes del sensor y meterlos en una variable
+ * Temp*
+ * 
+ * Esta variable se debera de mandar por UART al ESP32
+ * 
+ * El Pic tambien debera tener una variable llamada estado para la luz led
+ * 
+ * Una interrupcion se encargara de recibir datos por UART y cambiar el valor de
+ * Estado
+ * 
+ * Dependiendo del valor (0, 1) el estado enciende una led o la otra
  * 
  * 
+ * En arduino la programacion es mas acerca de mover datos de un lado a otro
+ * 
+ * Se debe recibir el dato pro UART y mandarlo por Wifi
+ * 
+ * Se debe recibir el dato por Wifi y se debe enviar por UART
+ * 
+ *
+ * Adafruit solo despliega datos en un feed y manda el dato de un boton por otro
+ *  feed
  */
