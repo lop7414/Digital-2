@@ -34,6 +34,7 @@ void UARTIntHandler(void){
 
 
     if(input == 'r' && LedR == 0){ //encender/apagar LEDR
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'R');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
@@ -45,6 +46,7 @@ void UARTIntHandler(void){
     }
 
     else if(input == 'r' && LedR == 1){
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'R');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
@@ -55,6 +57,7 @@ void UARTIntHandler(void){
     }
 
     else if(input == 'g' && LedG == 0){//encender/apagar LEDG
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'G');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
@@ -66,6 +69,7 @@ void UARTIntHandler(void){
     }
 
     else if(input == 'g' && LedG == 1){
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'G');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
@@ -76,6 +80,7 @@ void UARTIntHandler(void){
     }
 
     else if(input == 'b' && LedB == 0){//encender/apagar LEDB
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'B');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
@@ -87,6 +92,7 @@ void UARTIntHandler(void){
     }
 
     else if(input == 'b' && LedB == 1){
+        UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'B');
         UARTCharPut(UART0_BASE, ' ');
         UARTCharPut(UART0_BASE, 'O');
